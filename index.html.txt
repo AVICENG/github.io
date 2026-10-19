@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVIC ENGSERVICE | Промышленная автоматизация и IT</title>
+    <!-- Подключаем шрифт Inter, который использует Honeywell -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- Подключаем файл стилей, который сделаем на следующем шаге -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Премиальная минималистичная шапка Honeywell Style -->
+    <header>
+        <div class="hw-logo">
+            <a href="index.html">AVIC<span class="dot">.</span></a>
+            <div class="hw-sub">engservice</div>
+        </div>
+        <nav class="hw-nav">
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <!-- Ссылки на ваши будущие страницы оборудования -->
+                <li><a href="p/blog-page_5912.html">Оборудование</a></li>
+                <li><a href="p/solutions.html">Решения</a></li>
+                <li><a href="p/contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главный индустриальный баннер -->
+    <section class="hw-hero">
+        <div class="hero-content">
+            <h1>Building Automation & Industrial IT Solutions</h1>
+            <p>Проектирование, монтаж и модернизация интеллектуальных инженерных систем. Комплексная интеграция автоматики и систем диспетчеризации на протоколах KNX, DALI, Honeywell и TREND.</p>
+            <a href="mailto:info@aviceng.com" class="hw-btn">Связаться с инженером</a>
+        </div>
+    </section>
+
+    <!-- Сетка ключевых компетенций компании -->
+    <section class="hw-grid">
+        <div class="hw-card">
+            <h3>01 / Автоматизация зданий</h3>
+            <p>Разработка логики, интеграция, программирование и пусконаладка систем АСУ ТП, ОВиК и автоматизированного управления освещением коммерческих объектов.</p>
+        </div>
+        <div class="hw-card">
+            <h3>02 / Инженерные Системы</h3>
+            <p>Полный комплекс строительно-монтажных работ (СМР): устройство систем вентиляции, центрального кондиционирования, отопления и водоснабжения.</p>
+        </div>
+        <div class="hw-card">
+            <h3>03 / Сетевая Инфраструктура</h3>
+            <p>Проектирование и монтаж высоконадежных структурированных кабельных сетей (СКС), систем видеонаблюдения (СОТ) и контроля доступа (СКУД).</p>
+        </div>
+    </section>
+
+    <!-- Линейный B2B подвал сайта -->
+    <footer>
+        <div class="footer-left">
+            <p>© 2026 ООО «АВИК ИНЖСЕРВИС» | Строительство и информационные технологии</p>
+            <p style="color: #767676; margin-top: 5px; font-size: 12px;">Москва, Пресненская наб., 8, стр. 1, МФК "Город Столиц"</p>
+        </div>
+        <div class="footer-brand">AVIC<span>.</span></div>
+    </footer>
+
+</body>
+</html>

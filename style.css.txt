@@ -1,0 +1,159 @@
+/* Глобальные сбросы Honeywell Design System */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Шапка сайта */
+header {
+    background-color: #ffffff;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e5e5e5;
+}
+.hw-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+}
+.hw-logo a {
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: -1.5px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+.hw-logo span.dot {
+    color: #de1e26; /* Фирменный красный Honeywell */
+}
+.hw-logo .hw-sub {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #767676;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+/* Навигация */
+.hw-nav ul {
+    list-style: none;
+    display: flex;
+}
+.hw-nav li {
+    margin-left: 35px;
+}
+.hw-nav a {
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+    transition: color 0.15s ease;
+}
+.hw-nav a:hover, .hw-nav a.active {
+    color: #de1e26;
+}
+
+/* Баннер (Hero) */
+.hw-hero {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 120px 8%;
+    border-bottom: 4px solid #de1e26;
+}
+.hero-content {
+    max-width: 850px;
+}
+.hw-hero h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+.hw-hero p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+.hw-btn {
+    background-color: #de1e26;
+    color: #ffffff;
+    padding: 16px 35px;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+.hw-btn:hover {
+    background-color: #b8141b;
+}
+
+/* Сетка карточек */
+.hw-grid {
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+.hw-card {
+    flex: 1;
+    border-top: 3px solid #1a1a1a;
+    padding-top: 20px;
+}
+.hw-card:hover {
+    border-top-color: #de1e26;
+}
+.hw-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.hw-card p {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Подвал */
+footer {
+    background-color: #1a1a1a;
+    color: #aaaaaa;
+    padding: 50px 8%;
+    font-size: 13px;
+    border-top: 1px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-brand {
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.footer-brand span {
+    color: #de1e26;
+}

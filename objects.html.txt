@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выполненные объекты | AVIC ENGSERVICE</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- Поднимаемся на уровень выше, чтобы подключить общий файл стилей -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Специфичные для контентной страницы стили Honeywell/Trend */
+        .container { padding: 60px 8%; background: #ffffff; min-height: 600px; }
+        .page-title { font-size: 38px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 40px; color: #1a1a1a; }
+        
+        /* Промышленная таблица объектов (Референс-лист) */
+        .project-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .project-table th { background-color: #1a1a1a; color: #ffffff; padding: 16px; text-align: left; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid #1a1a1a; }
+        .project-table td { padding: 16px; border: 1px solid #e5e5e5; font-size: 14px; color: #222222; vertical-align: top; line-height: 1.5; }
+        .project-table tr:nth-child(even) { background-color: #f9f9f9; }
+        .project-table tr:hover { background-color: #f1f1f1; }
+        
+        .date-col { font-weight: 700; color: #de1e26; width: 100px; white-space: nowrap; }
+        .object-col { font-weight: 700; color: #1a1a1a; width: 350px; }
+        .object-col span { display: block; font-weight: 400; font-size: 12px; color: #767676; margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="hw-logo">
+            <a href="../index.html">AVIC<span class="dot">.</span></a>
+            <div class="hw-sub">engservice</div>
+        </div>
+        <nav class="hw-nav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="equipment.html">Оборудование</a></li>
+                <li><a href="objects.html" class="active">Объекты</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основная контентная зона с таблицей Honeywell Style -->
+    <main class="container">
+        <h1 class="page-title">Выполненные и текущие объекты</h1>
+        
+        <table class="project-table">
+            <thead>
+                <tr>
+                    <th class="date-col">Дата</th>
+                    <th class="object-col">Наименование объекта и локация</th>
+                    <th>Выполненный комплекс инжиниринговых работ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="date-col">24.08.2024</td>
+                    <td class="object-col">«Киноконцертный комплекс и съемочный павильон №17»<span>г. Москва, Раменки, Мосфильмовская ул.</span></td>
+                    <td>Выполнены программирование и пусконаладочные работы системы автоматизации и диспетчеризации инженерных систем.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">12.02.2022</td>
+                    <td class="object-col">Торгово-деловой центр "Галерея"<span>МО, г. Звенигород, Радужная ул.</span></td>
+                    <td>Выполнены работы по проектированию, монтажу и пусконаладке систем автоматизации и диспетчеризации инженерных систем.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">12.02.2021</td>
+                    <td class="object-col">Бизнес-центр "Меридиан"<span>г. Москва, Смольная ул., 24Д</span></td>
+                    <td>Выполнены работы по модернизации автоматизации и диспетчеризации инженерных систем здания.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">14.01.2021</td>
+                    <td class="object-col">Спорткар-центр<span>МО, Одинцовский район, д. Раздоры, МКАД 61 км, стр. 1</span></td>
+                    <td>Выполнены работы по созданию высоконадежной облачной системы диспетчеризации.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">24.12.2020</td>
+                    <td class="object-col">"Bloomberg"<span>г. Москва, Романов переулок, 4</span></td>
+                    <td>Выполнены комплексные работы по модернизации системы BMS (Building Management System).</td>
+                </tr>
+                <tr>
+                    <td class="date-col">16.09.2020</td>
+                    <td class="object-col">Бизнес-центр ОКО II с надземно-подземным паркингом<span>г. Москва, ЦАО, ММДЦ "МОСКВА-СИТИ", уч. 16Б</span></td>
+                    <td>Выполнены масштабные работы по автоматизации и диспетчеризации инженерных систем здания.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">08.09.2020</td>
+                    <td class="object-col">Технопарк "Отрадное", Корпус А<span>г. Москва, Отрадная ул., 2, административный корпус А</span></td>
+                    <td>Выполнено проектирование и полный комплекс сложнейших работ по автоматизации и диспетчеризации инженерных систем.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">28.04.2019</td>
+                    <td class="object-col">Аэропорт "Остафьево"<span>поселение Рязановское, г. Москва</span></td>
+                    <td>Выполнены работы по пусконаладке автоматизации и комплексной диспетчеризации инженерных систем.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">09.01.2019</td>
+                    <td class="object-col">Гос. Дума Федерального Собрания РФ<span>г. Москва, Охотный ряд, д. 1</span></td>
+                    <td>Техническое обслуживание систем автоматизации и централизованной диспетчеризации здания.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">06.11.2018</td>
+                    <td class="object-col">Технопарк "Отрадное", Здания B и C<span>г. Москва, Отрадная ул., 2, многоуровневый паркинг на 602 м/м</span></td>
+                    <td>Выполнены работы по комплексной автоматизации и диспетчеризации технологических систем.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">10.01.2018</td>
+                    <td class="object-col">Porsche-Центр Рублевский<span>МО, Одинцовский район, д. Раздоры, МКАД 61 км, стр. 1</span></td>
+                    <td>Профессиональное техническое обслуживание автоматики и систем диспетчеризации.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">12.11.2017</td>
+                    <td class="object-col">Здание инженерных служб ГУП "Московский метрополитен"<span>г. Москва, ул. Гиляровского 37/1</span></td>
+                    <td>Выполнены профильные работы по диспетчеризации инженерных систем здания.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">07.11.2017</td>
+                    <td class="object-col">Porsche-Центр Рублевский<span>МО, Одинцовский район, д. Раздоры, МКАД 61 км, стр. 1</span></td>
+                    <td>Выполнены работы по полной автоматизации и выводу в диспетчерскую инженерных систем.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">07.10.2017</td>
+                    <td class="object-col">"Danfoss"<span>МО, Истринский район, с.п. Павло-Слободское, Лешково 217</span></td>
+                    <td>Выполнены регламентные работы по автоматизации и диспетчеризации инженерных систем.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">26.07.2017</td>
+                    <td class="object-col">Аэропорт "Остафьево"<span>поселение Рязановское, г. Москва</span></td>
+                    <td>Выполнены работы по автоматизации и диспетчеризации систем технологической вентиляции и КНС.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">28.01.2016</td>
+                    <td class="object-col">МХТ им. Чехова<span>г. Москва, Камергерский пер., 3</span></td>
+                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем на объекте исторической реконструкции.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">26.07.2015</td>
+                    <td class="object-col">ЖК "Литератор", Корпус Ж<span>г. Москва, ул. Льва Толстого, 23</span></td>
+                    <td>Выполнены комплексные работы по автоматизации и диспетчеризации внутренних систем жизнеобеспечения.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">17.04.2015</td>
+                    <td class="object-col">ТЦ "Ковчег"<span>г. Москва, ул. Малая Филевская, 13</span></td>
+                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем здания.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">18.08.2014</td>
+                    <td class="object-col">ТРЦ "GoodZone" ("Гудзон")<span>г. Москва, Каширское шоссе, 12</span></td>
+                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем кинотеатра "Люксор", Гипермаркета "О'КЕЙ", "М-Видео" и офисных помещений.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">25.05.2013</td>
+                    <td class="object-col">Здание инженерных служб ГУП "Московский метрополитен"<span>г. Москва, ул. Гиляровского 37/1</span></td>
+                    <td>Выполняется регулярное техническое обслуживание автоматизации и диспетчеризации инженерных систем.</td>
+                </tr>
+                <tr>
+                    <td class="date-col">15.05.2013</td>
