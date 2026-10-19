@@ -7,29 +7,26 @@
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="/github.io/style.css">
     <style>
-        .container { padding: 60px 8%; background: #ffffff; min-height: 600px; display: flex; gap: 80px; box-sizing: border-box; }
-        .contact-info { flex: 1; }
+        .container { padding: 60px 8%; background: #ffffff; min-height: 600px; display: flex; gap: 60px; box-sizing: border-box; }
+        .contact-info { flex: 1.2; display: flex; flex-direction: column; }
         .page-title { font-size: 38px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 40px; color: #1a1a1a; }
-        
-        /* Стили для логотипа в контенте */
-        .content-logo { display: block; margin-bottom: 30px; height: 75px; width: auto; border: 1px solid #e5e5e5; padding: 5px; }
         
         .phone-link, .email-link { font-size: 28px; font-weight: 800; color: #1a1a1a; display: block; margin-bottom: 15px; }
         .phone-link:hover, .email-link:hover { color: #de1e26; }
-        .address { font-size: 16px; color: #1a1a1a; margin-bottom: 30px; line-height: 1.6; }
+        .address { font-size: 16px; color: #1a1a1a; margin-bottom: 25px; line-height: 1.6; }
         
-        /* Кнопка карты Honeywell Style */
-        .map-btn { background-color: #1a1a1a; color: #ffffff; padding: 12px 24px; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; transition: background-color 0.2s ease; margin-top: 10px; }
-        .map-btn:hover { background-color: #de1e26; }
+        /* Встроенная компактная карта Honeywell Style */
+        .map-box { width: 100%; height: 300px; border: 1px solid #e5e5e5; margin-top: 10px; position: relative; }
+        .map-box iframe { width: 100%; height: 100%; border: 0; }
         
-        .requisites { flex: 1; background: #f9f9f9; padding: 40px; border-top: 3px solid #1a1a1a; height: fit-content; }
+        .requisites { flex: 0.8; background: #f9f9f9; padding: 40px; border-top: 3px solid #1a1a1a; height: fit-content; }
         .requisites h3 { font-size: 18px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 0.5px; }
         .req-table { width: 100%; border-collapse: collapse; }
         .req-table td { padding: 12px 0; font-size: 14px; border-bottom: 1px solid #e5e5e5; }
         .req-label { color: #767676; font-weight: 500; width: 120px; }
         .req-val { color: #1a1a1a; font-weight: 600; }
         
-        @media (max-width: 900px) { .container { flex-direction: column; gap: 40px; padding: 40px 5%; } .phone-link, .email-link { font-size: 22px; } }
+        @media (max-width: 900px) { .container { flex-direction: column; gap: 40px; padding: 40px 5%; } .phone-link, .email-link { font-size: 22px; } .map-box { height: 250px; } }
     </style>
 </head>
 <body>
@@ -55,17 +52,17 @@
         <div class="contact-info">
             <h1 class="page-title">Контакты</h1>
             
-            <!-- Официальный графический логотип компании из вашей базы данных -->
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiCFkyz8VJN63qNKunTkFFDXDbcpFc19WNBOvsIw14cATqyaTIGETGB4BBKh_3iFX1YpoDUAKcljFhs_jNaL6yfSpQKaiUsk6DJJD7z2AwRcAeg_TA_nsjGs6L4CFeUWs8AeBZRunI6oPZGqg-04pWmJ30A_gIJhx_4hdPQCIIlFF3NmjvabgMedZvpspL/s181/%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.JPG" class="content-logo" alt="AVIC PRO Logo" />
-
             <a href="tel:+79251345090" class="phone-link">+7 (925) 134-50-90</a>
             <a href="mailto:info@aviceng.com" class="email-link">info@aviceng.com</a>
             
             <div class="address">
                 <p style="font-size: 18px; margin-bottom: 8px;"><strong>ООО "АВИК ИНЖСЕРВИС"</strong></p>
-                <p style="color: #555555;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
-                <!-- Ссылка на обновленный адрес на Яндекс.Картах -->
-                <a href="https://yandex.ru" target="_blank" class="map-btn">Показать на карте</a>
+                <p style="color: #555555; margin-bottom: 15px;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
+                
+                <!-- Встроенная интерактивная Яндекс.Карта с точкой на Мурманском проезде -->
+                <div class="map-box">
+                    <iframe src="https://yandex.ru" allowfullscreen="true"></iframe>
+                </div>
             </div>
         </div>
         
