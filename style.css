@@ -35,7 +35,7 @@ header {
 .hw-logo a {
     font-weight: 800;
     font-size: 25px;
-    letter-spacing: 2.5px;
+    letter-spacing: -5.5px;
     color: #1a1a1a;
     text-transform: uppercase;
 }
