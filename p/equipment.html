@@ -3,54 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты и реквизиты | AVIC ENGSERVICE</title>
+    <title>Оборудование автоматики | AVIC ENGSERVICE</title>
+    <!-- Подключаем шрифт Inter для индустриальной типографики -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="/github.io/style.css">
     <style>
-        .container { padding: 60px 8%; background: #ffffff; min-height: 600px; display: flex; gap: 60px; box-sizing: border-box; }
-        .contact-info { flex: 1.2; display: flex; flex-direction: column; }
-        .page-title { font-size: 38px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 40px; color: #1a1a1a; }
+        .container { padding: 60px 8%; background: #ffffff; min-height: 600px; box-sizing: border-box; }
+        .page-title { font-size: 38px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 20px; color: #1a1a1a; }
+        .page-subtitle { font-size: 16px; color: #555555; margin-bottom: 50px; max-width: 850px; line-height: 1.6; }
         
-        .phone-link, .email-link { font-size: 28px; font-weight: 800; color: #1a1a1a; display: block; margin-bottom: 15px; }
-        .phone-link:hover, .email-link:hover { color: #de1e26; }
-        .address { font-size: 16px; color: #1a1a1a; margin-bottom: 25px; line-height: 1.6; }
+        /* Плиточная сетка брендов Honeywell / Trend Style */
+        .brand-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 20px; }
+        .brand-card { background: #ffffff; border: 1px solid #e5e5e5; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; border-top: 3px solid #1a1a1a; }
+        .brand-card:hover { border-top-color: #de1e26; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .brand-name { font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; color: #1a1a1a; margin-bottom: 12px; }
+        .brand-desc { font-size: 14px; color: #555555; line-height: 1.6; margin-bottom: 30px; }
         
-        /* Статичный стильный блок карты с переходом на Google / Яндекс */
-        .map-wrapper { width: 100%; margin-top: 15px; }
-        .map-placeholder { 
-            width: 100%; 
-            height: 280px; 
-            background-color: #1a1a1a; 
-            border: 1px solid #e5e5e5;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: background-color 0.2s ease;
-        }
-        .map-placeholder:hover { background-color: #2a2a2a; }
-        .map-title { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .map-desc { font-size: 13px; color: #aaaaaa; margin-bottom: 25px; max-width: 400px; line-height: 1.4; }
+        /* Промышленная B2B кнопка */
+        .brand-link { background-color: #1a1a1a; color: #ffffff; padding: 14px 28px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; text-align: center; transition: background-color 0.2s ease; width: fit-content; }
+        .brand-card:hover .brand-link { background-color: #de1e26; }
         
-        /* Кнопки переключения карт */
-        .map-links-flex { display: flex; gap: 15px; }
-        .map-btn { background-color: #de1e26; color: #ffffff; padding: 12px 24px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; transition: background-color 0.2s ease; }
-        .map-btn:hover { background-color: #b8141b; }
-        .map-btn.secondary { background-color: #ffffff; color: #1a1a1a; border: 1px solid #ffffff; }
-        .map-btn.secondary:hover { background-color: #e5e5e5; }
-        
-        .requisites { flex: 0.8; background: #f9f9f9; padding: 40px; border-top: 3px solid #1a1a1a; height: fit-content; }
-        .requisites h3 { font-size: 18px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 0.5px; }
-        .req-table { width: 100%; border-collapse: collapse; }
-        .req-table td { padding: 12px 0; font-size: 14px; border-bottom: 1px solid #e5e5e5; }
-        .req-label { color: #767676; font-weight: 500; width: 120px; }
-        .req-val { color: #1a1a1a; font-weight: 600; }
-        
-        @media (max-width: 900px) { .container { flex-direction: column; gap: 40px; padding: 40px 5%; } .phone-link, .email-link { font-size: 22px; } .map-placeholder { height: 240px; } .map-links-flex { flex-direction: column; gap: 10px; width: 100%; } .map-btn { text-align: center; } }
+        @media (max-width: 900px) { .brand-grid { grid-template-columns: 1fr; } .container { padding: 40px 5%; } .page-title { font-size: 30px; } }
     </style>
 </head>
 <body>
@@ -64,51 +37,83 @@
         <nav class="hw-nav">
             <ul>
                 <li><a href="/github.io/index.html">Главная</a></li>
-                <li><a href="/github.io/p/equipment.html">Оборудование</a></li>
+                <li><a href="/github.io/p/equipment.html" class="active">Оборудование</a></li>
                 <li><a href="/github.io/p/objects.html">Объекты</a></li>
-                <li><a href="/github.io/p/contacts.html" class="active">Контакты</a></li>
+                <li><a href="/github.io/p/contacts.html">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Основной блок -->
+    <!-- Основной контент каталога -->
     <main class="container">
-        <div class="contact-info">
-            <h1 class="page-title">Контакты</h1>
-            
-            <a href="tel:+79251345090" class="phone-link">+7 (925) 134-50-90</a>
-            <a href="mailto:info@aviceng.com" class="email-link">info@aviceng.com</a>
-            
-            <div class="address">
-                <p style="font-size: 18px; margin-bottom: 8px;"><strong>ООО "АВИК ИНЖСЕРВИС"</strong></p>
-                <p style="color: #555555; margin-bottom: 20px;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
-                
-                <!-- Статичный блок-карта с защитой от блокировки хостинга -->
-                <div class="map-wrapper">
-                    <div class="map-placeholder">
-                        <div class="map-title">Интерактивная карта маршрута</div>
-                        <div class="map-desc">Выберите удобный навигационный сервис для открытия точных координат компании на Мурманском проезде</div>
-                        <div class="map-links-flex">
-                            <!-- Ссылка на точку в Google Maps -->
-                            <a href="https://google.com" target="_blank" class="map-btn">Открыть в Google Maps</a>
-                            <!-- Ссылка на точку в Яндекс.Картах -->
-                            <a href="https://yandex.ru" target="_blank" class="map-btn secondary">Открыть в Яндекс.Картах</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h1 class="page-title">Продукция и Оборудование</h1>
+        <p class="page-subtitle">ООО «АВИК ИНЖСЕРВИС» осуществляет комплексные поставки, проектирование, программирование и пусконаладочные работы компонентов автоматизации и диспетчеризации ведущих мировых B2B-производителей.</p>
         
-        <div class="requisites">
-            <h3>Официальные реквизиты</h3>
-            <table class="req-table">
-                <tr><td class="req-label">ИНН</td><td class="req-val">7717290070</td></tr>
-                <tr><td class="req-label">КПП</td><td class="req-val">771701001</td></tr>
-                <tr><td class="req-label">ОГРН</td><td class="req-val">1157746486083</td></tr>
-                <tr><td class="req-label">ОКПО</td><td class="req-val">45331384</td></tr>
-                <tr><td class="req-label">ОКАТО</td><td class="req-val">45280572</td></tr>
-                <tr><td class="req-label">ОКТМО</td><td class="req-val">4535800000</td></tr>
-            </table>
+        <div class="brand-grid">
+            
+            <!-- Блок Trend Controls -->
+            <div class="brand-card">
+                <div>
+                    <div class="brand-name">Trend Controls</div>
+                    <p class="brand-desc">Системы управления микроклиматом и диспетчеризации зданий. Интеллектуальные программируемые контроллеры серий IQ4, IQECO, модули расширения, датчики, дисплеи и приводы.</p>
+                </div>
+                <a href="https://aviceng.com" target="_blank" class="brand-link">Открыть каталог Trend</a>
+            </div>
+
+            <!-- Блок Honeywell -->
+            <div class="brand-card">
+                <div>
+                    <div class="brand-name">Honeywell</div>
+                    <p class="brand-desc">Мировой эталон автоматизации зданий. Классические промышленные контроллеры линейки Excel 5000, частотные преобразователи, высокоточные линейные и поворотные клапаны, электроприводы и пневматика.</p>
+                </div>
+                <a href="https://aviceng.com" target="_blank" class="brand-link">Открыть каталог Honeywell</a>
+            </div>
+
+            <!-- Блок Centraline -->
+            <div class="brand-card">
+                <div>
+                    <div class="brand-name">Centraline</div>
+                    <p class="brand-desc">Профессиональное оборудование для интеграции инженерных систем отопления, вентиляции и кондиционирования. Зонные и свободнопрограммируемые контроллеры, датчики потока и трансформаторы.</p>
+                </div>
+                <a href="https://aviceng.com" target="_blank" class="brand-link">Открыть каталог Centraline</a>
+            </div>
+
+            <!-- Блок Johnson Controls -->
+            <div class="brand-card">
+                <div>
+                    <div class="brand-name">Johnson Controls</div>
+                    <p class="brand-desc">Оборудование комплексного управления инфраструктурой умных зданий (BMS). Полноразмерный прайс-лист модулей ввода/вывода, резьбовых гаек, реле давления, адаптеров и сервоприводов.</p>
+                </div>
+                <a href="https://aviceng.com" target="_blank" class="brand-link">Открыть прайс Johnson</a>
+            </div>
+
+            <!-- Блок Saia Burgess -->
+            <div class="brand-card">
+                <div>
+                    <div class="brand-name">Saia Burgess</div>
+                    <p class="brand-desc">Свободнопрограммируемые ПЛК промышленного класса Saia PCD, модули расширения RIO, высокотехнологичные Web-панели с Micro-Browser, реле контроля фаз и счетчики электроэнергии.</p>
+                </div>
+                <a href="https://aviceng.com" target="_blank" class="brand-link">Открыть продукцию Saia</a>
+            </div>
+
+            <!-- Блок Danfoss -->
+            <div class="brand-card">
+                <div>
+                    <div class="brand-name">Danfoss</div>
+                    <p class="brand-desc">Признанные решения для повышения энергоэффективности. Преобразователи частоты серий VLT Micro Drive FC-051, VLT 2800, специализированные приводы VLT AQUA Drive FC 202 для насосных станций и опции LCP.</p>
+                </div>
+                <a href="https://aviceng.com" target="_blank" class="brand-link">Открыть прайс Danfoss</a>
+            </div>
+
+            <!-- Блок Siemens -->
+            <div class="brand-card" style="grid-column: span 2; @media (max-width: 900px) { grid-column: span 1; }">
+                <div>
+                    <div class="brand-name">Siemens</div>
+                    <p class="brand-desc">Интеллектуальные контроллеры семейств Climatix POL и Desigo PXC для ИТП и вентиляции. Модули связи (Modbus, BACnet IP, LON), сенсорные панели оператора, комнатные и уличные датчики QAA/QAC, гигростаты и реле перепада давления QBM.</p>
+                </div>
+                <a href="https://aviceng.com" target="_blank" class="brand-link">Открыть прайс Siemens</a>
+            </div>
+
         </div>
     </main>
 
