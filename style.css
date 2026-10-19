@@ -27,29 +27,35 @@ header {
     z-index: 1000;
     border-bottom: 1px solid #e5e5e5;
 }
+/* Контейнер для всего логотипа */
 .hw-logo {
     display: flex;
     flex-direction: column;
-    line-height: 0.9;
+    align-items: stretch; /* Растягивает обе строчки по одной ширине */
+    width: fit-content;   /* Контейнер сжимается строго по ширине текста */
 }
+
+/* Главное слово AVIC */
 .hw-logo a {
-    font-weight: 2800;
-    font-size: 25px;
-    letter-spacing: -1,5px;
+    font-weight: 800;
+    font-size: 32px;      /* Можете поставить любой размер */
     color: #1a1a1a;
     text-transform: uppercase;
+    display: flex;        
+    justify-content: space-between; /* Распределяет буквы AVIC равномерно */
 }
-.hw-logo span.dot {
-    color: #de1e26; /* Фирменный красный Honeywell */
-}
+
+/* Нижняя подпись engservice */
 .hw-logo .hw-sub {
-    font-size: 9px;
+    font-size: 10px;      /* Подберите размер, чтобы буквы не слипались */
     font-weight: 600;
-    letter-spacing: 5px;
     color: #767676;
     text-transform: uppercase;
-    margin-top: 6px;
+    margin-top: 4px;      /* Отступ между верхней и нижней строчкой */
+    display: flex;        
+    justify-content: space-between; /* Автоматически растягивает engservice ровно под границы AVIC */
 }
+
 
 /* Навигация */
 .hw-nav ul {
