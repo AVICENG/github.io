@@ -153,6 +153,28 @@ footer {
     color: #ffffff;
     text-transform: uppercase;
     font-size: 20px;
+    /* Переопределение шрифта для всего сайта */
+body { font-family: 'Inter', sans-serif !important; }
+
+/* Стили для ровной и четкой шапки */
+.hw-header { background: #ffffff; border-bottom: 1px solid #eeeeee; position: sticky; top: 0; z-index: 1000; }
+.header-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+.hw-logo-block { display: flex; align-items: center; }
+.hw-logo { font-size: 28px; font-weight: 800; color: #111111; text-decoration: none; letter-spacing: 1px; line-height: 1; }
+.hw-logo .dot { color: #38ef7d; } /* Ярко-зеленый индикатор в логотипе */
+.hw-sub { font-size: 11px; font-weight: 700; color: #6c757d; text-transform: uppercase; letter-spacing: 1.5px; margin-left: 12px; padding-left: 12px; border-left: 1px solid #dee2e6; line-height: 1.2; text-align: left; }
+.hw-sub span { font-size: 9px; font-weight: 500; color: #999999; letter-spacing: 0.5px; }
+
+/* Выстраивание меню в линию */
+.hw-nav ul { list-style: none; display: flex; margin: 0; padding: 0; gap: 25px; }
+.hw-nav a { text-decoration: none; color: #333333; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.hw-nav a:hover, .hw-nav a.active { color: #0d6efd; }
+
+/* Стили для крупного русского слогана */
+.hero-content h1 { font-size: 42px !important; font-weight: 800 !important; color: #111111; margin-bottom: 5px; letter-spacing: -0.5px; }
+.hero-slogan { font-size: 22px !important; font-weight: 500 !important; color: #0d6efd !important; margin-top: 0; margin-bottom: 25px; }
+.hero-text { font-size: 16px; color: #555555; max-width: 700px; line-height: 1.6; }
+
 }
 .footer-brand span {
     color: #de1e26;
