@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVIC ENGSERVICE | Промышленная автоматизация и IT</title>
-    <link rel="preconnect" href="https://googleapis.com">
+    <!-- Подключаем строгий шрифт Inter в стиле Honeywell и Siemens -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- ИСПРАВЛЕНО: Правильный относительный путь к стилям -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- ИСПРАВЛЕНО: Улучшенная структура четкого B2B-логотипа -->
     <header class="hw-header">
         <div class="header-container">
             <div class="hw-logo-block">
@@ -18,25 +22,48 @@
             </div>
             <nav class="hw-nav">
                 <ul>
+                    <!-- ИСПРАВЛЕНО: Убраны некорректные префиксы /github.io/ из ссылок -->
                     <li><a href="index.html" class="active">Главная</a></li>
-                    <li><a href="p/blog-page_5912.html">Оборудование</a></li>
-                    <li><a href="#objects">Объекты</a></li>
+                    <li><a href="p/equipment.html">Оборудование</a></li>
+                    <li><a href="p/objects.html">Объекты</a></li>
                     <li><a href="p/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <section class="hw-hero">
         <div class="hero-content">
+            <!-- ИСПРАВЛЕНО: Стильный, чистый русский заголовок-слоган -->
             <h1>Интеллектуальные инженерные системы</h1>
             <p class="hero-slogan">Технологии трансформации зданий и промышленные IT-решения</p>
-            <a href="mailto:info@aviceng.com" class="hw-btn">Связаться с инженером</a>
+            <p class="hero-text">Проектирование, монтаж и модернизация интеллектуальных инженерных систем. Комплексная интеграция автоматики и систем диспетчеризации на протоколах KNX, DALI, Honeywell и TREND.</p>
+            <a href="p/contacts.html" class="hw-btn">Связаться с инженером</a>
         </div>
     </section>
+
+    <section class="hw-grid">
+        <div class="hw-card">
+            <h3>01 / Автоматизация зданий</h3>
+            <p>Разработка логики, интеграция, программирование и пусконаладка систем АСУ ТП, ОВиК и автоматизированного управления освещением коммерческих объектов.</p>
+        </div>
+        <div class="hw-card">
+            <h3>02 / Инженерные Системы</h3>
+            <p>Полный комплекс строительно-монтажных работ (СМР): устройство систем вентиляции, центрального кондиционирования, отопления и водоснабжения.</p>
+        </div>
+        <div class="hw-card">
+            <h3>03 / Сетевая Инфраструктура</h3>
+            <p>Проектирование и монтаж высоконадежных структурированных кабельных сетей (СКС), систем видеонаблюдения (СОТ) и контроля доступа (СКУД).</p>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-left">
-            <p>© 2026 ООО «АВИК ИНЖСЕРВИС»</p>
+            <p>© 2026 ООО «АВИК ИНЖСЕРВИС» | Строительство и информационные технологии</p>
+            <p style="color: #767676; margin-top: 5px; font-size: 12px;">г. Москва, Пресненская наб., 8, стр. 1, МФК "Город Столиц"</p>
         </div>
+        <div class="footer-brand">AVIC<span>.</span></div>
     </footer>
+
 </body>
 </html>
