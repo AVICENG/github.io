@@ -1,233 +1,92 @@
-/* ========================================================
-   Глобальные сбросы и шрифты (Honeywell Design System) 
-   ======================================================== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f9f9f9;
-    color: #1a1a1a;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVIC ENGSERVICE | Промышленная автоматизация и IT</title>
+    <!-- Подключаем шрифт Inter в стиле Honeywell -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Подключение единого файла стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* ========================================================
-   Шапка сайта (Строго одинаковая для всех страниц)
-   ======================================================== */
-header {
-    background-color: #ffffff;
-    padding: 25px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #e5e5e5;
-}
-.hw-logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-.hw-logo a {
-    display: block;
-    height: 32px; /* Фиксированная высота для ровного позиционирования */
-}
-/* Стили для идеальной гладкости и субпиксельной четкости векторного логотипы */
-.hw-logo-svg {
-    height: 100%;
-    width: auto;
-    shape-rendering: geometricPrecision;
-    text-rendering: geometricPrecision;
-}
-.hw-logo .hw-sub {
-    font-size: 9px;
-    font-weight: 300;          /* Ваш полюбившийся тонкий и изящный шрифт */
-    letter-spacing: 5px;       /* Широкий промышленный разлет букв */
-    color: #767676;
-    text-transform: uppercase;
-    margin-top: 4px;           /* Выверенный аккуратный отступ */
-}
+    <!-- Премиальная минималистичная шапка Honeywell Style -->
+    <header>
+        <div class="hw-logo">
+            <a href="index.html">
+                <!-- Идеально четкий векторный логотип AVIC. -->
+                <svg class="hw-logo-svg" viewBox="0 0 110 24" xmlns="http://w3.org">
+                    <text x="0" y="20" font-family="'Inter', sans-serif" font-weight="800" font-size="24" fill="#1a1a1a" letter-spacing="-0.5">AVIC</text>
+                    <circle cx="68" cy="17" r="2.5" fill="#de1e26" />
+                </svg>
+            </a>
+            <div class="hw-sub">engservice</div>
+        </div>
+        <nav class="hw-nav">
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="p/equipment.html">Оборудование</a></li>
+                <li><a href="p/objects.html">Объекты</a></li>
+                <li><a href="p/contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Главный индустриальный баннер -->
+    <section class="hw-hero">
+        <div class="hero-content">
+            <h1>Building Automation & Industrial IT Solutions</h1>
+            <p>Проектирование, монтаж и комплексная модернизация интеллектуальных инженерных систем. Объединяем классическую автоматику зданий (Honeywell, TREND, KNX) с передовыми IoT-технологиями и диспетчеризацией.</p>
+            <a href="p/contacts.html" class="hw-btn">Связаться с инженером</a>
+        </div>
+    </section>
+    
+    <!-- Сетка ключевых компетенций компании со встроенной векторной графикой -->
+    <section class="hw-grid">
+        <!-- Карточка 1: BMS -->
+        <div class="hw-card">
+            <div class="card-image-wrapper">
+                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%230052cc' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25' /%3E%3C/svg%3E" alt="BMS">
+            </div>
+            <div class="card-content">
+                <h3>01 / Cloud BMS & Автоматизация</h3>
+                <p>Проектирование и диспетчеризация инженерных систем зданий. Интеграция классических протоколов (BACnet, Modbus) с облачными платформами.</p>
+            </div>
+        </div>
+        
+        <!-- Карточка 2: IoT -->
+        <div class="hw-card">
+            <div class="card-image-wrapper">
+                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%230052cc' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M8.25 3v1.5M12 3v1.5m3.75-1.5V4.5M8.25 19.5V21M12 19.5V21m3.75-1.5V21M3 6.75h1.5M3 12h1.5m-1.5 5.25h1.5m15-10.5H21M19.5 12H21m-1.5 5.25H21M5.25 5.25h13.5A1.75 1.75 0 0120.5 7v10a1.75 1.75 0 01-1.75 1.75H5.25A1.75 1.75 0 013.5 17V7a1.75 1.75 0 011.75-1.75zM9 9h6v6H9V9z' /%3E%3C/svg%3E" alt="IIoT">
+            </div>
+            <div class="card-content">
+                <h3>02 / Промышленный IoT (IIoT)</h3>
+                <p>Развертывание беспроводных сетей датчиков (LoRaWAN, NB-IoT) для мониторинга микроклимата, энергоэффективности и предотвращения аварий.</p>
+            </div>
+        </div>
+        
+        <!-- Карточка 3: Энергия -->
+        <div class="hw-card">
+            <div class="card-image-wrapper">
+                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%230052cc' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' /%3E%3C/svg%3E" alt="Energy">
+            </div>
+            <div class="card-content">
+                <h3>03 / Энергетический Менеджмент</h3>
+                <p>Внедрение интеллектуального учета ресурсов (Smart Metering), предиктивная аналитика нагрузок и глубокая оптимизация OPEX.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Линейный B2B подвал сайта -->
+    <footer>
+        <div class="footer-left">
+            <p>© 2026 ООО «АВИК ИНЖСЕРВИС» | Строительство и информационные технологии</p>
+        </div>
+        <div class="footer-brand">AVIC<span>.</span></div>
+    </footer>
 
-/* Меню навигации */
-.hw-nav ul {
-    list-style: none;
-    display: flex;
-}
-.hw-nav li {
-    margin-left: 35px;
-}
-.hw-nav a {
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #1a1a1a;
-    transition: color 0.15s ease;
-}
-.hw-nav a:hover, .hw-nav a.active {
-    color: #de1e26;
-}
-
-/* ========================================================
-   Главная страница (Индекс)
-   ======================================================== */
-.hw-hero { 
-    position: relative; 
-    background-color: #0b0f19;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e293b' fill-opacity='0.4'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2v2h-2V0zm0 4h2v2h-2V4zm0 4h2v2h-2V8zm0 12h2v2h-2v-2zm0 12h2v2h-2v-2zm4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm12 0h2v2h-2v-2zm12 0h2v2h-2v-2z'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230052cc' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E");
-    min-height: 500px; 
-    display: flex; 
-    align-items: center; 
-    padding: 0 8%; 
-    border-bottom: 4px solid #de1e26;
-}
-.hw-hero::before { 
-    content: ''; 
-    position: absolute; 
-    top: 0; left: 0; right: 0; bottom: 0; 
-    background: radial-gradient(circle at 70% 50%, rgba(0, 82, 204, 0.15), transparent); 
-    z-index: 1; 
-}
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 750px;
-    color: #ffffff;
-}
-.hw-hero h1 {
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-.hw-hero p {
-    font-size: 16px;
-    font-weight: 300;
-    color: #d1d5db;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-.hw-btn {
-    display: inline-block;
-    background-color: #de1e26;
-    color: #ffffff;
-    padding: 14px 28px;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.hw-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
-    padding: 80px 8%;
-    background: #f4f4f4;
-}
-.hw-card {
-    background: #ffffff;
-    border-top: 4px solid #1a1a1a;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    transition: all 0.3s ease;
-}
-.card-image-wrapper { 
-    width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; background: #111827; border-bottom: 1px solid #eee; overflow: hidden; 
-}
-.card-image { 
-    max-width: 80px; max-height: 80px; opacity: 0.85; transition: transform 0.3s; 
-}
-.card-content { padding: 25px; flex-grow: 1; }
-.hw-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
-.hw-card p { font-size: 14px; color: #666666; line-height: 1.5; font-weight: 300; }
-.hw-card:hover { border-top-color: #0052cc; transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.08); }
-
-/* ========================================================
-   Внутренние разделы (Страница контактов и оборудования)
-   ======================================================== */
-.internal-container {
-    flex-grow: 1;
-    padding: 60px 8%;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-}
-h1.page-title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    letter-spacing: -0.5px;
-    border-bottom: 2px solid #1a1a1a;
-    padding-bottom: 15px;
-    display: inline-block;
-}
-.contacts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 50px;
-}
-.info-block { margin-bottom: 30px; }
-.info-block h3 { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #767676; text-transform: uppercase; letter-spacing: 1px; }
-.info-block p { font-size: 16px; line-height: 1.6; }
-.info-block a { color: #de1e26; font-weight: 600; }
-
-.requisites-table { width: 100%; border-collapse: collapse; background: #ffffff; border-top: 4px solid #1a1a1a; }
-.requisites-table td { padding: 12px 20px; font-size: 14px; border-bottom: 1px solid #e5e5e5; }
-.requisites-table td:first-child { font-weight: 600; color: #767676; width: 35%; }
-.requisites-table td:last-child { font-family: monospace; font-size: 15px; }
-
-.map-buttons { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
-.map-btn { display: inline-block; border: 1px solid #1a1a1a; padding: 10px 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; }
-
-/* Сетка оборудования */
-.equipment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-.eq-card {
-    background: #ffffff;
-    border: 1px solid #e5e5e5;
-    border-top: 4px solid #1a1a1a;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
-    transition: all 0.2s ease;
-}
-.eq-card:hover { border-top-color: #de1e26; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
-.eq-card h2 { font-size: 22px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; }
-.eq-card p { font-size: 14px; line-height: 1.6; color: #555555; margin-bottom: 25px; flex-grow: 1; font-weight: 300; }
-.eq-btn { display: inline-block; align-self: flex-start; border: 1px solid #1a1a1a; color: #1a1a1a; padding: 10px 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.15s ease; }
-.eq-btn:hover { background: #1a1a1a; color: #ffffff; }
-
-/* ========================================================
-   Подвал сайта (Строго одинаковый для всех страниц)
-   ======================================================== */
-footer {
-    background-color: #ffffff;
-    color: #1a1a1a;
-    padding: 40px 8%;
-    font-size: 13px;
-    border-top: 1px solid #e5e5e5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-}
-.footer-left p { font-size: 13px; }
-.footer-brand { font-weight: 700; font-size: 20px; }
-.footer-brand span { color: #de1e26; }
+</body>
+</html>
