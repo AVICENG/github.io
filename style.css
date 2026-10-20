@@ -229,6 +229,28 @@ footer {
 
 .hw-header-dark .hw-nav a {
     color: #a0abc0;
+    /* Фиксация размеров логотипа, чтобы он не плыл */
+.hw-logo a {
+    display: inline-block;
+    height: 32px;  /* Четкая высота контейнера */
+    width: 130px;  /* Четкая ширина контейнера */
+    overflow: hidden;
+}
+
+.hw-logo-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+}
+
+/* На всякий случай сбрасываем глобальные свойства, если они влияли на SVG */
+.hw-logo-svg text {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 800 !important;
+}
+
 }
 .hw-header-dark .hw-nav a:hover, .hw-header-dark .hw-nav a.active {
     color: #ffffff;
