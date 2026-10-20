@@ -1,257 +1,182 @@
-/* Общие сбросы стилей */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f9f9f9;
     color: #1a1a1a;
-    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Шапка сайта в стиле Honeywell */
 header {
+    background-color: #ffffff;
+    padding: 25px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 4%;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e5e5;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    border-bottom: 1px solid #e5e5e5;
 }
 
-.hw-logo {
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
+/* Фиксация монолитного логотипа */
+.hw-logo, .hw-logo a {
+    display: block !important;
+    width: 130px !important;
+    height: 42px !important;
 }
-
-/* Настройка четкого SVG логотипа по умолчанию (Темный) */
 .hw-logo-svg {
-    width: 110px;
-    height: 24;
-    display: block;
-}
-
-.hw-logo-svg text {
-    fill: #1a1a1a; /* Цвет текста логотипа на главной */
-    transition: fill 0.3s ease;
-}
-
-.hw-sub {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #757575;
-    padding-bottom: 2px;
-    font-weight: 600;
-}
-
-/* Навигационное меню */
-.hw-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.hw-nav a {
-    text-decoration: none;
-    color: #666666;
-    font-size: 14px;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.hw-nav a:hover, .hw-nav a.active {
-    color: #de1e26; /* Фирменный красный акцент */
-}
-
-/* Главный промышленный баннер */
-.hw-hero {
-    background: linear-gradient(135deg, #141923 0%, #1e2638 100%);
-    color: #ffffff;
-    padding: 100px 4%;
-    display: flex;
-    align-items: center;
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-.hero-content h1 {
-    font-size: 42px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-}
-
-.hero-content p {
-    font-size: 18px;
-    color: #b0b7c6;
-    margin-bottom: 35px;
-    font-weight: 300;
-}
-
-/* Кнопка */
-.hw-btn {
-    display: inline-block;
-    background-color: #de1e26;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 14px 28px;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.hw-btn:hover {
-    background-color: #b8141b;
-    transform: translateY(-2px);
-}
-
-/* Сетка карточек компетенций */
-.hw-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 80px 4%;
-}
-
-.hw-card {
-    background-color: #ffffff;
-    border: 1px solid #e5e5e5;
-    padding: 40px 30px;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.hw-card:hover {
-    border-color: #b0b7c6;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.card-image-wrapper {
-    margin-bottom: 25px;
-}
-
-/* Стилизация иконок */
-.card-icon {
-    width: 40px;
-    height: 40px;
-    color: #0052cc; /* Индустриальный синий цвет для иконок */
-}
-
-.hw-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-}
-
-.hw-card p {
-    font-size: 14px;
-    color: #666666;
-    line-height: 1.6;
-}
-
-/* Подвал (Footer) */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 4%;
-    background-color: #ffffff;
-    border-top: 1px solid #e5e5e5;
-    font-size: 13px;
-    color: #757575;
-}
-
-.footer-brand {
-    font-weight: 800;
-    font-size: 18px;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-}
-
-.footer-brand span {
-    color: #de1e26;
-}
-
-/* Адаптивность для мобильных экранов */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    .hw-nav ul {
-        gap: 15px;
-    }
-    .hero-content h1 {
-        font-size: 30px;
-    }
-    footer {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-}
-
-
-/* ==========================================================================
-   ИНСТРУКЦИЯ ДЛЯ ДРУГИХ СТРАНИЦ (p/contacts.html, p/objects.html и т.д.)
-   ========================================================================== */
-
-/* Если на внутренних страницах вам нужен другой вид логотипа (например, белый текст на темной шапке),
-   просто добавьте к тегу <header> класс .hw-header-dark, и свойства ниже изменят стиль автоматически */
-
-.hw-header-dark {
-    background-color: #141923;
-    border-bottom: 1px solid #262f45;
-}
-
-.hw-header-dark .hw-logo-svg text {
-    fill: #ffffff; /* Текст логотипа станет идеально белым */
-}
-
-.hw-header-dark .hw-sub {
-    color: #a0abc0;
-}
-
-.hw-header-dark .hw-nav a {
-    color: #a0abc0;
-    /* Фиксация размеров логотипа, чтобы он не плыл */
-.hw-logo a {
-    display: inline-block;
-    height: 32px;  /* Четкая высота контейнера */
-    width: 130px;  /* Четкая ширина контейнера */
-    overflow: hidden;
-}
-
-.hw-logo-svg {
-    width: 100%;
-    height: 100%;
+    width: 130px !important;
+    height: 42px !important;
     display: block;
     shape-rendering: geometricPrecision;
     text-rendering: geometricPrecision;
 }
 
-/* На всякий случай сбрасываем глобальные свойства, если они влияли на SVG */
-.hw-logo-svg text {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 800 !important;
+.hw-nav ul {
+    list-style: none;
+    display: flex;
+}
+.hw-nav li {
+    margin-left: 35px;
+}
+.hw-nav a {
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+    transition: color 0.15s ease;
+}
+.hw-nav a:hover, .hw-nav a.active {
+    color: #de1e26;
 }
 
+.hw-hero { 
+    position: relative; 
+    background-color: #0b0f19;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e293b' fill-opacity='0.4'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2v2h-2V0zm0 4h2v2h-2V4zm0 4h2v2h-2V8zm0 12h2v2h-2v-2zm0 12h2v2h-2v-2zm4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm12 0h2v2h-2v-2zm12 0h2v2h-2v-2z'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230052cc' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E");
+    min-height: 500px; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 8%; 
+    border-bottom: 4px solid #de1e26;
 }
-.hw-header-dark .hw-nav a:hover, .hw-header-dark .hw-nav a.active {
+.hw-hero::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; right: 0; bottom: 0; 
+    background: radial-gradient(circle at 70% 50%, rgba(0, 82, 204, 0.15), transparent); 
+    z-index: 1; 
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
     color: #ffffff;
 }
+.hw-hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.hw-hero p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.hw-btn {
+    display: inline-block;
+    background-color: #de1e26;
+    color: #ffffff;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    padding: 80px 8%;
+    background: #f4f4f4;
+}
+.hw-card {
+    background: #ffffff;
+    border-top: 4px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+.card-image-wrapper { 
+    width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; background: #111827; border-bottom: 1px solid #eee; overflow: hidden; 
+}
+
+/* Компактные утонченные иконки */
+.card-image { 
+    max-width: 46px !important; 
+    max-height: 46px !important; 
+    opacity: 0.9; 
+    transition: transform 0.3s; 
+    stroke-width: 1px !important; 
+}
+
+.card-content { padding: 25px; flex-grow: 1; }
+.hw-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+.hw-card p { font-size: 14px; color: #666666; line-height: 1.5; font-weight: 300; }
+.hw-card:hover { border-top-color: #0052cc; transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.08); }
+
+.internal-container {
+    flex-grow: 1;
+    padding: 60px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+h1.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+footer {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 40px 8%;
+    font-size: 13px;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+.footer-left p { font-size: 13px; }
+.footer-brand { font-weight: 700; font-size: 20px; }
+.footer-brand span { color: #de1e26; }
+
+/* Кастомизация логотипа под темные внутренние страницы (при необходимости) */
+header.dark-page-header .hw-logo-svg text:first-of-type { fill: #ffffff !important; }
+header.dark-page-header .hw-logo-svg text:last-of-type { fill: #a0abc0 !important; }
+header.dark-page-header { background-color: #0b0f19 !important; border-bottom: 1px solid #1e293b !important; }
+header.dark-page-header .hw-nav a { color: #ffffff !important; }
