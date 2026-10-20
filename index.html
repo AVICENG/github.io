@@ -1,109 +1,233 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница</title>
-    <style>
-        /* Базовые стили и цвета вашего сайта */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #ffffff; /* Фон сайта (светлый) */
-            color: #111111;            /* Основной цвет текста (темный) */
-        }
+/* ========================================================
+   Глобальные сбросы и шрифты (Honeywell Design System) 
+   ======================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        header {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* ========================================================
+   Шапка сайта (Строго одинаковая для всех страниц)
+   ======================================================== */
+header {
+    background-color: #ffffff;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e5e5e5;
+}
+.hw-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+.hw-logo a {
+    display: block;
+    height: 32px; /* Фиксированная высота для ровного позиционирования */
+}
+/* Стили для идеальной гладкости и субпиксельной четкости векторного логотипы */
+.hw-logo-svg {
+    height: 100%;
+    width: auto;
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+}
+.hw-logo .hw-sub {
+    font-size: 9px;
+    font-weight: 300;          /* Ваш полюбившийся тонкий и изящный шрифт */
+    letter-spacing: 5px;       /* Широкий промышленный разлет букв */
+    color: #767676;
+    text-transform: uppercase;
+    margin-top: 4px;           /* Выверенный аккуратный отступ */
+}
 
-        /* Настройки логотипа в две строки */
-        .minimal-svg-logo {
-            display: flex;
-            flex-direction: column;
-            gap: 16px; /* Большое расстояние между строками логотипа */
-            width: fit-content;
-            cursor: pointer;
-        }
+/* Меню навигации */
+.hw-nav ul {
+    list-style: none;
+    display: flex;
+}
+.hw-nav li {
+    margin-left: 35px;
+}
+.hw-nav a {
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+    transition: color 0.15s ease;
+}
+.hw-nav a:hover, .hw-nav a.active {
+    color: #de1e26;
+}
 
-        .minimal-svg-logo svg {
-            display: block;
-            fill: currentColor; /* Логотип сам примет цвет текста вашего сайта */
-        }
+/* ========================================================
+   Главная страница (Индекс)
+   ======================================================== */
+.hw-hero { 
+    position: relative; 
+    background-color: #0b0f19;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e293b' fill-opacity='0.4'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2v2h-2V0zm0 4h2v2h-2V4zm0 4h2v2h-2V8zm0 12h2v2h-2v-2zm0 12h2v2h-2v-2zm4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm12 0h2v2h-2v-2zm12 0h2v2h-2v-2z'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230052cc' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E");
+    min-height: 500px; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 8%; 
+    border-bottom: 4px solid #de1e26;
+}
+.hw-hero::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; right: 0; bottom: 0; 
+    background: radial-gradient(circle at 70% 50%, rgba(0, 82, 204, 0.15), transparent); 
+    z-index: 1; 
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    color: #ffffff;
+}
+.hw-hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.hw-hero p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.hw-btn {
+    display: inline-block;
+    background-color: #de1e26;
+    color: #ffffff;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.hw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    padding: 80px 8%;
+    background: #f4f4f4;
+}
+.hw-card {
+    background: #ffffff;
+    border-top: 4px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+.card-image-wrapper { 
+    width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; background: #111827; border-bottom: 1px solid #eee; overflow: hidden; 
+}
+.card-image { 
+    max-width: 80px; max-height: 80px; opacity: 0.85; transition: transform 0.3s; 
+}
+.card-content { padding: 25px; flex-grow: 1; }
+.hw-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+.hw-card p { font-size: 14px; color: #666666; line-height: 1.5; font-weight: 300; }
+.hw-card:hover { border-top-color: #0052cc; transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.08); }
 
-        /* Эффект ультратонкой ниточки */
-        .minimal-svg-logo .thin-line {
-            stroke: currentColor;
-            stroke-width: 0.6px; /* Линия тонкая, как нить */
-            fill: none;
-        }
+/* ========================================================
+   Внутренние разделы (Страница контактов и оборудования)
+   ======================================================== */
+.internal-container {
+    flex-grow: 1;
+    padding: 60px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+h1.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+}
+.info-block { margin-bottom: 30px; }
+.info-block h3 { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #767676; text-transform: uppercase; letter-spacing: 1px; }
+.info-block p { font-size: 16px; line-height: 1.6; }
+.info-block a { color: #de1e26; font-weight: 600; }
 
-        /* Пример навигации сайта */
-        nav a {
-            color: currentColor;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 300;
-            font-size: 15px;
-            letter-spacing: 1px;
-        }
+.requisites-table { width: 100%; border-collapse: collapse; background: #ffffff; border-top: 4px solid #1a1a1a; }
+.requisites-table td { padding: 12px 20px; font-size: 14px; border-bottom: 1px solid #e5e5e5; }
+.requisites-table td:first-child { font-weight: 600; color: #767676; width: 35%; }
+.requisites-table td:last-child { font-family: monospace; font-size: 15px; }
 
-        /* Основной контент страницы */
-        main {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
+.map-buttons { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+.map-btn { display: inline-block; border: 1px solid #1a1a1a; padding: 10px 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; }
 
-        h1 {
-            font-weight: 200;
-            font-size: 36px;
-            letter-spacing: 1px;
-        }
-    </style>
-</head>
-<body>
+/* Сетка оборудования */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.eq-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-top: 4px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+    transition: all 0.2s ease;
+}
+.eq-card:hover { border-top-color: #de1e26; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+.eq-card h2 { font-size: 22px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; }
+.eq-card p { font-size: 14px; line-height: 1.6; color: #555555; margin-bottom: 25px; flex-grow: 1; font-weight: 300; }
+.eq-btn { display: inline-block; align-self: flex-start; border: 1px solid #1a1a1a; color: #1a1a1a; padding: 10px 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.15s ease; }
+.eq-btn:hover { background: #1a1a1a; color: #ffffff; }
 
-    <header>
-        <!-- БЛОК ТОНКОГО ЛОГОТИПА -->
-        <div class="minimal-svg-logo">
-            
-            <!-- Первая строка логотипа -->
-            <svg width="250" height="35" viewBox="0 0 250 35">
-                <text x="0" y="26" font-family="'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="100" letter-spacing="6">
-                    ПЕРВАЯ СТРОКА
-                </text>
-                <!-- Декоративная линия-ниточка под первым словом -->
-                <line x1="0" y1="34" x2="230" y2="34" class="thin-line" />
-            </svg>
-
-            <!-- Вторая строка логотипа -->
-            <svg width="250" height="25" viewBox="0 0 250 25">
-                <text x="2" y="16" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="100" letter-spacing="10">
-                    ВТОРЯЯ СТРОКА
-                </text>
-            </svg>
-
-        </div>
-
-        <!-- Навигационное меню (можно удалить или заменить) -->
-        <nav>
-            <a href="#">Главная</a>
-            <a href="#">Проекты</a>
-            <a href="#">Контакты</a>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Добро пожаловать на сайт</h1>
-        <p>Основной контент вашей страницы будет располагаться здесь.</p>
-    </main>
-
-</body>
-</html>
+/* ========================================================
+   Подвал сайта (Строго одинаковый для всех страниц)
+   ======================================================== */
+footer {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 40px 8%;
+    font-size: 13px;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+.footer-left p { font-size: 13px; }
+.footer-brand { font-weight: 700; font-size: 20px; }
+.footer-brand span { color: #de1e26; }
