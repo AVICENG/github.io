@@ -3,84 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVIC ENGSERVICE | Промышленная автоматизация и IT</title>
-    <!-- Подключаем шрифт Inter, который используется в Honeywell Design System -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Подключаем ОДИН общий файл стилей для ВСЕХ страниц сайта -->
-    <link rel="stylesheet" href="style.css">
+    <title>Главная страница</title>
+    <style>
+        /* Базовые стили и цвета вашего сайта */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff; /* Фон сайта (светлый) */
+            color: #111111;            /* Основной цвет текста (темный) */
+        }
+
+        header {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Настройки логотипа в две строки */
+        .minimal-svg-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* Большое расстояние между строками логотипа */
+            width: fit-content;
+            cursor: pointer;
+        }
+
+        .minimal-svg-logo svg {
+            display: block;
+            fill: currentColor; /* Логотип сам примет цвет текста вашего сайта */
+        }
+
+        /* Эффект ультратонкой ниточки */
+        .minimal-svg-logo .thin-line {
+            stroke: currentColor;
+            stroke-width: 0.6px; /* Линия тонкая, как нить */
+            fill: none;
+        }
+
+        /* Пример навигации сайта */
+        nav a {
+            color: currentColor;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 300;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Основной контент страницы */
+        main {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-weight: 200;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Премиальная статичная шапка Honeywell Style -->
     <header>
-        <div class="hw-logo">
-            <a href="index.html">AVIC<span class="dot">.</span></a>
-            <div class="hw-sub">engservice</div>
+        <!-- БЛОК ТОНКОГО ЛОГОТИПА -->
+        <div class="minimal-svg-logo">
+            
+            <!-- Первая строка логотипа -->
+            <svg width="250" height="35" viewBox="0 0 250 35">
+                <text x="0" y="26" font-family="'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="100" letter-spacing="6">
+                    ПЕРВАЯ СТРОКА
+                </text>
+                <!-- Декоративная линия-ниточка под первым словом -->
+                <line x1="0" y1="34" x2="230" y2="34" class="thin-line" />
+            </svg>
+
+            <!-- Вторая строка логотипа -->
+            <svg width="250" height="25" viewBox="0 0 250 25">
+                <text x="2" y="16" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="100" letter-spacing="10">
+                    ВТОРЯЯ СТРОКА
+                </text>
+            </svg>
+
         </div>
-        <nav class="hw-nav">
-            <ul>
-                <li><a href="index.html" class="active">Главная</a></li>
-                <li><a href="p/equipment.html">Оборудование</a></li>
-                <li><a href="p/objects.html">Объекты</a></li>
-                <li><a href="p/contacts.html">Контакты</a></li>
-            </ul>
+
+        <!-- Навигационное меню (можно удалить или заменить) -->
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#">Проекты</a>
+            <a href="#">Контакты</a>
         </nav>
     </header>
-    
-    <!-- Главный индустриальный баннер -->
-    <section class="hw-hero">
-        <div class="hero-content">
-            <h1>Next-Gen BMS & Industrial IoT Solutions</h1>
-            <p>Проектирование, монтаж и глубокая интеграция интеллектуальных экосистем. Объединяем классическую автоматику зданий с передовыми IoT-технологиями.</p>
-            <a href="p/contacts.html" class="hw-btn">Связаться с инженером</a>
-        </div>
-    </section>
-    
-    <!-- Сетка ключевых компетенций компании с иконками -->
-    <section class="hw-grid">
-        <!-- Карточка 1: BMS -->
-        <div class="hw-card">
-            <div class="card-image-wrapper">
-                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%230052cc' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25' /%3E%3C/svg%3E" alt="BMS">
-            </div>
-            <div class="card-content">
-                <h3>01 / Cloud BMS & Автоматизация</h3>
-                <p>Проектирование и диспетчеризация инженерных систем зданий.</p>
-            </div>
-        </div>
-        
-        <!-- Карточка 2: IoT -->
-        <div class="hw-card">
-            <div class="card-image-wrapper">
-                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%230052cc' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M8.25 3v1.5M12 3v1.5m3.75-1.5V4.5M8.25 19.5V21M12 19.5V21m3.75-1.5V21M3 6.75h1.5M3 12h1.5m-1.5 5.25h1.5m15-10.5H21M19.5 12H21m-1.5 5.25H21M5.25 5.25h13.5A1.75 1.75 0 0120.5 7v10a1.75 1.75 0 01-1.75 1.75H5.25A1.75 1.75 0 013.5 17V7a1.75 1.75 0 011.75-1.75zM9 9h6v6H9V9z' /%3E%3C/svg%3E" alt="IIoT">
-            </div>
-            <div class="card-content">
-                <h3>02 / Промышленный IoT (IIoT)</h3>
-                <p>Развертывание беспроводных сетей датчиков.</p>
-            </div>
-        </div>
-        
-        <!-- Карточка 3: Энергия -->
-        <div class="hw-card">
-            <div class="card-image-wrapper">
-                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%230052cc' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' /%3E%3C/svg%3E" alt="Energy">
-            </div>
-            <div class="card-content">
-                <h3>03 / Энергетический Менеджмент</h3>
-                <p>Внедрение интеллектуального учета энергоресурсов.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Линейный B2B подвал сайта -->
-    <footer>
-        <div class="footer-left">
-            <p>© 2026 ООО «АВИК ИНЖСЕРВИС»</p>
-        </div>
-        <div class="footer-brand">AVIC<span>.</span></div>
-    </footer>
+
+    <main>
+        <h1>Добро пожаловать на сайт</h1>
+        <p>Основной контент вашей страницы будет располагаться здесь.</p>
+    </main>
 
 </body>
 </html>
