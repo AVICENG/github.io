@@ -11,6 +11,7 @@ body {
     background-color: #f9f9f9;
     color: #1a1a1a;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -37,25 +38,26 @@ header {
 .hw-logo {
     display: flex;
     flex-direction: column;
-    line-height: 0.9;
+    line-height: 1;
 }
 .hw-logo a {
-    font-weight: 800;          /* Массивные жирные буквы */
-    font-size: 32px;           /* Крупный солидный размер */
-    letter-spacing: -1.5px;     /* Плотное сжатие букв */
-    color: #1a1a1a;
-    text-transform: uppercase;
+    display: block;
+    height: 32px; /* Фиксированная высота для ровного позиционирования */
 }
-.hw-logo span.dot {
-    color: #de1e26;            /* Фирменный красный Honeywell */
+/* Стили для идеальной гладкости и субпиксельной четкости векторного логотипы */
+.hw-logo-svg {
+    height: 100%;
+    width: auto;
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
 }
 .hw-logo .hw-sub {
     font-size: 9px;
-    font-weight: 300;          /* МАКСИМАЛЬНО ТОНКИЙ ИЗЯЩНЫЙ ШРИФТ */
-    letter-spacing: 5px;       /* Широкий разлет букв e n g s e r v i c e */
+    font-weight: 300;          /* Ваш полюбившийся тонкий и изящный шрифт */
+    letter-spacing: 5px;       /* Широкий промышленный разлет букв */
     color: #767676;
     text-transform: uppercase;
-    margin-top: 6px;           /* Идеальный отступ под крупным лого */
+    margin-top: 4px;           /* Выверенный аккуратный отступ */
 }
 
 /* Меню навигации */
