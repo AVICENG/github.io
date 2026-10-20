@@ -25,7 +25,7 @@ a {
    ======================================================== */
 header {
     background-color: #ffffff;
-    padding: 20px 10%;
+    padding: 25px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,21 +40,22 @@ header {
     line-height: 0.9;
 }
 .hw-logo a {
-    font-weight: 700;
-    font-size: 24px;
-    letter-spacing: -0.5px;
+    font-weight: 800;          /* Массивные жирные буквы */
+    font-size: 32px;           /* Крупный солидный размер */
+    letter-spacing: -1.5px;     /* Плотное сжатие букв */
     color: #1a1a1a;
+    text-transform: uppercase;
 }
 .hw-logo span.dot {
-    color: #de1e26; /* Фирменный красный Honeywell */
+    color: #de1e26;            /* Фирменный красный Honeywell */
 }
 .hw-logo .hw-sub {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-size: 9px;
+    font-weight: 300;          /* МАКСИМАЛЬНО ТОНКИЙ ИЗЯЩНЫЙ ШРИФТ */
+    letter-spacing: 5px;       /* Широкий разлет букв e n g s e r v i c e */
     color: #767676;
     text-transform: uppercase;
-    margin-top: -2px;
+    margin-top: 6px;           /* Идеальный отступ под крупным лого */
 }
 
 /* Меню навигации */
@@ -63,11 +64,13 @@ header {
     display: flex;
 }
 .hw-nav li {
-    margin-left: 30px;
+    margin-left: 35px;
 }
 .hw-nav a {
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     color: #1a1a1a;
     transition: color 0.15s ease;
 }
@@ -85,7 +88,8 @@ header {
     min-height: 500px; 
     display: flex; 
     align-items: center; 
-    padding: 0 10%; 
+    padding: 0 8%; 
+    border-bottom: 4px solid #de1e26;
 }
 .hw-hero::before { 
     content: ''; 
@@ -126,8 +130,8 @@ header {
 .hw-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 60px 10%;
+    gap: 35px;
+    padding: 80px 8%;
     background: #f4f4f4;
 }
 .hw-card {
@@ -154,7 +158,7 @@ header {
    ======================================================== */
 .internal-container {
     flex-grow: 1;
-    padding: 60px 10%;
+    padding: 60px 8%;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
@@ -177,10 +181,12 @@ h1.page-title {
 .info-block h3 { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #767676; text-transform: uppercase; letter-spacing: 1px; }
 .info-block p { font-size: 16px; line-height: 1.6; }
 .info-block a { color: #de1e26; font-weight: 600; }
+
 .requisites-table { width: 100%; border-collapse: collapse; background: #ffffff; border-top: 4px solid #1a1a1a; }
 .requisites-table td { padding: 12px 20px; font-size: 14px; border-bottom: 1px solid #e5e5e5; }
 .requisites-table td:first-child { font-weight: 600; color: #767676; width: 35%; }
 .requisites-table td:last-child { font-family: monospace; font-size: 15px; }
+
 .map-buttons { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
 .map-btn { display: inline-block; border: 1px solid #1a1a1a; padding: 10px 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; }
 
@@ -212,7 +218,7 @@ h1.page-title {
 footer {
     background-color: #ffffff;
     color: #1a1a1a;
-    padding: 40px 10%;
+    padding: 40px 8%;
     font-size: 13px;
     border-top: 1px solid #e5e5e5;
     display: flex;
