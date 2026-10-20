@@ -38,7 +38,7 @@ header {
 /* Главное слово AVIC */
 .hw-logo a {
     font-weight: 800;
-    font-size: 32px;      /* Можете поставить любой размер */
+    font-size: 25px;      /* Можете поставить любой размер */
     color: #1a1a1a;
     text-transform: uppercase;
     display: flex;        
