@@ -3,119 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты и реквизиты | AVIC ENGSERVICE</title>
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="/github.io/style.css">
-    <style>
-        .container { padding: 60px 8%; background: #ffffff; min-height: 600px; display: flex; gap: 60px; box-sizing: border-box; }
-        .contact-info { flex: 1.2; display: flex; flex-direction: column; }
-        .page-title { font-size: 38px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 40px; color: #1a1a1a; }
-        
-        .phone-link, .email-link { font-size: 28px; font-weight: 800; color: #1a1a1a; display: block; margin-bottom: 15px; }
-        .phone-link:hover, .email-link:hover { color: #de1e26; }
-        .address { font-size: 16px; color: #1a1a1a; margin-bottom: 25px; line-height: 1.6; }
-        
-        /* Статичный стильный блок карты с переходом на Google / Яндекс */
-        .map-wrapper { width: 100%; margin-top: 15px; }
-        .map-placeholder { 
-            width: 100%; 
-            height: 280px; 
-            background-color: #1a1a1a; 
-            border: 1px solid #e5e5e5;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: background-color 0.2s ease;
-        }
-        .map-placeholder:hover { background-color: #2a2a2a; }
-        .map-title { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .map-desc { font-size: 13px; color: #aaaaaa; margin-bottom: 25px; max-width: 400px; line-height: 1.4; }
-        
-        /* Кнопки переключения карт */
-        .map-links-flex { display: flex; gap: 15px; }
-        .map-btn { background-color: #de1e26; color: #ffffff; padding: 12px 24px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; transition: background-color 0.2s ease; }
-        .map-btn:hover { background-color: #b8141b; }
-        .map-btn.secondary { background-color: #ffffff; color: #1a1a1a; border: 1px solid #ffffff; }
-        .map-btn.secondary:hover { background-color: #e5e5e5; }
-        
-        .requisites { flex: 0.8; background: #f9f9f9; padding: 40px; border-top: 3px solid #1a1a1a; height: fit-content; }
-        .requisites h3 { font-size: 18px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 0.5px; }
-        .req-table { width: 100%; border-collapse: collapse; }
-        .req-table td { padding: 12px 0; font-size: 14px; border-bottom: 1px solid #e5e5e5; }
-        .req-label { color: #767676; font-weight: 500; width: 120px; }
-        .req-val { color: #1a1a1a; font-weight: 600; }
-        
-        @media (max-width: 900px) { .container { flex-direction: column; gap: 40px; padding: 40px 5%; } .phone-link, .email-link { font-size: 22px; } .map-placeholder { height: 240px; } .map-links-flex { flex-direction: column; gap: 10px; width: 100%; } .map-btn { text-align: center; } }
-    </style>
+    <title>Контакты и реквизиты | AVIC PRO</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Поднимаемся на уровень выше к файлу стилей -->
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-    <!-- Шапка сайта -->
-    <header>
+    <!-- Внутренние страницы используют темную шапку класса .dark-page-header -->
+    <header class="dark-page-header">
         <div class="hw-logo">
-            <a href="/github.io/index.html">AVIC<span class="dot">.</span></a>
-            <div class="hw-sub">engservice</div>
+            <a href="../index.html">
+                <!-- Адаптивный SVG-логотип: автоматически перекрашивается на темном фоне -->
+                <svg class="hw-logo-svg" viewBox="0 0 130 42" xmlns="http://w3.org">
+                    <g transform="translate(2, 4.5)">
+                        <!-- Буква "а" (Всегда красная #de1e26) -->
+                        <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" 
+                              fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Блок VIC (Имеет класс .hw-logo-text-main для адаптивного перекрашивания) -->
+                        <path class="hw-logo-text-main" d="M 26.5,9 L 36.5,23.5 L 46.5,9" 
+                              fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="hw-logo-text-main" d="M 54.5,9 L 54.5,23.5" 
+                              fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round"/>
+                        <path class="hw-logo-text-main" d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" 
+                              fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Блок PRO -->
+                        <g transform="translate(79, 1.5)">
+                            <!-- P и R перекрашиваются через класс .hw-logo-text-main -->
+                            <path class="hw-logo-text-main" d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" 
+                                  fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="hw-logo-text-main" d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" 
+                                  fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- O (Всегда красная #de1e26) -->
+                            <rect x="33" y="2" width="10" height="11" rx="4" 
+                                  fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </g>
+                    <!-- Подстрочник имеет класс .hw-logo-text-sub для перекрашивания в светло-серый -->
+                    <g transform="translate(2, 0)">
+                        <text class="hw-logo-text-sub" x="2" y="38.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#767676" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
+                    </g>
+                </svg>
+            </a>
         </div>
         <nav class="hw-nav">
             <ul>
-                <li><a href="/github.io/index.html">Главная</a></li>
-                <li><a href="/github.io/p/equipment.html">Оборудование</a></li>
-                <li><a href="/github.io/p/objects.html">Объекты</a></li>
-                <li><a href="/github.io/p/contacts.html" class="active">Контакты</a></li>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="equipment.html">Оборудование</a></li>
+                <li><a href="objects.html">Объекты</a></li>
+                <li><a href="contacts.html" class="active">Контакты</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- Основной блок -->
-    <main class="container">
-        <div class="contact-info">
-            <h1 class="page-title">Контакты</h1>
-            
-            <a href="tel:+79251345090" class="phone-link">+7 (925) 134-50-90</a>
-            <a href="mailto:info@aviceng.com" class="email-link">info@aviceng.com</a>
-            
-            <div class="address">
-                <p style="font-size: 18px; margin-bottom: 8px;"><strong>ООО "АВИК ИНЖСЕРВИС"</strong></p>
-                <p style="color: #555555; margin-bottom: 20px;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
+    
+    <main class="internal-container">
+        <h1 class="page-title">Контакты</h1>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-bottom: 60px;">
+            <div>
+                <p style="font-size: 24px; font-weight: 700; margin-bottom: 10px; color: #de1e26;">+7 (925) 134-50-90</p>
+                <p style="font-size: 16px; color: #666; margin-bottom: 30px;">info@aviceng.com</p>
                 
-                <!-- Статичный блок-карта с защитой от блокировки хостинга -->
-                <div class="map-wrapper">
-                    <div class="map-placeholder">
-                        <div class="map-title">Интерактивная карта маршрута</div>
-                        <div class="map-desc">Выберите удобный навигационный сервис для открытия точных координат компании на Мурманском проезде</div>
-                        <div class="map-links-flex">
-                            <!-- Ссылка на точку в Google Maps -->
-                            <a href="https://www.google.com/maps" target="_blank" class="map-btn">Открыть в Google Maps</a>
-                            <!-- Ссылка на точку в Яндекс.Картах -->
-                            <a href="https://yandex.ru/maps" target="_blank" class="map-btn secondary">Открыть в Яндекс.Картах</a>
-                        </div>
-                    </div>
+                <p style="font-weight: 700; margin-bottom: 5px;">Адрес офиса:</p>
+                <p style="color: #333; line-height: 1.6; margin-bottom: 20px;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
+            </div>
+            
+            <!-- Блок официальных реквизитов с интегрированным русским графическим логотипом -->
+            <div style="background: #ffffff; padding: 30px; border-top: 4px solid #0b0f19; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                <div style="margin-bottom: 25px; display: flex; align-items: center; justify-content: space-between;">
+                    <h3 style="font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Официальные реквизиты</h3>
+                    
+                    <!-- РУССКАЯ ГРАФИЧЕСКАЯ ВЕРСИЯ ЛОГОТИПА: АВИК ПРО -->
+                    <svg width="110" height="36" viewBox="0 0 130 42" xmlns="http://w3.org" style="display: block;">
+                        <g transform="translate(2, 6)">
+                            <!-- Русская А (Наша фирменная капля в красном цвете) -->
+                            <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" 
+                                  fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Русская В -->
+                            <path d="M 26,23.5 L 26,9 M 26,9 L 33,9 C 36,9 37.5,10.5 37.5,12.5 C 37.5,14.5 36,16 33,16 L 26,16 M 33,16 C 36.5,16 38.5,17.5 38.5,19.75 C 38.5,22 36.5,23.5 33,23.5 L 26,23.5" 
+                                  fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Русская И -->
+                            <path d="M 44,9 L 44,23.5 M 44,23.5 L 54,9 M 54,9 L 54,23.5" 
+                                  fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Русская К -->
+                            <path d="M 60,9 L 60,23.5 M 60,16.25 L 68.5,9 M 60,16.25 L 69.5,23.5" 
+                                  fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            
+                            <!-- Блок ПРО -->
+                            <g transform="translate(75, 0)">
+                                <path d="M 2,23.5 L 2,9 M 2,9 L 10,9 M 10,9 L 10,16 L 2,16" fill="none" stroke="#0b0f19" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M 16,23.5 L 16,9 M 16,9 L 23,9 C 26,9 27.5,10.5 27.5,12.5 C 27.5,14.5 26,16 23,16 L 16,16 M 22.5,16 L 27.5,23.5" fill="none" stroke="#0b0f19" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="33" y="9" width="10" height="14.5" rx="4" fill="none" stroke="#de1e26" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                
+                <div style="font-size: 13px; color: #444; line-height: 2;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><strong>ООО "АВИК ПРО"</strong></div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>ИНН:</span> <span>7717290070</span></div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>КПП:</span> <span>771701001</span></div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>ОГРН:</span> <span>1157746486083</span></div>
                 </div>
             </div>
         </div>
-        
-        <div class="requisites">
-            <h3>Официальные реквизиты</h3>
-            <table class="req-table">
-                <tr><td class="req-label">ИНН</td><td class="req-val">7717290070</td></tr>
-                <tr><td class="req-label">КПП</td><td class="req-val">771701001</td></tr>
-                <tr><td class="req-label">ОГРН</td><td class="req-val">1157746486083</td></tr>
-                <tr><td class="req-label">ОКПО</td><td class="req-val">45331384</td></tr>
-                <tr><td class="req-label">ОКАТО</td><td class="req-val">45280572</td></tr>
-                <tr><td class="req-label">ОКТМО</td><td class="req-val">4535800000</td></tr>
-            </table>
-        </div>
     </main>
-
-    <!-- Подвал сайта -->
+    
     <footer>
-        <p>© 2026 ООО «АВИК ИНЖСЕРВИС» | Промышленная автоматизация и IT</p>
-        <div class="footer-brand">AVIC<span>.</span></div>
+        <div class="footer-left">
+            <p>© 2026 ООО «АВИК ПРО» | Инжиниринг, автоматизация и строительство</p>
+        </div>
     </footer>
 
 </body>
