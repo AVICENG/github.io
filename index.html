@@ -33,6 +33,7 @@
             </a>
         </div>
         
+        <!-- КНОПКА ГАМБУРГЕРА ДЛЯ МОБИЛЬНЫХ -->
         <button class="menu-toggle" id="mobileMenuBtn" aria-label="Открыть меню">
             <span></span>
             <span></span>
@@ -122,27 +123,30 @@
         </div>
     </footer>
 
-    <!-- АВТОНОМНЫЙ СКРИПТ — РАБОТАЕТ ВЕЗДЕ -->
+    <!-- АВТОНОМНЫЙ СКРИПТ УПРАВЛЕНИЯ ГАМБУРГЕРОМ -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var btn = document.getElementById('mobileMenuBtn');
-            var nav = document.getElementById('mobileNav');
-            
-            if(btn && nav) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    btn.classList.toggle('active');
-                    nav.classList.toggle('active');
+            var menuButton = document.getElementById('mobileMenuBtn');
+            var navigationPanel = document.getElementById('mobileNav');
+
+            if (menuButton && navigationPanel) {
+                // Открытие и закрытие по клику на гамбургер
+                menuButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    menuButton.classList.toggle('active');
+                    navigationPanel.classList.toggle('active');
                 });
-                
-                nav.addEventListener('click', function(e) {
-                    e.stopPropagation();
+
+                // Предотвращаем закрытие при клике внутри области меню (на ссылки)
+                navigationPanel.addEventListener('click', function(event) {
+                    event.stopPropagation();
                 });
-                
+
+                // Закрываем меню при клике на любую свободную область экрана
                 document.addEventListener('click', function() {
-                    btn.classList.remove('active');
-                    nav.classList.remove('active');
+                    menuButton.classList.remove('active');
+                    navigationPanel.classList.remove('active');
                 });
             }
         });
