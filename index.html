@@ -6,7 +6,7 @@
     <title>AVIC PRO | Промышленная автоматизация, IT и Строительство</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <header>
         <div class="hw-logo">
             <a href="index.html">
-                <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://www.w3.org/2000/svg" style="height: 46px !important;">
+                <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://w3.org" style="height: 46px !important;">
                     <g transform="translate(2, 6)">
                         <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -33,7 +33,6 @@
             </a>
         </div>
         
-        <!-- КНОПКА ГАМБУРГЕРА ДЛЯ МОБИЛЬНЫХ -->
         <button class="menu-toggle" id="mobileMenuBtn" aria-label="Открыть меню">
             <span></span>
             <span></span>
@@ -70,10 +69,9 @@
         </div>
 
         <section class="hw-grid">
-            <!-- Карточка 01 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5A3.375 3.375 0 0010.125 2.25h-2.625a3.375 3.375 0 00-3.375 3.375v1.5a1.125 1.125 0 01-1.125 1.125h-1.5A3.375 3.375 0 000 11.625v2.625" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3.75 18.75h16.5M6.75 18.75v-3.75A1.5 1.5 0 018.25 13.5h7.5a1.5 1.5 0 011.5 1.5v3.75" />
                     </svg>
@@ -85,10 +83,9 @@
                 </div>
             </div>
             
-            <!-- Карточка 02 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-3 0h3m0 0l3-3m-3 3l3 3" />
                     </svg>
                 </div>
@@ -99,10 +96,9 @@
                 </div>
             </div>
             
-            <!-- Карточка 03 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                     </svg>
                 </div>
@@ -126,6 +122,30 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- АВТОНОМНЫЙ СКРИПТ — РАБОТАЕТ ВЕЗДЕ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('mobileMenuBtn');
+            var nav = document.getElementById('mobileNav');
+            
+            if(btn && nav) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    btn.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+                
+                nav.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+                
+                document.addEventListener('click', function() {
+                    btn.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
