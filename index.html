@@ -14,10 +14,21 @@
     <header>
         <div class="hw-logo">
             <a href="index.html">
+                <!-- Вариант 2: Премиальный IT-концепт (Графика + Текст) -->
                 <svg class="hw-logo-svg" viewBox="0 0 130 42" xmlns="http://w3.org">
-                    <text x="0" y="24" font-family="'Inter', sans-serif" font-weight="800" font-size="26" fill="#1a1a1a" letter-spacing="-0.5">AVIC</text>
-                    <circle cx="72" cy="21" r="3" fill="#de1e26" />
-                    <text x="2" y="38" font-family="'Inter', sans-serif" font-weight="300" font-size="9" fill="#767676" letter-spacing="4.5">ENGSERVICE</text>
+                    <!-- Графический знак (Узел автоматизации / IoT / Здание) -->
+                    <g transform="translate(0, 5)">
+                        <path d="M 6,26 L 15,4 L 24,26" fill="none" stroke="#0052cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 10.5,16 L 19.5,16" fill="none" stroke="#de1e26" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="15" cy="4" r="2.5" fill="#de1e26" />
+                        <circle class="hw-logo-node" cx="6" cy="26" r="2.5" fill="#1a1a1a" />
+                        <circle class="hw-logo-node" cx="24" cy="26" r="2.5" fill="#1a1a1a" />
+                    </g>
+                    <!-- Текстовый блок -->
+                    <g transform="translate(34, 0)">
+                        <text class="hw-logo-text-main" x="0" y="21" font-family="'Inter', sans-serif" font-weight="800" font-size="19" fill="#1a1a1a" letter-spacing="-0.3">AVIC</text>
+                        <text class="hw-logo-text-sub" x="0" y="34" font-family="'Inter', sans-serif" font-weight="600" font-size="8" fill="#767676" letter-spacing="0.8">ENGSERVICE</text>
+                    </g>
                 </svg>
             </a>
         </div>
@@ -72,7 +83,7 @@
             </div>
             <div class="card-content">
                 <h3>03 / Энергетический Менеджмент</h3>
-                <p>Внедрение интеллектуального учета ресурсов (Smart Metering), предиктивная аналитика нагрузок и глубокая优化 OPEX.</p>
+                <p>Внедрение интеллектуального учета ресурсов (Smart Metering), предиктивная аналитика нагрузок и глубокая оптимизация OPEX.</p>
             </div>
         </div>
     </section>
