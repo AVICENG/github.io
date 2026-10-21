@@ -47,6 +47,44 @@
             background-color: #de1e26 !important;
             border-color: #de1e26 !important;
         }
+        
+        /* Стили подвала со статус-строкой */
+        .hw-footer-status {
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+        }
+        .status-dot::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            opacity: 0.4;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -54,7 +92,7 @@
     <header>
         <div class="hw-logo">
             <a href="../index.html">
-                <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://w3.org" style="height: 46px !important;">
+                <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://www.w3.org/2000/svg" style="height: 46px !important;">
                     <g transform="translate(2, 4.5)">
                         <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -86,13 +124,15 @@
         <div class="section-header-block">
             <h2>Продукция и Оборудование</h2>
             <div class="section-header-line"></div>
-            <p>Комплексные поставки, проектирование и пусконаладка компонентов автоматизации от ведущих B2B-производителей.</p>
+            <p>Комплексные поставки, проектирование и пусконаладка components автоматизации от ведущих B2B-производителей.</p>
         </div>
         
         <div class="hw-grid">
+            
+            <!-- 1. Trend Controls -->
             <div class="hw-card" style="display: flex; flex-direction: column; height: 100%;">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 5h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2z" />
                     </svg>
                 </div>
@@ -107,9 +147,10 @@
                 </div>
             </div>
 
+            <!-- 2. Honeywell -->
             <div class="hw-card" style="display: flex; flex-direction: column; height: 100%;">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><circle cx="12" cy="12" r="3" stroke-width="1.2"/>
                     </svg>
                 </div>
@@ -124,16 +165,17 @@
                 </div>
             </div>
 
+            <!-- 3. Centraline -->
             <div class="hw-card" style="display: flex; flex-direction: column; height: 100%;">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m4 0v-3a1 1 0 011-1h2a1 1 0 011 1v3M4 7h16M4 11h16M4 15h16" />
                     </svg>
                 </div>
                 <div class="card-content" style="display: flex; flex-direction: column; flex-grow: 1;">
-                    <div class="card-num">HVAC Integration</div>
+                    <div class="card-num">Honeywell Partner Brand</div>
                     <h3>Centraline</h3>
-                    <p style="flex-grow: 1;">Профессиональное оборудование для интеграции систем отопления, вентиляции и кондиционирования. Зонные контроллеры и датчики.</p>
+                    <p style="flex-grow: 1;">Интегрированные системы управления зданиями на базе Niagara Framework. Контроллеры EAGLE, HAWK и энергоэффективные решения для умных экосистем.</p>
                     <div class="card-actions-row">
                         <a href="https://aviceng.com" target="_blank" class="hw-btn-fixed btn-outline">Каталог Centraline</a>
                         <a href="#" class="hw-btn-fixed btn-filled">Запросить КП</a>
@@ -141,24 +183,87 @@
                 </div>
             </div>
 
+            <!-- 4. Johnson Controls -->
             <div class="hw-card" style="display: flex; flex-direction: column; height: 100%;">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M20.488 9H15V3.512A9.025 9.001 0 0120.488 9z" />
+                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
                     </svg>
                 </div>
                 <div class="card-content" style="display: flex; flex-direction: column; flex-grow: 1;">
-                    <div class="card-num">Infrastructure Software</div>
+                    <div class="card-num">Smart Building Solutions</div>
                     <h3>Johnson Controls</h3>
-                    <p style="flex-grow: 1;">Комплексное управление инфраструктурой зданий (BMS). Спектр прецизионных модулей ввода/вывода, реле давления и адаптеров.</p>
+                    <p style="flex-grow: 1;">Комплексные платформы автоматизации Metasys. Системы диспетчеризации, контроллеры серий FEC/FAC, клапаны и приводы для систем ОВК.</p>
                     <div class="card-actions-row">
-                        <a href="https://aviceng.com" target="_blank" class="hw-btn-fixed btn-outline">Прайс Johnson</a>
-                        <a href="#" class="hw-btn-fixed btn-filled">Заказать</a>
+                        <a href="https://aviceng.com" target="_blank" class="hw-btn-fixed btn-outline">Каталог Johnson</a>
+                        <a href="#" class="hw-btn-fixed btn-filled">Запросить КП</a>
                     </div>
                 </div>
             </div>
+
+            <!-- 5. Saia Burgess -->
+            <div class="hw-card" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="card-image-wrapper">
+                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                    </svg>
+                </div>
+                <div class="card-content" style="display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="card-num">Industrial PLC Reliability</div>
+                    <h3>Saia Burgess</h3>
+                    <p style="flex-grow: 1;">Сверхнадежные свободнопрограммируемые контроллеры Saia PCD, панели оператора и модули сбора данных с поддержкой открытых протоколов.</p>
+                    <div class="card-actions-row">
+                        <a href="https://aviceng.com" target="_blank" class="hw-btn-fixed btn-outline">Каталог Saia</a>
+                        <a href="#" class="hw-btn-fixed btn-filled">Запросить КП</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Danfoss -->
+            <div class="hw-card" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="card-image-wrapper">
+                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 022 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <div class="card-content" style="display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="card-num">Thermal & Drive Components</div>
+                    <h3>Danfoss</h3>
+                    <p style="flex-grow: 1;">Преобразователи частоты VLT, регулирующие клапаны, балансировочная арматура и специализированные контроллеры для систем теплоснабжения.</p>
+                    <div class="card-actions-row">
+                        <a href="https://aviceng.com" target="_blank" class="hw-btn-fixed btn-outline">Каталог Danfoss</a>
+                        <a href="#" class="hw-btn-fixed btn-filled">Запросить КП</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Siemens -->
+            <div class="hw-card" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="card-image-wrapper">
+                    <svg class="card-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                </div>
+                <div class="card-content" style="display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="card-num">Global Engineering Leader</div>
+                    <h3>Siemens</h3>
+                    <p style="flex-grow: 1;">Решения Desigo CC и Climatix для автоматизации зданий. Линейки контроллеров PXC, датчики, приводы воздушных заслонок и регулирующие клапаны.</p>
+                    <div class="card-actions-row">
+                        <a href="https://aviceng.com" target="_blank" class="hw-btn-fixed btn-outline">Каталог Siemens</a>
+                        <a href="#" class="hw-btn-fixed btn-filled">Запросить КП</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
+
+    <!-- Подвал со статус-строкой -->
+    <footer class="hw-footer-status">
+        <span class="status-dot"></span>
+        Системы работают в штатном режиме
+    </footer>
 
 </body>
 </html>
