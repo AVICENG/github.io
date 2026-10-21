@@ -11,14 +11,12 @@
 </head>
 <body>
 
-    <!-- Главная шапка сайта -->
     <header>
         <div class="hw-logo">
             <a href="../index.html">
                 <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://w3.org" style="height: 46px !important;">
                     <g transform="translate(2, 6)">
-                        <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" 
-                              fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round"/>
                         <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -44,40 +42,35 @@
         </nav>
     </header>
     
-    <main class="internal-container">
+    <main class="hw-main-content" style="background-color: var(--color-bg-light); padding: 60px 8%;">
         <div class="section-header-block">
             <h2>Контакты</h2>
             <p>Свяжитесь с инженерным отделом ООО «АВИК ПРО» для проектирования систем, заказа оборудования или получения сервисной поддержки.</p>
         </div>
         
-        <!-- align-items: stretch заставляет обе колонки быть абсолютно одной высоты -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; align-items: stretch;">
-            
             <!-- Левая часть (Контакты и карты) -->
-            <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="margin-bottom: 30px;">
+            <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
+                <div style="margin-bottom: 25px;">
                     <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid #e5e5e5; padding-bottom: 8px; color: #0b0f19;">Связь с инженером</h3>
-                    
                     <p style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #de1e26;">+7 (925) 134-50-90</p>
                     <p style="font-size: 16px; color: #666; margin-bottom: 25px;">info@aviceng.com</p>
-                    
                     <p style="font-weight: 700; margin-bottom: 5px; color: #0b0f19;">Адрес офиса:</p>
                     <p style="color: #333; line-height: 1.6; margin-bottom: 0;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
                 </div>
                 
-                <!-- Баннер карт теперь жестко привязан к низу левой карточки -->
-                <div style="background: #ffffff; padding: 20px; border: 1px solid #e5e5e5; border-radius: 2px; margin-top: auto;">
+                <div style="background: #ffffff; padding: 20px; border: 1px solid #e5e5e5; border-radius: 2px; box-sizing: border-box;">
                     <p style="font-weight: 700; font-size: 13px; margin-bottom: 6px; color: #0b0f19;">Интерактивная карта маршрута</p>
                     <p style="font-size: 12px; color: #666; margin-bottom: 12px; line-height: 1.4;">Выберите навигационный сервис для открытия точных координат компании</p>
                     <div style="display: flex; gap: 10px;">
-                        <a href="https://google.com" target="_blank" style="background: #0b0f19; color: #fff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Google Maps</a>
-                        <a href="https://yandex.ru" target="_blank" style="background: #de1e26; color: #fff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Яндекс.Карты</a>
+                        <a href="https://google.com" target="_blank" style="background: #0b0f19; color: #fff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Google Maps</a>
+                        <a href="https://yandex.ru" target="_blank" style="background: #de1e26; color: #fff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Яндекс.Карты</a>
                     </div>
                 </div>
             </div>
             
             <!-- Правая часть (Реквизиты) -->
-            <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; display: flex; flex-direction: column;">
+            <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; display: flex; flex-direction: column; box-sizing: border-box;">
                 <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid #e5e5e5; padding-bottom: 8px; color: #0b0f19;">Официальные реквизиты</h3>
                 
                 <div style="display: flex; justify-content: flex-start; margin-bottom: 20px;">
@@ -110,6 +103,19 @@
                     <div style="display: flex; justify-content: space-between; padding: 2px 0;"><span>ОКТМО:</span> <span>4535800000</span></div>
                 </div>
             </div>
-            
         </div>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>© 2026 ООО «АВИК ПРО» | Инжиниринг, автоматизация и строительство</p>
+            </div>
+            <div class="footer-right">
+                <span class="footer-status-dot"></span> Системы работают в штатном режиме
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
