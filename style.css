@@ -59,6 +59,41 @@ header {
     display: block;
 }
 
+/* Кнопка Мобильного Меню (Гамбургер) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-bg-dark);
+    transition: all 0.25s ease;
+    transform-origin: left center;
+}
+
+/* Анимация превращения гамбургера в крестик X */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(2px, -1px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, 1px);
+}
+
 .hw-nav ul {
     list-style: none;
     display: flex;
@@ -85,7 +120,7 @@ header {
 .hw-hero { 
     position: relative; 
     background-color: var(--color-bg-dark);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e293b' fill-opacity='0.25'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2v2h-2V0zm0 4h2v2h-2V4zm0 4h2v2h-2V8zm0 12h2v2h-2v-2zm0 12h2v2h-2v-2zm4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm12 0h2v2h-2v-2zm12 0h2v2h-2v-2z'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230052cc' fill-opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e293b' fill-opacity='0.25'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2v2h-2V0zm0 4h2v2h-2V4zm0 4h2v2h-2V8zm0 12h2v2h-2v-2zm0 12h2v2h-2v-2zm4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm12 0h2v2h-2v-2zm12 0h2v2h-2v-2z'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230052cc' fill-opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
     min-height: 540px; 
     display: flex; 
     align-items: center; 
@@ -234,6 +269,48 @@ header {
     position: relative;
 }
 
+/* Стили для кнопок внутри карточек оборудования (унифицированные) */
+.card-actions-row {
+    display: flex !important;
+    gap: 10px !important;
+    margin-top: auto !important;
+    padding-top: 15px !important;
+    width: 100% !important;
+}
+
+.hw-btn-fixed {
+    flex: 1 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    padding: 10px 14px !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    display: inline-block !important;
+}
+
+.hw-btn-fixed.btn-outline {
+    background-color: #ffffff !important;
+    color: #0b0f19 !important;
+    border: 1.5px solid #0b0f19 !important;
+}
+
+.hw-btn-fixed.btn-outline:hover {
+    background-color: #f4f5f7 !important;
+}
+
+.hw-btn-fixed.btn-filled {
+    background-color: #0b0f19 !important;
+    color: #ffffff !important;
+    border: 1.5px solid #0b0f19 !important;
+}
+
+.hw-btn-fixed.btn-filled:hover {
+    background-color: #de1e26 !important;
+    border-color: #de1e26 !important;
+}
+
 /* УБРАНЫ черные дыры. Теперь здесь легкий, премиальный серый фон с синим акцентом */
 .card-image-wrapper { 
     width: 100%; 
@@ -338,5 +415,122 @@ footer {
     background-color: #10b981;
     border-radius: 50%;
     display: inline-block;
-    box-shadow: 0 0 8px #10b981;
+    position: relative;
+}
+
+/* Пульсация индикатора активности */
+.footer-status-dot::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #10b981;
+    border-radius: 50%;
+    animation: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ СМАРТФОНОВ (Ширина менее 768px) */
+@media (max-width: 767px) {
+    :root {
+        --side-padding: 5%;
+    }
+
+    header {
+        padding: 16px var(--side-padding);
+    }
+
+    .menu-toggle {
+        display: flex; /* Показываем гамбургер */
+    }
+
+    /* Мобильное выпадающее меню */
+    .hw-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* Класс открытия меню по клику */
+    .hw-nav.open {
+        max-height: 300px;
+    }
+
+    .hw-nav ul {
+        flex-direction: column;
+        padding: 15px var(--side-padding);
+    }
+
+    .hw-nav li {
+        margin-left: 0;
+        margin-bottom: 16px;
+    }
+
+    .hw-nav li:last-child {
+        margin-bottom: 0;
+    }
+
+    .hw-nav a {
+        display: block;
+        font-size: 14px;
+        padding: 4px 0;
+    }
+
+    /* Адаптация Hero-блока */
+    .hw-hero {
+        min-height: auto;
+        padding: 60px var(--side-padding);
+    }
+
+    .hw-hero h1 {
+        font-size: 28px;
+    }
+
+    .hw-hero p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hw-btn, .hw-btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    /* Адаптация контента и сетки карточек */
+    .hw-main-content {
+        padding: 50px var(--side-padding);
+    }
+
+    .section-header-block h2 {
+        font-size: 24px;
+    }
+
+    .hw-grid {
+        grid-template-columns: 1fr; /* Карточки строго в один ряд */
+        gap: 20px;
+    }
+
+    /* Адаптация подвала */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
 }
