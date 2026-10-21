@@ -81,9 +81,9 @@ header {
     color: var(--color-accent-red);
 }
 
-/* Кнопка Мобильного Меню (Гамбургер) */
+/* Кнопка Мобильного Меню (Гамбургер) - ДЛЯ КОМПЬЮТЕРОВ СКРЫТА */
 .menu-toggle {
-    display: none; /* Скрыта по умолчанию на десктопах */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 26px;
@@ -91,7 +91,7 @@ header {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 1002;
+    z-index: 10000;
 }
 
 .menu-toggle span {
@@ -101,6 +101,7 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
+/* Анимация превращения гамбургера в крестик при активации */
 .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -149,7 +150,7 @@ header {
 .hw-hero { 
     position: relative; 
     background-color: var(--color-bg-dark);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e293b' fill-opacity='0.25'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2v2h-2V0zm0 4h2v2h-2V4zm0 4h2v2h-2V8zm0 12h2v2h-2v-2zm0 12h2v2h-2v-2zm4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm12 0h2v2h-2v-2zm12 0h2v2h-2v-2z'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230052cc' fill-opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e293b' fill-opacity='0.25'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2v2h-2V0zm0 4h2v2h-2V4zm0 4h2v2h-2V8zm0 12h2v2h-2v-2zm0 12h2v2h-2v-2zm4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm12 0h2v2h-2v-2zm12 0h2v2h-2v-2z'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230052cc' fill-opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
     min-height: 540px; 
     display: flex; 
     align-items: center; 
@@ -251,93 +252,34 @@ footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px
 .footer-left p { font-size: 13px; color: var(--color-text-muted); }
 .footer-right { font-weight: 500; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; }
 
-/* ==========================================
-   Адаптивная мобильная верстка (max-width: 768px)
-   ========================================== */
-@media (max-width: 768px) {
-    /* Отображение кнопки на всех страницах */
-    .menu-toggle {
-        display: flex !important;
-        position: relative;
-        z-index: 1002;
-    }
-
-    /* Мобильное адаптивное меню */
-    .hw-nav {
-        display: none; /* Изначально скрыто */
-        position: absolute;
-        top: 100%; /* Открывается прямо под шапкой */
-        left: 0;
-        width: 100%;
-        background-color: #ffffff !important;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08) !important;
-        border-bottom: 1px solid var(--color-border);
-        z-index: 1001; /* Поверх контента страницы */
-    }
-
-    /* Вертикальный список ссылок */
-    .hw-nav ul {
-        flex-direction: column !important;
-        padding: 24px var(--side-padding) !important;
-        display: flex !important;
-    }
-
-    .hw-nav li {
-        margin-left: 0 !important;
-        margin-bottom: 20px !important;
-        width: 100%;
-    }
-    
-    .hw-nav li:last-child {
-        margin-bottom: 0 !important;
-    }
-
-    .hw-nav a {
-        display: block;
-        font-size: 15px !important; /* Увеличено для удобного нажатия */
-        padding: 6px 0;
-        width: 100%;
-    }
-
-    /* ПРАВИЛЬНОЕ ПЕРЕКЛЮЧЕНИЕ ПРИ АКТИВАЦИИ КЛАССА .active ИЗ СКРИПТА */
-    .hw-nav.active {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-}
 /* ==========================================================================
    АДАПТИВНАЯ ВЕРСТКА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (ЭКРАНЫ МЕНЬШЕ 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    
-    /* 1. Принудительно показываем гамбургер на мобильных вместо display: none */
+    /* 1. Показываем кнопку гамбургера */
     .menu-toggle {
-        display: flex !important; 
-        position: relative;
-        z-index: 10000; /* Кнопка ВСЕГДА должна быть выше выпадающего меню */
+        display: flex !important;
     }
 
-    /* 2. Скрываем стандартную горизонтальную строку меню */
+    /* 2. Трансформируем панель навигации в выпадающий блок */
     .hw-nav {
-        display: none !important; 
-        position: absolute;
-        top: 100%; /* Меню открывается ровно под шапкой сайта */
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08); /* Красивая тень */
-        border-bottom: 1px solid var(--color-border);
-        z-index: 9999; /* Меню перекрывает баннер .hw-hero и другой контент */
+        display: none; /* Изначально скрыто */
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: #ffffff !important;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08) !important;
+        border-bottom: 1px solid var(--color-border) !important;
+        z-index: 9999 !important;
     }
 
-    /* Перестраиваем пункты меню вертикально друг под другом */
+    /* Меняем направление ссылок на вертикальное */
     .hw-nav ul {
         flex-direction: column !important;
         padding: 25px var(--side-padding) !important;
     }
 
-    /* Делаем отступы между кнопками удобными для пальцев */
     .hw-nav li {
         margin-left: 0 !important;
         margin-bottom: 20px !important;
@@ -347,14 +289,14 @@ footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px
         margin-bottom: 0 !important;
     }
 
-    /* Увеличиваем размер ссылок в меню на смартфонах */
     .hw-nav a {
-        display: block;
-        font-size: 15px !important;
-        padding: 5px 0;
+        display: block !important;
+        font-size: 16px !important;
+        padding: 8px 0 !important;
+        width: 100% !important;
     }
 
-    /* 3. ФИКСАЦИЯ МЕНЮ: Когда скрипт добавляет класс .active, показываем меню */
+    /* 3. Отображение при активации скриптом */
     .hw-nav.active {
         display: block !important;
     }
