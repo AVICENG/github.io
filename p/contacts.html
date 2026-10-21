@@ -16,6 +16,7 @@
         <div class="hw-logo">
             <a href="../index.html">
                 <svg class="hw-logo-svg" viewBox="0 0 130 42" xmlns="http://w3.org">
+                    <!-- Верхний графический блок аVIC PRO (Зазор за счёт координаты Y=4.5) -->
                     <g transform="translate(2, 4.5)">
                         <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" 
                               fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -28,6 +29,7 @@
                             <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
                         </g>
                     </g>
+                    <!-- Нижняя подпись (Сдвинута на Y=38.5 для создания красивого свободного пространства) -->
                     <g transform="translate(2, 0)">
                         <text class="hw-logo-text-sub" x="2" y="38.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#767676" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
                     </g>
@@ -47,7 +49,6 @@
     <main class="internal-container">
         <h1 class="page-title">Контакты</h1>
         
-        <!-- Сетка выровнена: обе части стартуют строго с одной высоты -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; align-items: start;">
             
             <!-- Левая часть (Контакты и карты) -->
@@ -69,32 +70,15 @@
                 </div>
             </div>
             
-            <!-- Правая часть (Реквизиты) — теперь идеально подогнана к левой по стилю и высоте -->
-            <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid #e5e5e5; padding-bottom: 8px; color: #0b0f19;">Официальные реквизиты</h3>
-                    
-                    <div style="font-size: 13px; color: #333; line-height: 2.2; margin-bottom: 20px;">
-                        <div style="border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><strong>ООО "АВИК ПРО"</strong></div>
-                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ИНН:</span> <strong>7717290070</strong></div>
-                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>КПП:</span> <strong>771701001</strong></div>
-                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОГРН:</span> <strong>1157746486083</strong></div>
-                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОКПО:</span> <span>45331384</span></div>
-                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОКАТО:</span> <span>45280572</span></div>
-                        <div style="display: flex; justify-content: space-between; padding: 2px 0;"><span>ОКТМО:</span> <span>4535800000</span></div>
-                    </div>
-                </div>
-
-                <!-- Утонченный шильд: тонкая рамка 1px, фон прозрачный, оригинальные темные буквы -->
-                <div style="display: flex; justify-content: center; margin-top: auto; padding-top: 10px;">
+            <!-- Правая часть (Реквизиты) с верхним расположением шильда -->
+            <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; height: 100%;">
+                
+                <!-- Логотип перенесен наверх и выровнен по левому краю -->
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 25px;">
                     <svg width="140" height="52" viewBox="0 0 140 52" xmlns="http://w3.org" style="display: block;">
-                        <!-- Тонкая полоска вокруг логотипа -->
                         <rect x="0.5" y="0.5" width="139" height="51" rx="2" fill="none" stroke="#0b0f19" stroke-width="1" opacity="0.3"/>
-                        
-                        <!-- Оригинальный логотип внутри рамки -->
-                        <g transform="translate(5, 5)">
-                            <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" 
-                                  fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g transform="translate(5, 4.5)">
+                            <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round"/>
                             <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -104,10 +88,22 @@
                                 <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
                             </g>
                         </g>
-                        <g transform="translate(5, 6)">
+                        <g transform="translate(5, 0)">
                             <text x="2" y="38.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#767676" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
                         </g>
                     </svg>
+                </div>
+
+                <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid #e5e5e5; padding-bottom: 8px; color: #0b0f19;">Официальные реквизиты</h3>
+                
+                <div style="font-size: 13px; color: #333; line-height: 2.2;">
+                    <div style="border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><strong>ООО "АВИК ПРО"</strong></div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ИНН:</span> <strong>7717290070</strong></div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>КПП:</span> <strong>771701001</strong></div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОГРН:</span> <strong>1157746486083</strong></div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОКПО:</span> <span>45331384</span></div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОКАТО:</span> <span>45280572</span></div>
+                    <div style="display: flex; justify-content: space-between; padding: 2px 0;"><span>ОКТМО:</span> <span>4535800000</span></div>
                 </div>
             </div>
             
