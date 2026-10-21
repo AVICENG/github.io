@@ -59,41 +59,6 @@ header {
     display: block;
 }
 
-/* Кнопка Мобильного Меню (Гамбургер) */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 1100;
-}
-
-.menu-toggle span {
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-bg-dark);
-    transition: all 0.25s ease;
-    transform-origin: left center;
-}
-
-/* Анимация превращения гамбургера в крестик X */
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(2px, -1px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    width: 0%;
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(2px, 1px);
-}
-
 .hw-nav ul {
     list-style: none;
     display: flex;
@@ -114,6 +79,81 @@ header {
 
 .hw-nav a:hover, .hw-nav a.active {
     color: var(--color-accent-red);
+}
+
+/* Кнопка Мобильного Меню (Гамбургер) */
+.menu-toggle {
+    display: none; /* Скрыта на ПК */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text-main);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Анимация превращения гамбургера в крестик X */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Фиксированные кнопки для карточек оборудования */
+.card-actions-row {
+    display: flex !important;
+    gap: 10px !important;
+    margin-top: auto !important;
+    padding-top: 15px !important;
+    width: 100% !important;
+}
+
+.hw-btn-fixed {
+    flex: 1 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    padding: 10px 14px !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    display: inline-block !important;
+}
+
+.hw-btn-fixed.btn-outline {
+    background-color: #ffffff !important;
+    color: #0b0f19 !important;
+    border: 1.5px solid #0b0f19 !important;
+}
+
+.hw-btn-fixed.btn-outline:hover {
+    background-color: #f4f5f7 !important;
+}
+
+.hw-btn-fixed.btn-filled {
+    background-color: #0b0f19 !important;
+    color: #ffffff !important;
+    border: 1.5px solid #0b0f19 !important;
+}
+
+.hw-btn-filled:hover {
+    background-color: #de1e26 !important;
+    border-color: #de1e26 !important;
 }
 
 /* Мощный Hero Блок в стиле IT-платформ */
@@ -181,7 +221,6 @@ header {
     gap: 15px;
 }
 
-/* Связаться с инженером — Плотная красная кнопка */
 .hw-btn {
     display: inline-block;
     background-color: var(--color-accent-red);
@@ -199,7 +238,6 @@ header {
     box-shadow: 0 4px 15px rgba(222, 30, 38, 0.3);
 }
 
-/* Наши объекты — Контурная красная кнопка (Гармония и парность) */
 .hw-btn-secondary {
     display: inline-block;
     background-color: transparent;
@@ -219,13 +257,12 @@ header {
     box-shadow: 0 4px 15px rgba(222, 30, 38, 0.3);
 }
 
-/* Главный контент — Выравнивание 1:1 по сетке */
+/* Главный контент */
 .hw-main-content {
     padding: 90px var(--side-padding);
     background-color: var(--color-bg-content);
 }
 
-/* Строгий левый блок заголовка */
 .section-header-block {
     text-align: left;
     margin-bottom: 50px;
@@ -252,14 +289,12 @@ header {
     font-weight: 400;
 }
 
-/* Чистая Grid сетка */
 .hw-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
-/* Карточки в стиле Schneider / Honeywell: Легкие, светлые, технологичные */
 .hw-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -269,49 +304,6 @@ header {
     position: relative;
 }
 
-/* Стили для кнопок внутри карточек оборудования (унифицированные) */
-.card-actions-row {
-    display: flex !important;
-    gap: 10px !important;
-    margin-top: auto !important;
-    padding-top: 15px !important;
-    width: 100% !important;
-}
-
-.hw-btn-fixed {
-    flex: 1 !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    padding: 10px 14px !important;
-    border-radius: 6px !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    transition: all 0.2s ease !important;
-    display: inline-block !important;
-}
-
-.hw-btn-fixed.btn-outline {
-    background-color: #ffffff !important;
-    color: #0b0f19 !important;
-    border: 1.5px solid #0b0f19 !important;
-}
-
-.hw-btn-fixed.btn-outline:hover {
-    background-color: #f4f5f7 !important;
-}
-
-.hw-btn-fixed.btn-filled {
-    background-color: #0b0f19 !important;
-    color: #ffffff !important;
-    border: 1.5px solid #0b0f19 !important;
-}
-
-.hw-btn-fixed.btn-filled:hover {
-    background-color: #de1e26 !important;
-    border-color: #de1e26 !important;
-}
-
-/* УБРАНЫ черные дыры. Теперь здесь легкий, премиальный серый фон с синим акцентом */
 .card-image-wrapper { 
     width: 100%; 
     height: 120px; 
@@ -326,7 +318,7 @@ header {
 .card-image { 
     max-width: 44px !important; 
     max-height: 44px !important; 
-    color: var(--color-accent-blue); /* Инженерный синий цвет иконки */
+    color: var(--color-accent-blue);
     transition: transform 0.3s ease; 
 }
 
@@ -358,7 +350,6 @@ header {
     font-weight: 400; 
 }
 
-/* Эффект наведения: благородное появление красной плашки и легкая тень */
 .hw-card:hover { 
     transform: translateY(-4px); 
     box-shadow: 0 15px 30px rgba(15, 23, 42, 0.05); 
@@ -415,79 +406,65 @@ footer {
     background-color: #10b981;
     border-radius: 50%;
     display: inline-block;
-    position: relative;
-}
-
-/* Пульсация индикатора активности */
-.footer-status-dot::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: #10b981;
-    border-radius: 50%;
-    animation: statusPulse 2s infinite ease-in-out;
+    box-shadow: 0 0 8px #10b981;
+    animation: statusPulse 2s infinite;
 }
 
 @keyframes statusPulse {
-    0% { transform: scale(1); opacity: 0.7; }
-    100% { transform: scale(2.5); opacity: 0; }
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-/* МЕДИА-ЗАПРОСЫ ДЛЯ СМАРТФОНОВ (Ширина менее 768px) */
+/* АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
 @media (max-width: 767px) {
-    :root {
-        --side-padding: 5%;
-    }
-
     header {
-        padding: 16px var(--side-padding);
+        padding: 15px var(--side-padding);
+        position: relative;
     }
 
+    /* Гамбургер всегда виден в правом углу, независимо от логотипа */
     .menu-toggle {
-        display: flex; /* Показываем гамбургер */
+        display: flex;
     }
 
-    /* Мобильное выпадающее меню */
+    /* Превращаем горизонтальное меню в выпадающее мобильное */
     .hw-nav {
+        display: block;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: #ffffff;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
         border-bottom: 1px solid var(--color-border);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
     }
 
-    /* Класс открытия меню по клику */
+    /* Класс, который вешает JS при клике на гамбургер */
     .hw-nav.open {
         max-height: 300px;
     }
 
     .hw-nav ul {
         flex-direction: column;
-        padding: 15px var(--side-padding);
+        padding: 10px var(--side-padding) 20px var(--side-padding);
     }
 
     .hw-nav li {
         margin-left: 0;
-        margin-bottom: 16px;
-    }
-
-    .hw-nav li:last-child {
-        margin-bottom: 0;
+        margin-top: 15px;
     }
 
     .hw-nav a {
         display: block;
+        padding: 8px 0;
         font-size: 14px;
-        padding: 4px 0;
     }
 
-    /* Адаптация Hero-блока */
+    /* Оптимизация Hero блока */
     .hw-hero {
         min-height: auto;
         padding: 60px var(--side-padding);
@@ -497,23 +474,18 @@ footer {
         font-size: 28px;
     }
 
-    .hw-hero p {
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
-
     .hero-actions {
         flex-direction: column;
         gap: 12px;
     }
 
     .hw-btn, .hw-btn-secondary {
-        width: 100%;
+        display: block;
         text-align: center;
-        padding: 12px 20px;
+        width: 100%;
     }
 
-    /* Адаптация контента и сетки карточек */
+    /* Сетка и контент */
     .hw-main-content {
         padding: 50px var(--side-padding);
     }
@@ -523,14 +495,13 @@ footer {
     }
 
     .hw-grid {
-        grid-template-columns: 1fr; /* Карточки строго в один ряд */
-        gap: 20px;
+        grid-template-columns: 1fr;
     }
 
-    /* Адаптация подвала */
+    /* Подвал */
     .footer-container {
         flex-direction: column;
-        text-align: center;
         gap: 15px;
+        text-align: center;
     }
 }
