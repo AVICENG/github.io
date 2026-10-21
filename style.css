@@ -83,7 +83,7 @@ header {
 
 /* Кнопка Мобильного Меню (Гамбургер) */
 .menu-toggle {
-    display: none;
+    display: none; /* Скрыта по умолчанию на десктопах */
     flex-direction: column;
     justify-content: space-between;
     width: 26px;
@@ -251,46 +251,58 @@ footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px
 .footer-left p { font-size: 13px; color: var(--color-text-muted); }
 .footer-right { font-weight: 500; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; }
 
-/* АДАПТИВНАЯ ВЕРСТКА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+/* ==========================================
+   Адаптивная мобильная верстка (max-width: 768px)
+   ========================================== */
 @media (max-width: 768px) {
+    /* Отображение кнопки на всех страницах */
     .menu-toggle {
-        display: flex;
+        display: flex !important;
+        position: relative;
+        z-index: 1002;
     }
 
+    /* Мобильное адаптивное меню */
     .hw-nav {
-        display: none;
+        display: none; /* Изначально скрыто */
         position: absolute;
-        top: 100%;
+        top: 100%; /* Открывается прямо под шапкой */
         left: 0;
         width: 100%;
-        background-color: #ffffff;
-        border-bottom: 2px solid var(--color-accent-red);
-        box-shadow: 0 10px 20px rgba(11, 15, 25, 0.1);
-        padding: 20px var(--side-padding);
+        background-color: #ffffff !important;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08) !important;
+        border-bottom: 1px solid var(--color-border);
+        z-index: 1001; /* Поверх контента страницы */
     }
 
-    /* Отображение меню при активном классе */
-    .hw-nav.active {
-        display: block !important;
-    }
-
+    /* Вертикальный список ссылок */
     .hw-nav ul {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: column !important;
+        padding: 24px var(--side-padding) !important;
+        display: flex !important;
     }
 
     .hw-nav li {
-        margin-left: 0;
-        margin-bottom: 18px;
+        margin-left: 0 !important;
+        margin-bottom: 20px !important;
+        width: 100%;
     }
     
     .hw-nav li:last-child {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 
     .hw-nav a {
-        font-size: 15px;
         display: block;
-        padding: 5px 0;
+        font-size: 15px !important; /* Увеличено для удобного нажатия */
+        padding: 6px 0;
+        width: 100%;
+    }
+
+    /* ПРАВИЛЬНОЕ ПЕРЕКЛЮЧЕНИЕ ПРИ АКТИВАЦИИ КЛАССА .active ИЗ СКРИПТА */
+    .hw-nav.active {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 }
