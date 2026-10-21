@@ -83,7 +83,7 @@ header {
 
 /* Кнопка Мобильного Меню (Гамбургер) */
 .menu-toggle {
-    display: none; /* Скрыта на компьютерах */
+    display: none; /* Скрыта на ПК */
     flex-direction: column;
     justify-content: space-between;
     width: 26px;
@@ -101,6 +101,7 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
+/* Анимация крестика при нажатии */
 .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -140,7 +141,7 @@ header {
     border: 1.5px solid #0b0f19 !important;
 }
 
-.hw-btn-filled:hover {
+.hw-btn-fixed.btn-filled:hover {
     background-color: #de1e26 !important;
     border-color: #de1e26 !important;
 }
@@ -252,10 +253,50 @@ footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px
 .footer-right { font-weight: 500; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; }
 
 /* ==========================================================================
-   ТОЧЕЧНОЕ ИСПРАВЛЕНИЕ: ОТОБРАЖЕНИЕ КНОПКИ НА ВСЕХ МОБИЛЬНЫХ ЭКРАНАХ
+   ИСПРАВЛЕННЫЙ БЛОК АДАПТИВНОСТИ ДЛЯ СМАРТФОНОВ (ЭКРАНЫ МЕНЬШЕ 768px)
    ========================================================================== */
 @media (max-width: 768px) {
+    /* Принудительно возвращаем кнопку на всех страницах */
     .menu-toggle {
-        display: flex !important; /* Делаем кнопку видимой на смартфонах везде */
+        display: flex !important;
+    }
+
+    /* Строим выпадающую панель навигации */
+    .hw-nav {
+        display: none; /* Изначально скрыто */
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: #ffffff !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+        border-bottom: 1px solid var(--color-border) !important;
+        z-index: 2000 !important;
+    }
+
+    /* Принудительно показываем меню, когда JS добавляет класс .active */
+    .hw-nav.active {
+        display: block !important;
+    }
+
+    /* Перестраиваем ссылки в вертикальный список */
+    .hw-nav ul {
+        flex-direction: column !important;
+        padding: 20px var(--side-padding) !important;
+    }
+
+    .hw-nav li {
+        margin-left: 0 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hw-nav li:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .hw-nav a {
+        display: block !important;
+        font-size: 15px !important;
+        padding: 5px 0 !important;
     }
 }
