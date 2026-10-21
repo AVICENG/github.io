@@ -81,9 +81,9 @@ header {
     color: var(--color-accent-red);
 }
 
-/* Кнопка Мобильного Меню (Гамбургер) - ДЛЯ КОМПЬЮТЕРОВ СКРЫТА */
+/* Кнопка Мобильного Меню (Гамбургер) */
 .menu-toggle {
-    display: none;
+    display: none; /* Скрыта на компьютерах */
     flex-direction: column;
     justify-content: space-between;
     width: 26px;
@@ -91,7 +91,7 @@ header {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 1002;
 }
 
 .menu-toggle span {
@@ -101,7 +101,6 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-/* Анимация превращения гамбургера в крестик при активации */
 .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -141,7 +140,7 @@ header {
     border: 1.5px solid #0b0f19 !important;
 }
 
-.hw-btn-fixed.btn-filled:hover {
+.hw-btn-filled:hover {
     background-color: #de1e26 !important;
     border-color: #de1e26 !important;
 }
@@ -253,103 +252,10 @@ footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px
 .footer-right { font-weight: 500; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; }
 
 /* ==========================================================================
-   АДАПТИВНАЯ ВЕРСТКА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (ЭКРАНЫ МЕНЬШЕ 768px)
+   ТОЧЕЧНОЕ ИСПРАВЛЕНИЕ: ОТОБРАЖЕНИЕ КНОПКИ НА ВСЕХ МОБИЛЬНЫХ ЭКРАНАХ
    ========================================================================== */
 @media (max-width: 768px) {
-    /* 1. Показываем кнопку гамбургера */
     .menu-toggle {
-        display: flex !important;
-    }
-
-    /* 2. Трансформируем панель навигации в выпадающий блок */
-    .hw-nav {
-        display: none; /* Изначально скрыто */
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        background-color: #ffffff !important;
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08) !important;
-        border-bottom: 1px solid var(--color-border) !important;
-        z-index: 9999 !important;
-    }
-
-    /* Меняем направление ссылок на вертикальное */
-    .hw-nav ul {
-        flex-direction: column !important;
-        padding: 25px var(--side-padding) !important;
-    }
-
-    .hw-nav li {
-        margin-left: 0 !important;
-        margin-bottom: 20px !important;
-    }
-    
-    .hw-nav li:last-child {
-        margin-bottom: 0 !important;
-    }
-
-    .hw-nav a {
-        display: block !important;
-        font-size: 16px !important;
-        padding: 8px 0 !important;
-        width: 100% !important;
-    }
-
-    /* 3. Отображение при активации скриптом */
-    .hw-nav.active {
-        /* ==========================================================================
-   ФИКСАЦИЯ МОБИЛЬНОГО МЕНЮ (ЭКРАНЫ МЕНЬШЕ 768px)
-   ========================================================================== */
-@media (max-width: 768px) {
-    /* Принудительно отображаем гамбургер на телефонах */
-    .menu-toggle {
-        display: flex !important;
-        position: relative !important;
-        z-index: 100000 !important; /* Кнопка ВСЕГДА поверх выпадающего меню */
-    }
-
-    /* Превращаем навигацию в выпадающее окно поверх контента */
-    .hw-nav {
-        display: none !important; /* Скрыто по умолчанию на мобильных */
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        background-color: #ffffff !important;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15) !important;
-        border-bottom: 1px solid var(--color-border) !important;
-        z-index: 99999 !important; /* Меню перекрывает .hw-hero и карточки */
-    }
-
-    /* Активация отображения меню скриптом */
-    .hw-nav.active {
-        display: block !important;
-    }
-
-    /* Вертикальное выравнивание ссылок */
-    .hw-nav ul {
-        flex-direction: column !important;
-        padding: 25px var(--side-padding) !important;
-    }
-
-    .hw-nav li {
-        margin-left: 0 !important;
-        margin-bottom: 18px !important;
-    }
-    
-    .hw-nav li:last-child {
-        margin-bottom: 0 !important;
-    }
-
-    .hw-nav a {
-        display: block !important;
-        font-size: 16px !important;
-        padding: 8px 0 !important;
-        width: 100% !important;
-    }
-}
-
-        display: block !important;
+        display: flex !important; /* Делаем кнопку видимой на смартфонах везде */
     }
 }
