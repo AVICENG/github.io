@@ -83,7 +83,7 @@ header {
 
 /* Кнопка Мобильного Меню (Гамбургер) */
 .menu-toggle {
-    display: none; /* Скрыта на компьютерах */
+    display: none; /* Изначально скрыта на компьютерах */
     flex-direction: column;
     justify-content: space-between;
     width: 26px;
@@ -91,7 +91,7 @@ header {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 10005; /* Кнопка всегда выше выпадающей панели */
+    z-index: 10005; /* Кнопка ВСЕГДА выше выпадающего меню */
 }
 
 .menu-toggle span {
@@ -101,7 +101,7 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-/* Анимация крестика */
+/* Анимация крестика при нажатии */
 .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -218,7 +218,7 @@ header {
 .section-header-block { text-align: left; margin-bottom: 50px; }
 .section-header-block h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; color: var(--color-bg-dark); margin-bottom: 12px; }
 .section-header-line { width: 60px; height: 3px; background-color: var(--color-accent-red); margin-bottom: 15px; }
-.section-header-block p { font-size: 15px; color: var(--text-muted); font-weight: 400; }
+.section-header-block p { font-size: 15px; color: var(--color-text-muted); font-weight: 400; }
 
 .hw-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
@@ -256,14 +256,16 @@ footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px
    БЛОК АДАПТИВНОСТИ ДЛЯ МОБИЛЬНЫХ (СТРОГО МЕНЬШЕ 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Показываем гамбургер */
+    /* Принудительно показываем гамбургер на мобильных */
     .menu-toggle {
         display: flex !important;
+        position: relative !important;
+        z-index: 10005 !important;
     }
 
-    /* Выпадающая панель меню */
+    /* Выпадающая панель мобильного меню */
     .hw-nav {
-        display: none !important; /* По умолчанию скрыта */
+        display: none !important; /* Изначально скрыта */
         position: absolute !important;
         top: 100% !important;
         left: 0 !important;
@@ -271,15 +273,15 @@ footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px
         background-color: #ffffff !important;
         box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12) !important;
         border-bottom: 1px solid var(--color-border) !important;
-        z-index: 10000 !important; /* Меню гарантированно выше контента страницы */
+        z-index: 10000 !important; /* Панель перекрывает баннер .hw-hero */
     }
 
-    /* Включаем отображение при добавлении класса .active */
+    /* Отображаем меню при добавлении класса .active встроенным JS-скриптом */
     .hw-nav.active {
         display: block !important;
     }
 
-    /* Вертикальный список ссылок */
+    /* Перестраиваем ссылки в вертикальный список */
     .hw-nav ul {
         flex-direction: column !important;
         padding: 25px var(--side-padding) !important;
