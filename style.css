@@ -83,7 +83,7 @@ header {
 
 /* Кнопка Мобильного Меню (Гамбургер) */
 .menu-toggle {
-    display: none;
+    display: none; /* Изначально скрыта на компьютерах */
     flex-direction: column;
     justify-content: space-between;
     width: 26px;
@@ -91,7 +91,7 @@ header {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 10005;
+    z-index: 10005; /* Кнопка ВСЕГДА выше выпадающего меню */
 }
 
 .menu-toggle span {
@@ -101,6 +101,7 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
+/* Анимация крестика при нажатии */
 .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -138,7 +139,14 @@ header {
     background-color: #0b0f19 !important;
     color: #ffffff !important;
     border: 1.5px solid #0b0f19 !important;
-}/* Hero Блок */
+}
+
+.hw-btn-fixed.btn-filled:hover {
+    background-color: #de1e26 !important;
+    border-color: #de1e26 !important;
+}
+
+/* Hero Блок */
 .hw-hero { 
     position: relative; 
     background-color: var(--color-bg-dark);
@@ -286,20 +294,28 @@ footer {
 }
 
 @keyframes statusPulse {
-    0% { transform: scale(1); opacity: 0.75; }
-    100% { transform: scale(2.5); opacity: 0; }
+    0% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
 }
 
 /* ==========================================================================
    БЛОК АДАПТИВНОСТИ ДЛЯ МОБИЛЬНЫХ (СТРОГО МЕНЬШЕ 768px)
    ========================================================================== */
 @media (max-width: 768px) {
+    /* Принудительно показываем гамбургер на мобильных */
     .menu-toggle {
         display: flex !important;
         position: relative !important;
         z-index: 10005 !important;
     }
 
+    /* Выпадающая панель мобильного меню */
     .hw-nav {
         display: none !important; 
         position: absolute !important;
@@ -312,34 +328,6 @@ footer {
         z-index: 10000 !important; 
     }
 
+    /* Отображаем меню при добавлении класса .active встроенным JS-скриптом */
     .hw-nav.active {
         display: block !important;
-    }
-
-    .hw-nav ul {
-        flex-direction: column !important;
-        padding: 25px var(--side-padding) !important;
-    }
-
-    .hw-nav li {
-        margin-left: 0 !important;
-        margin-bottom: 18px !important;
-    }
-
-    .hw-nav li:last-child {
-        margin-bottom: 0 !important;
-    }
-
-    .hw-nav a {
-        display: block !important;
-        font-size: 16px !important;
-        padding: 6px 0 !important;
-        width: 100% !important;
-    }
-}
-
-
-.hw-btn-fixed.btn-filled:hover {
-    background-color: #de1e26 !important;
-    border-color: #de1e26 !important;
-}
