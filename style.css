@@ -81,9 +81,9 @@ header {
     color: var(--color-accent-red);
 }
 
-/* Кнопка Мобильного Меню (Гамбургер, если он есть в HTML) */
+/* Кнопка Мобильного Меню (Гамбургер) */
 .menu-toggle {
-    display: none;
+    display: none; /* Скрыта по умолчанию на десктопах */
     flex-direction: column;
     justify-content: space-between;
     width: 26px;
@@ -251,93 +251,51 @@ footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px
 .footer-left p { font-size: 13px; color: var(--color-text-muted); }
 .footer-right { font-weight: 500; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; }
 
-.footer-status-dot {
-    width: 7px; height: 7px; background-color: #10b981; border-radius: 50%; display: inline-block;
-    box-shadow: 0 0 8px #10b981; animation: statusPulse 2s infinite;
-}
-
-@keyframes statusPulse {
-    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-}
-
-/* МОБИЛЬНАЯ АДАПТИВНОСТЬ БЕЗ ИЗМЕНЕНИЯ HTML СТРАНИЦ */
-@media (max-width: 767px) {
-    header {
-        padding: 15px var(--side-padding);
-        position: relative !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-
-    /* Логотип остается строго СЛЕВА */
-    .hw-logo {
-        margin-right: auto !important;
-    }
-
-    /* ИСКУССТВЕННЫЙ ГАМБУРГЕР: Генерируется через CSS в правый угол */
-    header::after {
-        content: "";
-        display: block;
-        width: 24px;
-        height: 16px;
-        /* Рисуем 3 полоски градиентом */
-        background: linear-gradient(
-            to bottom,
-            #0f172a, #0f172a 2px,
-            transparent 2px, transparent 7px,
-            #0f172a 7px, #0f172a 9px,
-            transparent 9px, transparent 14px,
-            #0f172a 14px, #0f172a 16px
-        );
-        cursor: pointer;
-        z-index: 1005;
-        position: absolute;
-        right: var(--side-padding);
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    /* Если физическая кнопка все же есть на главной — скрываем её дубль, доверяя нашему CSS */
+/* ==========================================================================
+   АДАПТИВНАЯ ВЕРСТКА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (Добавлено для работы гамбургера)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Отображаем кнопку гамбургера */
     .menu-toggle {
-        display: none !important;
+        display: flex;
     }
 
-    /* Поведение выпадающего меню на мобильных */
+    /* Перестраиваем навигацию в выпадающее мобильное меню */
     .hw-nav {
-        display: block !important;
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        background-color: #ffffff !important;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05) !important;
-        border-bottom: 1px solid var(--color-border) !important;
-        max-height: 0 !important;
-        overflow: hidden !important;
-        transition: max-height 0.3s ease-in-out !important;
-        z-index: 1001 !important;
+        display: none; /* Скрыто по умолчанию */
+        position: absolute;
+        top: 100%; /* Появляется строго под шапкой */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 20px rgba(11, 15, 25, 0.1);
+        border-bottom: 1px solid var(--color-border);
+        padding: 20px var(--side-padding);
+        z-index: 999;
     }
 
-    /* Открытие меню при клике по шапке на смартфонах */
-    header:active .hw-nav, 
-    header:focus-within .hw-nav {
-        max-height: 300px !important;
+    /* Показываем меню при добавлении класса .active (через JavaScript) */
+    .hw-nav.active {
+        display: block;
     }
 
-    .hw-nav ul { flex-direction: column !important; padding: 10px var(--side-padding) 20px var(--side-padding) !important; }
-    .hw-nav li { margin-left: 0 !important; margin-top: 15px !important; }
-    .hw-nav a { display: block !important; padding: 8px 0 !important; font-size: 14px !important; }
+    /* Разворачиваем пункты меню вертикально */
+    .hw-nav ul {
+        flex-direction: column;
+    }
 
-    /* Мобильный скролл блоков */
-    .hw-hero { min-height: auto !important; padding: 60px var(--side-padding) !important; }
-    .hw-hero h1 { font-size: 28px !important; }
-    .hero-actions { flex-direction: column !important; gap: 12px !important; }
-    .hw-btn, .hw-btn-secondary { display: block !important; text-align: center !important; width: 100% !important; }
-    .hw-main-content { padding: 50px var(--side-padding) !important; }
-    .section-header-block h2 { font-size: 24px !important; }
-    .hw-grid { grid-template-columns: 1fr !important; }
-    .footer-container { flex-direction: column !important; gap: 15px !important; text-align: center !important; }
+    .hw-nav li {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .hw-nav li:last-child {
+        margin-bottom: 0;
+    }
+
+    .hw-nav a {
+        font-size: 15px;
+        display: block;
+        padding: 5px 0;
+    }
 }
