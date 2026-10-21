@@ -3,50 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выполненные объекты | AVIC ENGSERVICE</title>
-    <!-- Подключаем шрифт Inter для индустриальной типографики -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="/github.io/style.css">
+    <title>Выполненные объекты | AVIC PRO</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <style>
-        /* Индустриальные B2B стили для контента Honeywell Style */
-        .container { padding: 60px 8%; background: #ffffff; min-height: 600px; box-sizing: border-box; }
-        .page-title { font-size: 38px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 40px; color: #1a1a1a; }
-        
-        /* Промышленная таблица объектов (Референс-лист) */
-        .project-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .project-table th { background-color: #1a1a1a; color: #ffffff; padding: 16px 14px; text-align: left; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid #1a1a1a; }
-        .project-table td { padding: 16px 14px; border: 1px solid #e5e5e5; font-size: 14px; color: #222222; vertical-align: top; line-height: 1.5; }
-        .project-table tr:nth-child(even) { background-color: #f9f9f9; }
-        .project-table tr:hover { background-color: #f1f1f1; }
-        
-        .date-col { font-weight: 700; color: #de1e26; width: 110px; white-space: nowrap; }
-        .object-col { font-weight: 700; color: #1a1a1a; width: 380px; }
-        .object-col span { display: block; font-weight: 400; font-size: 12px; color: #767676; margin-top: 4px; text-transform: none; letter-spacing: 0; }
+        .hw-project-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+        }
+        .hw-project-table th {
+            background-color: var(--color-bg-dark);
+            color: #ffffff;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .hw-project-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 14px;
+            color: var(--color-text-main);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        .hw-project-table tr:last-child td {
+            border-bottom: none;
+        }
+        .hw-project-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .hw-project-table tr:hover {
+            background-color: #f1f5f9;
+        }
+        .date-col {
+            font-weight: 700;
+            color: var(--color-accent-red);
+            width: 120px;
+            white-space: nowrap;
+        }
+        .object-col {
+            font-weight: 700;
+            color: var(--color-bg-dark);
+            width: 380px;
+        }
+        .object-col span {
+            display: block;
+            font-weight: 400;
+            font-size: 12px;
+            color: var(--color-text-muted);
+            margin-top: 6px;
+        }
+        @media (max-width: 768px) {
+            .hw-project-table, .hw-project-table tbody, .hw-project-table tr, .hw-project-table td, .hw-project-table th {
+                display: block;
+                width: 100%;
+            }
+            .hw-project-table thead {
+                display: none;
+            }
+            .hw-project-table tr {
+                border-bottom: 1px solid var(--color-border);
+                padding: 15px 10px;
+            }
+            .hw-project-table td {
+                padding: 5px 10px;
+                border: none;
+            }
+            .object-col {
+                margin: 8px 0;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Шапка сайта с жесткими путями для вашего репозитория /github.io/ -->
     <header>
         <div class="hw-logo">
-            <a href="/github.io/index.html">AVIC<span class="dot">.</span></a>
-            <div class="hw-sub">engservice</div>
+            <a href="../index.html">
+                <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://www.w3.org/2000/svg" style="height: 46px !important;">
+                    <g transform="translate(2, 6)">
+                        <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round"/>
+                        <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g transform="translate(79, 1.5)">
+                            <path d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </g>
+                    <g transform="translate(2, 0)">
+                        <text class="hw-logo-text-sub" x="2" y="42.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#767676" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
+                    </g>
+                </svg>
+            </a>
         </div>
         <nav class="hw-nav">
             <ul>
-                <li><a href="/github.io/index.html">Главная</a></li>
-                <li><a href="/github.io/p/equipment.html">Оборудование</a></li>
-                <li><a href="/github.io/p/objects.html" class="active">Объекты</a></li>
-                <li><a href="/github.io/p/contacts.html">Контакты</a></li>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="equipment.html">Оборудование</a></li>
+                <li><a href="objects.html" class="active">Объекты</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
     </header>
+    
+    <section class="hw-hero">
+        <div class="hero-content">
+            <div class="hero-tag">Engineering Experience &amp; Reference List</div>
+            <h1>Выполненные и <span class="text-accent">текущие объекты</span></h1>
+            <p>Референс-лист успешно реализованных проектов автоматизации, модернизации систем диспетчеризации (BMS) и технического обслуживания на критически важных объектах городской инфраструктуры.</p>
+            <div class="hero-actions">
+                <a href="contacts.html" class="hw-btn">Обсудить ваш проект</a>
+            </div>
+        </div>
+    </section>
+    
+    <main class="hw-main-content">
+        <div class="section-header-block">
+            <h2>Реестр реализованных проектов</h2>
+            <div class="section-header-line"></div>
+            <p>Опыт внедрения комплексных инжиниринговых решений от государственных учреждений до технологических корпораций.</p>
+        </div>
 
-    <!-- Главная контентная зона референс-листа -->
-    <main class="container">
-        <h1 class="page-title">Выполненные и текущие объекты</h1>
-        
-        <table class="project-table">
+        <table class="hw-project-table">
             <thead>
                 <tr>
                     <th class="date-col">Дата</th>
@@ -57,7 +146,7 @@
             <tbody>
                 <tr>
                     <td class="date-col">24.08.2024</td>
-                    <td class="object-col">«Киноконцертный комплекс и съемочный павильон №17»<span>г.  Москва, Раменки, Мосфильмовская ул.</span></td>
+                    <td class="object-col">«Киноконцертный комплекс и съемочный павильон №17»<span>г. Москва, Раменки, Мосфильмовская ул.</span></td>
                     <td>Выполнены программирование и пусконаладочные работы системы автоматизации и диспетчеризации инженерных систем.</td>
                 </tr>
                 <tr>
@@ -132,56 +221,23 @@
                 </tr>
                 <tr>
                     <td class="date-col">28.01.2016</td>
-                    <td class="object-col">МХТ им. Чехова<span>г. Москва, Камергерский пер., 3</span></td>
-                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем на объекте реконструкции.</td>
+                    <td class="object-col">МХТ им. Чехова<span>г. Москва, Камергерский пер., д. 3</span></td>
+                    <td>Выполнены работы по модернизации и пусконаладке систем автоматизации вентиляционного оборудования сценариев дымоудаления.</td>
                 </tr>
-                <tr>
-                    <td class="date-col">26.07.2015</td>
-                    <td class="object-col">ЖК "Литератор"<span>г. Москва, ул. Льва Толстого, 23, корпус Ж</span></td>
-                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем.</td>
-                </tr>
-                <tr>
-                    <td class="date-col">17.04.2015</td>
-                    <td class="object-col">ТЦ "Ковчег"<span>г. Москва, ул. Малая Филевская, 13</span></td>
-                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем здания.</td>
-                </tr>
-                <tr>
-                    <td class="date-col">18.08.2014</td>
-                    <td class="object-col">ТРЦ "Гудзон" ("GoodZone")<span>г. Москва, Каширское шоссе, 12</span></td>
-                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем кинотеатра "Люксор", Гипермаркета "О'КЕЙ", "М-Видео" и офисных помещений.</td>
-                </tr>
-                <tr>
-                    <td class="date-col">25.05.2013</td>
-                    <td class="object-col">Здание инженерных служб ГУП "Московский метрополитен"<span>г.  Москва, ул. Гиляровского 37/1</span></td>
-                    <td>Выполняется техническое обслуживание автоматизации и диспетчеризации инженерных систем.</td>
-                </tr>
-                                <tr>
-                    <td class="date-col">15.05.2013</td>
-                    <td class="object-col">ОАО "Сбербанк России"<span>Здание кассового узла Москва, Волгоградский пр., д. 32, корп. 45</span></td>
-                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем здания.</td>
-                </tr>
-                <tr>
-                    <td class="date-col">01.08.2012</td>
-                    <td class="object-col">Гостиница и ТДЦ "Lotte"<span>г. Москва, Новинский бульвар, 8</span></td>
-                    <td>Выполняется техническое обслуживание систем автоматики и диспетчеризации зданий.</td>
-                </tr>
-                <tr>
-                    <td class="date-col">14.11.2011</td>
-                    <td class="object-col">"Bloomberg"<span>г. Москва, Романов переулок, 4</span></td>
-                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем.</td>
-                </tr>
-                <tr>
-                    <td class="date-col">19.03.2011</td>
-                    <td class="object-col">"Сбербанк России" (МЕГА ЦОД)<span>г. Москва, 2-ой Южнопортовый проезд</span></td>
-                    <td>Выполнены работы по автоматизации и диспетчеризации инженерных систем.</td>
-                </tr>
-                <tr>
-                    <td class="date-col">15.07.2010</td>
-                    <td class="object-col">Банк Москвы<span>г.  Москва, ул. Трубная, 2</span></td>
-                    <td>Выполнены работы по диспетчеризации инженерных систем, выполняется техническое обслуживание систем автоматики и диспетчеризации здания.</td>
-                </tr>
-                <tr>
-                    <td class="date-col">20.01.2010</td>
-                    <td class="object-col">Мемориальный Музей Космонавтики<span>г. Москва, Проспект Мира, 101</span></td>
-                    <td>Выполнены работы по диспетчеризации инженерных систем.</td>
-                </tr>
+            </tbody>
+        </table>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>© 2026 ООО «АВИК ПРО» | Инжиниринг, автоматизация и капитальное строительство</p>
+            </div>
+            <div class="footer-right">
+                <span class="footer-status-dot"></span> Системы работают в штатном режиме
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
