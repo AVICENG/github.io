@@ -108,6 +108,10 @@ header {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+.hw-btn:hover {
+    background-color: #b5151b;
 }
 
 .hw-grid {
@@ -175,8 +179,9 @@ footer {
 .footer-brand { font-weight: 700; font-size: 20px; }
 .footer-brand span { color: #de1e26; }
 
-/* Кастомизация логотипа под темные внутренние страницы (при необходимости) */
-header.dark-page-header .hw-logo-svg text:first-of-type { fill: #ffffff !important; }
-header.dark-page-header .hw-logo-svg text:last-of-type { fill: #a0abc0 !important; }
+/* Адаптация нового логотипа под темные внутренние страницы */
 header.dark-page-header { background-color: #0b0f19 !important; border-bottom: 1px solid #1e293b !important; }
 header.dark-page-header .hw-nav a { color: #ffffff !important; }
+header.dark-page-header .hw-logo-svg .hw-logo-text-main { fill: #ffffff !important; }
+header.dark-page-header .hw-logo-svg .hw-logo-text-sub { fill: #a0abc0 !important; }
+header.dark-page-header .hw-logo-svg .hw-logo-node { fill: #ffffff !important; }
