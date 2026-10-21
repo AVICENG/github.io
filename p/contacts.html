@@ -47,39 +47,41 @@
     <main class="internal-container">
         <h1 class="page-title">Контакты</h1>
         
+        <!-- Сетка выровнена: обе карточки имеют одинаковую структуру и внутренние поля -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; align-items: start;">
             
-            <!-- Левая часть (Контакты и карты) -->
-            <div>
-                <p style="font-size: 24px; font-weight: 700; margin-bottom: 10px; color: #de1e26;">+7 (925) 134-50-90</p>
-                <p style="font-size: 16px; color: #666; margin-bottom: 30px;">info@aviceng.com</p>
+            <!-- Левая часть (Контакты и карты) упакована в карточку в едином стиле сайта -->
+            <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid #e5e5e5; padding-bottom: 8px; color: #0b0f19;">Связь с инженером</h3>
+                    
+                    <p style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #de1e26;">+7 (925) 134-50-90</p>
+                    <p style="font-size: 16px; color: #666; margin-bottom: 25px;">info@aviceng.com</p>
+                    
+                    <p style="font-weight: 700; margin-bottom: 5px; color: #0b0f19;">Адрес офиса:</p>
+                    <p style="color: #333; line-height: 1.6; margin-bottom: 25px;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
+                </div>
                 
-                <p style="font-weight: 700; margin-bottom: 5px;">Адрес офиса:</p>
-                <p style="color: #333; line-height: 1.6; margin-bottom: 30px;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
-                
-                <!-- Баннер карт -->
-                <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26;">
-                    <p style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Интерактивная карта маршрута</p>
-                    <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Выберите удобный навигационный сервис для открытия точных координат компании на Мурманском проезде</p>
+                <!-- Внутренний интерактивный баннер карт -->
+                <div style="background: #ffffff; padding: 20px; border: 1px solid #e5e5e5; border-radius: 2px; margin-top: auto;">
+                    <p style="font-weight: 700; font-size: 13px; margin-bottom: 6px; color: #0b0f19;">Интерактивная карта маршрута</p>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 12px; line-height: 1.4;">Выберите навигационный сервис для открытия точных координат компании</p>
                     <div style="display: flex; gap: 10px;">
-                        <a href="https://google.com" target="_blank" style="background: #0b0f19; color: #fff; padding: 8px 14px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Google Maps</a>
-                        <a href="https://yandex.ru" target="_blank" style="background: #de1e26; color: #fff; padding: 8px 14px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Яндекс.Карты</a>
+                        <a href="https://google.com" target="_blank" style="background: #0b0f19; color: #fff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Google Maps</a>
+                        <a href="https://yandex.ru" target="_blank" style="background: #de1e26; color: #fff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Яндекс.Карты</a>
                     </div>
                 </div>
             </div>
             
-            <!-- Правая часть (Реквизиты) -->
+            <!-- Правая часть (Реквизиты) — идеальный близнец левой по стилю и высоте -->
             <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; height: 100%;">
                 
                 <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid #e5e5e5; padding-bottom: 8px; color: #0b0f19;">Официальные реквизиты</h3>
                 
-                <!-- Идеально сбалансированный бейдж. Ширина скорректирована до 136px для выравнивания правого поля -->
+                <!-- Симметричный инвертированный бейдж с ровными отступами со всех сторон -->
                 <div style="display: flex; justify-content: flex-start; margin-bottom: 20px;">
                     <svg width="136" height="49" viewBox="0 0 136 49" xmlns="http://w3.org" style="display: block; background: #0b0f19; border-radius: 2px;">
-                        <!-- Рамка по контуру бейджа -->
                         <rect x="0.5" y="0.5" width="135.2" height="48" rx="2" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
-                        
-                        <!-- Внутренний контур (Смещения выровнены: 5px слева, 5px сверху) -->
                         <g transform="translate(5, 5)">
                             <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -91,7 +93,6 @@
                                 <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
                             </g>
                         </g>
-                        <!-- Подстрочник выровнен: 5px слева, 5px снизу до рамки -->
                         <g transform="translate(5, 0)">
                             <text x="2" y="43.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#ffffff" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
                         </g>
@@ -113,10 +114,3 @@
     </main>
     
     <footer>
-        <div class="footer-left">
-            <p>© 2026 ООО «АВИК ПРО» | Инжиниринг, автоматизация и строительство</p>
-        </div>
-    </footer>
-
-</body>
-</html>
