@@ -47,7 +47,10 @@
     <main class="internal-container">
         <h1 class="page-title">Контакты</h1>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-bottom: 60px;">
+        <!-- Сетка выровнена: обе части стартуют строго с одной высоты -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; align-items: start;">
+            
+            <!-- Левая часть (Контакты и карты) -->
             <div>
                 <p style="font-size: 24px; font-weight: 700; margin-bottom: 10px; color: #de1e26;">+7 (925) 134-50-90</p>
                 <p style="font-size: 16px; color: #666; margin-bottom: 30px;">info@aviceng.com</p>
@@ -56,7 +59,7 @@
                 <p style="color: #333; line-height: 1.6; margin-bottom: 30px;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
                 
                 <!-- Баннер карт -->
-                <div style="background: #f4f4f4; padding: 20px; border-left: 4px solid #de1e26; margin-bottom: 20px;">
+                <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26;">
                     <p style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Интерактивная карта маршрута</p>
                     <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Выберите удобный навигационный сервис для открытия точных координат компании на Мурманском проезде</p>
                     <div style="display: flex; gap: 10px;">
@@ -66,53 +69,48 @@
                 </div>
             </div>
             
-            <!-- Карточка официальных реквизитов -->
-            <div style="background: #ffffff; padding: 30px; border-top: 4px solid #0b0f19; box-shadow: 0 4px 15px rgba(0,0,0,0.02); height: fit-content;">
-                
-                <!-- Универсальный темный прямоугольный модуль со встроенными равными отступами -->
-                <div style="margin-bottom: 25px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="150" height="62" viewBox="0 0 150 62" xmlns="http://w3.org" style="display: block; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-                        <!-- Фон: идеально выровненный прямоугольник #0b0f19 со скруглением 3px -->
-                        <rect x="0" y="0" width="150" height="62" rx="3" fill="#0b0f19"/>
+            <!-- Правая часть (Реквизиты) — теперь идеально подогнана к левой по стилю и высоте -->
+            <div style="background: #f4f4f4; padding: 25px; border-left: 4px solid #de1e26; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid #e5e5e5; padding-bottom: 8px; color: #0b0f19;">Официальные реквизиты</h3>
+                    
+                    <div style="font-size: 13px; color: #333; line-height: 2.2; margin-bottom: 20px;">
+                        <div style="border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><strong>ООО "АВИК ПРО"</strong></div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ИНН:</span> <strong>7717290070</strong></div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>КПП:</span> <strong>771701001</strong></div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОГРН:</span> <strong>1157746486083</strong></div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОКПО:</span> <span>45331384</span></div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e5e5e5; padding: 2px 0;"><span>ОКАТО:</span> <span>45280572</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 2px 0;"><span>ОКТМО:</span> <span>4535800000</span></div>
+                    </div>
+                </div>
+
+                <!-- Утонченный шильд: тонкая рамка 1px, фон прозрачный, оригинальные темные буквы -->
+                <div style="display: flex; justify-content: center; margin-top: auto; padding-top: 10px;">
+                    <svg width="140" height="52" viewBox="0 0 140 52" xmlns="http://w3.org" style="display: block;">
+                        <!-- Тонкая полоска вокруг логотипа -->
+                        <rect x="0.5" y="0.5" width="139" height="51" rx="2" fill="none" stroke="#0b0f19" stroke-width="1" opacity="0.3"/>
                         
-                        <!-- Графический контур логотипа, смещенный ровно в центр (+10px по X, +10px по Y) -->
-                        <g transform="translate(12, 10)">
-                            <!-- Буква "а" (Фирменный красный #de1e26) -->
+                        <!-- Оригинальный логотип внутри рамки -->
+                        <g transform="translate(5, 5)">
                             <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" 
                                   fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
-                            
-                            <!-- Буквы VIC (Белый цвет #ffffff) -->
-                            <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round"/>
-                            <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-                            
+                            <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round"/>
+                            <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
                             <g transform="translate(79, 1.5)">
-                                <!-- Буквы P и R (Белый цвет #ffffff) -->
-                                <path d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <!-- Буква O (Фирменный красный #de1e26) -->
+                                <path d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
                             </g>
                         </g>
-                        <!-- Подстрочник (Белый цвет #ffffff), также идеально центрирован -->
-                        <g transform="translate(12, 5.5)">
-                            <text x="2" y="38.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#ffffff" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
+                        <g transform="translate(5, 6)">
+                            <text x="2" y="38.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#767676" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
                         </g>
                     </svg>
                 </div>
-
-                <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 8px; color: #1a1a1a;">Официальные реквизиты</h3>
-                
-                <div style="font-size: 13px; color: #444; line-height: 2.2;">
-                    <div style="border-bottom: 1px solid #eee; padding: 4px 0;"><strong>ООО "АВИК ПРО"</strong></div>
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>ИНН:</span> <strong>7717290070</strong></div>
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>КПП:</span> <strong>771701001</strong></div>
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>ОГРН:</span> <strong>1157746486083</strong></div>
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>ОКПО:</span> <span>45331384</span></div>
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>ОКАТО:</span> <span>45280572</span></div>
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 4px 0;"><span>ОКТМО:</span> <span>4535800000</span></div>
-                </div>
             </div>
+            
         </div>
     </main>
     
