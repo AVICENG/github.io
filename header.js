@@ -1,19 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Находим пустой тег <header></header> на странице
     const headerElement = document.querySelector('header');
     
     if (headerElement) {
-        // Умная проверка: если в адресе страницы есть "/p/", значит мы во вложенной папке
-        const isSubDir = window.location.pathname.includes('/p/');
+        // Проверяем, находится ли текущая страница в подпапке "/p/"
+        const inSubDir = window.location.pathname.includes('/p/');
         
-        // Настраиваем префиксы путей
-        const base = isSubDir ? '../' : '';
-        const pBase = isSubDir ? '' : 'p/';
+        // Если мы в папке "p", то к главной нужно подняться наверх (../), а остальные файлы в этой же папке
+        const homePath = inSubDir ? '../index.html' : 'index.html';
+        const eqPath   = inSubDir ? 'equipment.html' : 'p/equipment.html';
+        const objPath  = inSubDir ? 'objects.html' : 'p/objects.html';
+        const contPath = inSubDir ? 'contacts.html' : 'p/contacts.html';
 
-        // Вставляем единую HTML-разметку шапки
+        // Вставляем HTML шапки
         headerElement.innerHTML = `
             <div class="hw-logo">
-                <a href="${base}index.html">
+                <a href="${homePath}">
                     <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://w3.org" style="height: 46px !important;">
                         <g transform="translate(2, 6)">
                             <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -33,30 +34,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 </a>
             </div>
             
-            <!-- КНОПКА ГАМБУРГЕРА -->
             <button class="menu-toggle" id="mobileMenuBtn" aria-label="Открыть меню">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <!-- ПАНЕЛЬ НАВИГАЦИИ -->
             <nav class="hw-nav" id="mobileNav">
                 <ul>
-                    <li><a href="${base}index.html">Главная</a></li>
-                    <li><a href="${base}${pBase}equipment.html">Оборудование</a></li>
-                    <li><a href="${base}${pBase}objects.html">Объекты</a></li>
-                    <li><a href="${base}${pBase}contacts.html">Контакты</a></li>
+                    <li><a href="${homePath}">Главная</a></li>
+                    <li><a href="${eqPath}">Оборудование</a></li>
+                    <li><a href="${objPath}">Объекты</a></li>
+                    <li><a href="${contPath}">Контакты</a></li>
                 </ul>
             </nav>
         `;
 
-        // Оживляем кнопки сразу после создания HTML-структуры шапки
+        // Логика работы мобильного меню
         const menuButton = document.getElementById('mobileMenuBtn');
         const navigationPanel = document.getElementById('mobileNav');
 
         if (menuButton && navigationPanel) {
-            // Клик по гамбургеру
             menuButton.addEventListener('click', (event) => {
                 event.preventDefault();
                 event.stopPropagation();
@@ -64,12 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 navigationPanel.classList.toggle('active');
             });
 
-            // Изолируем клики внутри панели меню
             navigationPanel.addEventListener('click', (event) => {
                 event.stopPropagation();
             });
 
-            // Закрытие по клику в пустое место экрана
             document.addEventListener('click', () => {
                 menuButton.classList.remove('active');
                 navigationPanel.classList.remove('active');
@@ -77,4 +73,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-
