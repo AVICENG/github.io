@@ -4,152 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVIC PRO | Промышленная автоматизация, IT и Строительство</title>
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="hw-logo">
-            <a href="index.html">
-                <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://w3.org" style="height: 46px !important;">
-                    <g transform="translate(2, 6)">
-                        <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round"/>
-                        <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <g transform="translate(79, 1.5)">
-                            <path d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </g>
-                    </g>
-                    <g transform="translate(2, 0)">
-                        <text class="hw-logo-text-sub" x="2" y="42.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#767676" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
-                    </g>
-                </svg>
-            </a>
-        </div>
-        
-        <!-- КНОПКА ГАМБУРГЕРА ДЛЯ МОБИЛЬНЫХ -->
-        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <!-- Шапка генерируется динамически через скрипт header.js -->
+    <header></header>
 
-        <nav class="hw-nav" id="mobileNav">
-            <ul>
-                <li><a href="index.html" class="active">Главная</a></li>
-                <li><a href="p/equipment.html">Оборудование</a></li>
-                <li><a href="p/objects.html">Объекты</a></li>
-                <li><a href="p/contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+    <!-- Hero Блок -->
     <section class="hw-hero">
         <div class="hero-content">
-            <div class="hero-tag">Building Automation &amp; Industrial IT Holding</div>
-            <h1>Building Automation &amp; <span class="text-accent">Industrial IT</span> Solutions</h1>
-            <p>Проектирование, монтаж и комплексная модернизация интеллектуальных инженерных систем. Интегрируем классическую автоматику зданий (Honeywell, TREND, KNX) с передовыми беспроводными IoT-технологиями и предиктивной аналитикой данных.</p>
+            <span class="hero-tag">Building Automation & Industrial IT Holding</span>
+            <h1>Building Automation & <br><span class="text-accent">Industrial IT Solutions</span></h1>
+            <p>Проектирование, монтаж и комплексная модернизация интеллектуальных инженерных систем. Интегрируем распределенную автоматику зданий (BMS) с передовыми слаботочными комплексами, корпоративными сетями связи и системами комплексной безопасности объектов.</p>
             <div class="hero-actions">
                 <a href="p/contacts.html" class="hw-btn">Связаться с инженером</a>
                 <a href="p/objects.html" class="hw-btn-secondary">Наши объекты</a>
             </div>
         </div>
     </section>
-    
+
+    <!-- Основной контент: Направления инжиниринга -->
     <main class="hw-main-content">
         <div class="section-header-block">
-            <h2>Направления инжиниринга</h2>
             <div class="section-header-line"></div>
-            <p>Комплексные технологические решения для автоматизации зданий и цифровой трансформации предприятий.</p>
+            <h2>Направления инжиниринга</h2>
+            <p>Комплексные технологические решения для автоматизации зданий, слаботочных инфраструктур и комплексной b2b-безопасности предприятий.</p>
         </div>
 
-        <section class="hw-grid">
-            <div class="hw-card">
-                <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5A3.375 3.375 0 0010.125 2.25h-2.625a3.375 3.375 0 00-3.375 3.375v1.5a1.125 1.125 0 01-1.125 1.125h-1.5A3.375 3.375 0 000 11.625v2.625" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3.75 18.75h16.5M6.75 18.75v-3.75A1.5 1.5 0 018.25 13.5h7.5a1.5 1.5 0 011.5 1.5v3.75" />
-                    </svg>
-                </div>
-                <div class="card-content">
-                    <div class="card-num">01 / BMS &amp; Automation</div>
-                    <h3>Автоматизация зданий</h3>
-                    <p>Проектирование и диспетчеризация. Бесшовная интеграция классических протоколов (BACnet, Modbus, LonWorks, KNX) на базе платформ автоматизации последнего поколения.</p>
-                </div>
-            </div>
+        <div class="hw-grid">
             
+            <!-- 01 / BMS & Automation -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-3 0h3m0 0l3-3m-3 3l3 3" />
-                    </svg>
+                    <!-- Иконка автоматики -->
+                    <svg class="card-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                 </div>
                 <div class="card-content">
-                    <div class="card-num">02 / Industrial IoT (IIoT)</div>
-                    <h3>Промышленный IoT</h3>
-                    <p>Развертывание защищенных беспроводных сетей телеметрии (LoRaWAN, NB-IoT). Оперативный автоматизированный контроль микроклимата, расхода ресурсов и предотвращения аварий.</p>
+                    <div class="card-num">01 / BMS & Automation</div>
+                    <h3>Автоматизация и диспетчеризация (АК)</h3>
+                    <p>Проектирование распределенных систем диспетчеризации. Сборка шкафов автоматики вентиляции (ША1–ША11) и освещения (ШАО) на базе промышленных ПЛК с поддержкой протокола TCP/IP. Интеграция смесительных узлов калориферов WHEIL MUB, частотного регулирования и разработка верхнего уровня SCADA-систем (до 1250 точек контроля).</p>
                 </div>
             </div>
-            
+
+            <!-- 02 / Network & Infrastructure -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg class="card-image" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                    </svg>
+                    <!-- Иконка СКС -->
+                    <svg class="card-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M12 8v8M5 16v-4h14v4"></path></svg>
                 </div>
                 <div class="card-content">
-                    <div class="card-num">03 / EcoStruxure &amp; Energy</div>
-                    <h3>Энергоменеджмент</h3>
-                    <p>Внедрение систем автоматизированного коммерческого и технического учета ресурсов (АСКУЭ / АСТУЭ). Аналитика нагрузок объектов и глубокое снижение издержек OPEX.</p>
+                    <div class="card-num">02 / Network & Infrastructure</div>
+                    <h3>Структурированные кабельные системы (СКС)</h3>
+                    <p>Развертывание высокоскоростных корпоративных сетей ЛВС. Монтаж горизонтальных медных подсистем U/UTP Cat.5e ITK и построение вертикальных волоконно-оптических магистралей (многомодовый кабель OM3). Установка телекоммуникационных шкафов 18U, разварка оптических кроссов и тестирование линий приборами Fluke и рефлектометром (OTDR).</p>
                 </div>
             </div>
-        </section>
+
+            <!-- 03 / Wi-Fi 6 Wireless -->
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <!-- Иконка беспроводной связи -->
+                    <svg class="card-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.94 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                </div>
+                <div class="card-content">
+                    <div class="card-num">03 / Wireless Systems</div>
+                    <h3>Беспроводные корпоративные сети Wi-Fi 6</h3>
+                    <p>Проектирование и радиоразведка бесшовного Wi-Fi покрытия на коммерческих объектах. Монтаж высокопроизводительных внутренних точек доступа QWP-82 и уличных всепогодных точек QWO-820 от Qtech. Настройка отказоустойчивых аппаратных контроллеров QWC-VC, сегментация трафика, изоляция гостевых зон и защита WPA3-Enterprise.</p>
+                </div>
+            </div>
+
+            <!-- 04 / Intelligent Video Monitoring -->
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <!-- Иконка СОТ -->
+                    <svg class="card-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                </div>
+                <div class="card-content">
+                    <div class="card-num">04 / CCTV & Video Analytics</div>
+                    <h3>Системы охранного телевидения (СОТ)</h3>
+                    <p>Развертывание комплексов цифрового видеонаблюдения высокой четкости. Интеграция профессиональных видеосерверов NeuroStation 8800R/128-A5-S (Trassir) и ПО VideoNet 9 Business. Монтаж широкой сети купольных и цилиндрических IP-камер HiWatch с поддержкой питания PoE, прокладка магистральных кабельных трасс в лотках ДКС.</p>
+                </div>
+            </div>
+
+            <!-- 05 / Fire Safety Systems -->
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <!-- Иконка ОПС -->
+                    <svg class="card-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                </div>
+                <div class="card-content">
+                    <div class="card-num">05 / Life Safety & Fire Protection</div>
+                    <h3>Пожарная автоматика и Оповещение</h3>
+                    <p>Проектирование и монтаж систем противопожарной защиты ОПС и СОУЭ. Построение адресных систем на платформе ИСО «Орион» (Болид): пульты управления «Сириус», блоки Сигнал-10, контроллеры С2000-КДЛ, шкафы пуска ШКП-10RS. Прокладка огнестойкого кабеля FRHF, монтаж адресных датчиков ДИП-34А и линейного термокабеля.</p>
+                </div>
+            </div>
+
+            <!-- 06 / Access Control & Security -->
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <!-- Иконка СКУД и СОТС -->
+                    <svg class="card-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <div class="card-content">
+                    <div class="card-num">06 / Integrated Security Systems</div>
+                    <h3>Комплексная безопасность (СКУД и СОТС)</h3>
+                    <p>Монтаж систем контроля доступа и охранно-тревожной сигнализации. Установка двухдверных контроллеров С2000-2, считывателей, замков и доводчиков с интеграцией в шкафы ШПС-12. Построение контуров охраны: пульты С2000М, блоки индикации БКИ, радиоканальные передатчики БРО-4-GSM и адресные датчики объема, звука и взлома.</p>
+                </div>
+            </div>
+
+        </div>
     </main>
-    
+
+    <!-- Подвал сайта -->
     <footer>
         <div class="footer-container">
             <div class="footer-left">
-                <p>© 2026 ООО «АВИК ПРО» | Инжиниринг, автоматизация и капитальное строительство</p>
+                <p>&copy; 2026 ООО «АВИК ПРО» | Инжиниринг, автоматизация и капитальное строительство</p>
             </div>
             <div class="footer-right">
-                <span class="footer-status-dot"></span> Системы работают в штатном режиме
+                <span class="footer-status-dot"></span>
+                <span>Системы работают в штатном режиме</span>
             </div>
         </div>
     </footer>
 
-    <!-- АВТОНОМНЫЙ СКРИПТ УПРАВЛЕНИЯ ГАМБУРГЕРОМ -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var menuButton = document.getElementById('mobileMenuBtn');
-            var navigationPanel = document.getElementById('mobileNav');
-
-            if (menuButton && navigationPanel) {
-                // Открытие и закрытие по клику на гамбургер
-                menuButton.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    menuButton.classList.toggle('active');
-                    navigationPanel.classList.toggle('active');
-                });
-
-                // Предотвращаем закрытие при клике внутри области меню (на ссылки)
-                navigationPanel.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                });
-
-                // Закрываем меню при клике на любую свободную область экрана
-                document.addEventListener('click', function() {
-                    menuButton.classList.remove('active');
-                    navigationPanel.classList.remove('active');
-                });
-            }
-        });
-    </script>
+    <!-- Подключение скрипта для динамической генерации шапки -->
+    <script src="header.js"></script>
 </body>
 </html>
