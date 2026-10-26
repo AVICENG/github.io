@@ -127,16 +127,14 @@
         .hw-card:hover::after { width: 100%; }
         .hw-card:hover svg { transform: scale(1.1); }
 
-        /* Секция Оборудования */
-        .equipment-section { padding: 90px var(--side-padding); background-color: #ffffff; border-top: 1px solid var(--color-border); }
-        .card-actions-row { display: flex !important; gap: 10px !important; margin-top: auto !important; padding-top: 15px !important; width: 100% !important; }
-        
-        .hw-btn-fixed {
-            flex: 1 !important; text-align: center !important; padding: 10px 14px !important;
-            border-radius: 6px !important; font-size: 13px !important; font-weight: 500 !important;
-            transition: all 0.2s ease !important; display: inline-block !important; cursor: pointer;
+        @media (max-width: 768px) {
+            header { padding: 15px 5%; }
+            .hw-nav { display: none; }
+            .menu-toggle { display: flex; }
+            .hw-hero { padding: 40px 5%; min-height: 480px; background-attachment: scroll; }
+            .hw-hero h1 { font-size: 32px; }
+            .hw-main-content { padding: 60px 5%; }
         }
-        .hw-btn-fixed.btn-outline { background-color: #ffffff !important; color: #0b0f19 !important; border: 1.5px solid #0b0f19 !important; }
     </style>
 </head>
 <body>
@@ -162,6 +160,11 @@
                 </svg>
             </a>
         </div>
+        <button class="menu-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="hw-nav">
             <ul>
                 <li><a href="#engineering" class="active">Инжиниринг</a></li>
@@ -172,65 +175,72 @@
         </nav>
     </header>
 
-    <section id="engineering" class="hw-hero">
+    <section class="hw-hero">
         <div class="hero-content">
-            <span class="hero-tag">Профессиональная инженерия</span>
-            <h1>Интеллектуальная интеграция <br><span class="text-accent">и автоматизация зданий</span></h1>
-            <p>Проектирование и внедрение передовых систем диспетчеризации, автоматизации и комплексной безопасности для коммерческих, промышленных и жилых объектов.</p>
+            <span class="hero-tag">Системная интеграция</span>
+            <h1>Интеллектуальные решения для <span class="text-accent">автоматизации</span> инженерных систем зданий</h1>
+            <p>Проектирование, поставка оборудования и пусконаладка комплексных систем автоматизации, диспетчеризации (BMS) и безопасности на базе решений мировых технологических лидеров.</p>
             <div class="hero-actions">
-                <a href="#contacts" class="hw-btn">Связаться с нами</a>
-                <a href="pages/equipment.html" class="hw-btn-secondary">Каталог оборудования</a>
+                <a href="#engineering" class="hw-btn">Направления</a>
+                <a href="#contacts" class="hw-btn-secondary">Связаться</a>
             </div>
         </div>
     </section>
 
-    <main class="hw-main-content">
+    <!-- Секция инжиниринга (Направления деятельности) -->
+    <section id="engineering" class="hw-main-content">
         <div class="section-header-block">
             <div class="section-header-line"></div>
-            <h2>Комплексный Инжиниринг</h2>
-            <p>Реализуем полный цикл создания инженерной инфраструктуры современных высокотехнологичных зданий.</p>
+            <h2>Направления деятельности</h2>
+            <p>Комплексный инженерный подход к автоматизации и созданию современных климатических и технологических экосистем зданий.</p>
         </div>
-
+        
         <div class="hw-grid">
-            <!-- Карта 1 -->
+            <!-- Карточка 1 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <span class="card-num">Направление 01</span>
-                    <h3>Диспетчеризация (BMS)</h3>
-                    <p>Объединение всех систем здания (BMS/BAMS) в единый интуитивно понятный интерфейс для централизованного мониторинга и снижения эксплуатационных расходов.</p>
+                    <span class="card-num">01 / BMS</span>
+                    <h3>Автоматизация и диспетчеризация</h3>
+                    <p>Создание единых систем управления инженерным оборудованием зданий (BMS), интеграция систем вентиляции, кондиционирования, отопления и освещения.</p>
                 </div>
             </div>
 
-            <!-- Карта 2 -->
+            <!-- Карточка 2 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <span class="card-num">Направление 02</span>
-                    <h3>Автоматизация (АСУД)</h3>
-                    <p>Разработка и внедрение локальных и распределенных алгоритмов автоматического управления климатом, освещением и распределением энергоресурсов.</p>
+                    <span class="card-num">02 / Power</span>
+                    <h3>Энергоснабжение и освещение</h3>
+                    <p>Проектирование и сборка силовых щитов, систем автоматического ввода резерва (АВР), интеллектуальное управление внутренним и архитектурным освещением.</p>
                 </div>
             </div>
 
-            <!-- Карта 3 -->
+            <!-- Карточка 3 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <span class="card-num">Направление 03</span>
-                    <h3>Безопасность</h3>
-                    <p>Интеграция интеллектуальных платформ видеонаблюдения, СКУД, охранно-пожарных сигнализаций и систем раннего предотвращения аварийных ситуаций.</p>
+                    <span class="card-num">03 / Security</span>
+                    <h3>Безопасность и СКС</h3>
+                    <p>Интеграция систем видеонаблюдения, контроля и управления доступом (СКУД), охранно-пожарных сигнализаций и построение структурированных кабельных сетей.</p>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Встроенный адаптивный блок Контактов -->
+    <!-- Начало блока Контакты -->
     <section id="contacts" class="hw-main-content" style="background-color: var(--color-bg-light); padding: 90px var(--side-padding); border-top: 1px solid var(--color-border);">
         <div class="section-header-block">
             <div class="section-header-line"></div>
@@ -284,7 +294,7 @@
                 </div>
                 
                 <div style="font-size: 14px; color: var(--color-text-muted); line-height: 1.8;">
-                    <p style="color: var(--color-bg-dark);"><strong>ООО «АВИК ПРО»</strong></p>
+                    <p><strong>ООО «АВИК ПРО»</strong></p>
                     <p><strong>ИНН:</strong> 7716972230</p>
                     <p><strong>ОГРН:</strong> 1227700508490</p>
                     <p><strong>КПП:</strong> 771601001</p>
@@ -293,5 +303,28 @@
         </div>
     </section>
 
+    <script>
+        // Простейший скрипт для работы мобильного меню (гамбургера)
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.hw-nav');
+        
+        if(toggleBtn && navMenu) {
+            toggleBtn.addEventListener('click', () => {
+                toggleBtn.classList.toggle('active');
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+                if(navMenu.style.display === 'flex') {
+                    navMenu.style.position = 'absolute';
+                    navMenu.style.top = '100%';
+                    navMenu.style.left = '0';
+                    navMenu.style.width = '100%';
+                    navMenu.style.backgroundColor = '#ffffff';
+                    navMenu.style.padding = '20px';
+                    navMenu.style.boxShadow = '0 10px 15px rgba(0,0,0,0.05)';
+                    navMenu.querySelector('ul').style.flexDirection = 'column';
+                    navMenu.querySelectorAll('li').style.margin = '10px 0';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
