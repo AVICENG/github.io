@@ -24,6 +24,10 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-main);
             background-color: var(--color-bg-light);
@@ -133,71 +137,6 @@
             transition: all 0.2s ease !important; display: inline-block !important; cursor: pointer;
         }
         .hw-btn-fixed.btn-outline { background-color: #ffffff !important; color: #0b0f19 !important; border: 1.5px solid #0b0f19 !important; }
-        .hw-btn-fixed.btn-outline:hover { background-color: #f4f5f7 !important; }
-        .hw-btn-fixed.btn-filled { background-color: #0b0f19 !important; color: #ffffff !important; border: 1.5px solid #0b0f19 !important; }
-        .hw-btn-fixed.btn-filled:hover { background-color: #de1e26 !important; border-color: #de1e26 !important; }
-
-        /* Всплывающее Модальное Окно ТЗ */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 15, 25, 0.6); backdrop-filter: blur(4px);
-            display: flex; align-items: center; justify-content: center;
-            z-index: 10000; opacity: 0; visibility: hidden; transition: all 0.3s ease;
-        }
-        .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal-box {
-            background: #ffffff; width: 100%; max-width: 500px; padding: 40px;
-            border-radius: 8px; border-top: 4px solid var(--color-accent-red);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative; transform: translateY(-20px); transition: all 0.3s ease;
-        }
-        .modal-overlay.active .modal-box { transform: translateY(0); }
-        .modal-close {
-            position: absolute; top: 20px; right: 20px; background: none; border: none;
-            font-size: 24px; cursor: pointer; color: var(--color-text-muted);
-        }
-        .modal-box h3 { font-size: 24px; font-weight: 800; margin-bottom: 8px; color: var(--color-bg-dark); }
-        .modal-box p { font-size: 14px; color: var(--color-text-muted); margin-bottom: 25px; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; color: var(--color-text-main); }
-        .form-control {
-            width: 100%; padding: 12px; border: 1px solid var(--color-border);
-            border-radius: 4px; font-family: var(--font-main); font-size: 14px; transition: border-color 0.2s;
-        }
-        .form-control:focus { outline: none; border-color: var(--color-accent-red); }
-        .form-submit-btn { width: 100%; padding: 14px; background: var(--color-accent-red); color: white; border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; margin-top: 10px; }
-        .form-submit-btn:hover { background: #b5151b; }
-
-        /* Подвал */
-        footer { background-color: #ffffff; color: var(--color-text-main); padding: 30px var(--side-padding); font-size: 13px; border-top: 1px solid var(--color-border); }
-        .footer-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .footer-left p { font-size: 13px; color: var(--color-text-muted); }
-        .footer-right { font-weight: 500; color: var(--color-text-muted); display: flex; align-items: center; gap: 10px; }
-        
-        .footer-status-dot { width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; display: inline-block; position: relative; }
-        .footer-status-dot::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background-color: #10b981; animation: statusPulse 2s infinite ease-in-out; }
-        @keyframes statusPulse {
-            0% { transform: scale(1); opacity: 0.75; }
-            100% { transform: scale(2.5); opacity: 0; }
-        }
-
-        /* Мобильная адаптивность */
-        @media (max-width: 768px) {
-            header { padding: 15px 5%; }
-            .menu-toggle { display: flex !important; position: relative !important; z-index: 10005 !important; }
-            .hw-nav {
-                display: none !important; position: absolute !important; top: 100% !important; left: 0 !important;
-                width: 100% !important; background-color: #ffffff !important; z-index: 10000 !important;
-                box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12) !important; border-bottom: 1px solid var(--color-border) !important;
-            }
-            .hw-nav.active { display: block !important; }
-            .hw-nav ul { flex-direction: column !important; padding: 25px 5% !important; }
-            .hw-nav li { margin-left: 0 !important; margin-bottom: 18px !important; }
-            .hw-nav li:last-child { margin-bottom: 0 !important; }
-            .hw-nav a { display: block !important; font-size: 16px !important; padding: 6px 0 !important; width: 100% !important; }
-            .hw-hero h1 { font-size: 32px; }
-            .hw-main-content, .equipment-section { padding: 60px 5%; }
-            .footer-container { flex-direction: column; text-align: center; }
-        }
     </style>
 </head>
 <body>
@@ -207,14 +146,14 @@
             <a href="index.html">
                 <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://www.w3.org/2000/svg" style="height: 46px !important;">
                     <g transform="translate(2, 6)">
-                        <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="var(--color-accent-red)" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="var(--color-bg-dark)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="var(--color-bg-dark)" stroke-width="4.2" stroke-linecap="round"/>
-                        <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="var(--color-bg-dark)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round"/>
+                        <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
                         <g transform="translate(79, 1.5)">
-                            <path d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke="var(--color-bg-dark)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke="var(--color-bg-dark)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="var(--color-accent-red)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
                         </g>
                     </g>
                     <g transform="translate(2, 0)">
@@ -223,249 +162,136 @@
                 </svg>
             </a>
         </div>
-        
-        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Открыть меню">
-            <span></span><span></span><span></span>
-        </button>
-
-        <nav class="hw-nav" id="mobileNav">
+        <nav class="hw-nav">
             <ul>
-                <li><a href="index.html" class="active">Главная</a></li>
-                <li><a href="#equipment">Оборудование</a></li>
-                <li><a href="#engineering">Направления</a></li>
+                <li><a href="#engineering" class="active">Инжиниринг</a></li>
+                <li><a href="pages/equipment.html">Оборудование</a></li>
+                <li><a href="pages/objects.html">Объекты</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hw-hero">
+    <section id="engineering" class="hw-hero">
         <div class="hero-content">
-            <span class="hero-tag">Enterprise решения</span>
-            <h1>Цифровая инфраструктура коммерческих и <span class="text-accent">промышленных объектов</span></h1>
-            <p>Проектирование и построение отказоустойчивых распределенных вычислительных сетей, комплексных слаботочных систем и интеллектуальной автоматизации диспетчеризации (BMS) на базе открытых стандартов связи.</p>
+            <span class="hero-tag">Профессиональная инженерия</span>
+            <h1>Интеллектуальная интеграция <br><span class="text-accent">и автоматизация зданий</span></h1>
+            <p>Проектирование и внедрение передовых систем диспетчеризации, автоматизации и комплексной безопасности для коммерческих, промышленных и жилых объектов.</p>
             <div class="hero-actions">
-                <button class="hw-btn open-modal-btn">Отправить ТЗ на расчет</button>
-                <a href="#engineering" class="hw-btn-secondary">Направления инжиниринга</a>
+                <a href="#contacts" class="hw-btn">Связаться с нами</a>
+                <a href="pages/equipment.html" class="hw-btn-secondary">Каталог оборудования</a>
             </div>
         </div>
     </section>
 
-    <main class="hw-main-content" id="engineering">
+    <main class="hw-main-content">
         <div class="section-header-block">
-            <h2>Архитектура инженерных систем</h2>
             <div class="section-header-line"></div>
-            <p>Кросс-платформенные комплексные решения для цифровизации современного здания</p>
+            <h2>Комплексный Инжиниринг</h2>
+            <p>Реализуем полный цикл создания инженерной инфраструктуры современных высокотехнологичных зданий.</p>
         </div>
 
         <div class="hw-grid">
+            <!-- Карта 1 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM9 9h6v6H9z"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="card-content">
-                    <span class="card-num">01 / BMS & Automation</span>
-                    <h3>Автоматизация и диспетчеризация (АК)</h3>
-                    <p>Многоуровневые системы климата и освещения. Бесшовная интеграция по открытым протоколам BACnet, Modbus и KNX. Разработка отказоустойчивых систем SCADA/HMI.</p>
+                    <span class="card-num">Направление 01</span>
+                    <h3>Диспетчеризация (BMS)</h3>
+                    <p>Объединение всех систем здания (BMS/BAMS) в единый интуитивно понятный интерфейс для централизованного мониторинга и снижения эксплуатационных расходов.</p>
                 </div>
             </div>
 
+            <!-- Карта 2 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24"><path d="M2 19h20M4 5v14M20 5v14M12 5v14"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="card-content">
-                    <span class="card-num">02 / Network Infrastructure</span>
-                    <h3>Структурированные кабельные системы (СКС)</h3>
-                    <p>Высокоскоростные ЛВС горизонтальных подсистем Cat.6 и резервированных магистральных оптических колец связи (ВОЛС) с паспортизацией и рефлектометрическим контролем OTDR.</p>
+                    <span class="card-num">Направление 02</span>
+                    <h3>Автоматизация (АСУД)</h3>
+                    <p>Разработка и внедрение локальных и распределенных алгоритмов автоматического управления климатом, освещением и распределением энергоресурсов.</p>
                 </div>
             </div>
 
+            <!-- Карта 3 -->
             <div class="hw-card">
                 <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24"><path d="M12 18h.01M8.5 14.5a5 5 0 0 1 7 0M5 11a10 10 0 0 1 14 0"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="card-content">
-                    <span class="card-num">03 / Wireless Systems</span>
-                    <h3>Беспроводные сети высокой плотности</h3>
-                    <p>Технологические Wi-Fi сети стандарта Wi-Fi 6 (802.11ax). Радиоразведка, интеллектуальный бесшовный роуминг (802.11r/k/v) и защита корпоративного класса.</p>
-                </div>
-            </div>
-
-            <div class="hw-card">
-                <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7zM1 5h14v14H1V5z"/></svg>
-                </div>
-                <div class="card-content">
-                    <span class="card-num">04 / CCTV & Video Analytics</span>
-                    <h3>Системы охранного телевидения (СОТ)</h3>
-                    <p>Цифровое IP-видеонаблюдение в изолированных подсетях VLAN с PoE+. Интеграция с интеллектуальной серверной видеоаналитикой контроля зон и периметров.</p>
-                </div>
-            </div>
-
-            <div class="hw-card">
-                <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24"><path d="M12 2v20M12 6a6 6 0 0 1 6 6M12 9a3 3 0 0 1 3 3"/></svg>
-                </div>
-                <div class="card-content">
-                    <span class="card-num">05 / Life Safety & Fire Protection</span>
-                    <h3>Пожарная автоматика и оповещение</h3>
-                    <p>Проектирование противопожарной защиты (ОПС, СОУЭ, АПТ). Распределенные кольцевые линии повышенной живучести с автоматическим отключением вентиляции при пожаре.</p>
-                </div>
-            </div>
-
-            <div class="hw-card">
-                <div class="card-image-wrapper">
-                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="card-content">
-                    <span class="card-num">06 / Integrated Security Systems</span>
-                    <h3>Комплексная безопасность (СКУД и СОТС)</h3>
-                    <p>Масштабируемый контроль доступа по интерфейсам RS-485 и Ethernet. Автоматизация точек прохода, шифрование считывателей и рубежи охраны с резервным питанием.</p>
+                    <span class="card-num">Направление 03</span>
+                    <h3>Безопасность</h3>
+                    <p>Интеграция интеллектуальных платформ видеонаблюдения, СКУД, охранно-пожарных сигнализаций и систем раннего предотвращения аварийных ситуаций.</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <section class="equipment-section" id="equipment">
+    <!-- Встроенный адаптивный блок Контактов -->
+    <section id="contacts" class="hw-main-content" style="background-color: var(--color-bg-light); padding: 90px var(--side-padding); border-top: 1px solid var(--color-border);">
         <div class="section-header-block">
-            <h2>Промышленное оборудование и компоненты</h2>
             <div class="section-header-line"></div>
-            <p>Прямые поставки сертифицированного оборудования Enterprise-класса от ведущих вендоров</p>
+            <h2>Контакты</h2>
+            <p>Свяжитесь с инженерным отделом ООО «АВИК ПРО» для проектирования систем, заказа оборудования или получения сервисной поддержки.</p>
         </div>
-
-        <div class="hw-grid">
-            <div class="hw-card">
-                <div class="card-content">
-                    <span class="card-num">Контроллеры ПЛК</span>
-                    <h3>Программируемый логический контроллер BMS</h3>
-                    <p>Поддержка протоколов BACnet IP и Modbus TCP. Предназначен для автоматизации комплексных систем вентиляции, отопления и кондиционирования больших объектов.</p>
-                    <div class="card-actions-row">
-                        <button class="hw-btn-fixed btn-outline open-modal-btn">Спецификация</button>
-                        <button class="hw-btn-fixed btn-filled open-modal-btn">Заказать</button>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: stretch;">
+            <!-- Левая часть (Контакты и карты) -->
+            <div style="background: #f8fafc; padding: 30px; border-left: 4px solid var(--color-accent-red); border-top: 1px solid var(--color-border); border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box;">
+                <div style="margin-bottom: 25px;">
+                    <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid var(--color-border); padding-bottom: 8px; color: var(--color-bg-dark);">Связь с инженером</h3>
+                    <p style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: var(--color-accent-red);">+7 (925) 134-50-90</p>
+                    <p style="font-size: 16px; color: var(--color-text-muted); margin-bottom: 25px;">info@aviceng.com</p>
+                    <p style="font-weight: 700; margin-bottom: 5px; color: var(--color-bg-dark);">Адрес офиса:</p>
+                    <p style="color: var(--color-text-main); line-height: 1.6; margin-bottom: 0;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
+                </div>
+                
+                <div style="background: #ffffff; padding: 20px; border: 1px solid var(--color-border); border-radius: 2px; box-sizing: border-box;">
+                    <p style="font-weight: 700; font-size: 13px; margin-bottom: 6px; color: var(--color-bg-dark);">Интерактивная карта маршрута</p>
+                    <p style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 12px; line-height: 1.4;">Выберите навигационный сервис для открытия точных координат компании</p>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://maps.google.com" target="_blank" style="background: var(--color-bg-dark); color: #fff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Google Maps</a>
+                        <a href="https://yandex.ru/maps" target="_blank" style="background: var(--color-accent-red); color: #fff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Яндекс.Карты</a>
                     </div>
                 </div>
             </div>
-
-            <div class="hw-card">
-                <div class="card-content">
-                    <span class="card-num">Сетевое оборудование</span>
-                    <h3>Управляемый коммутатор L3 PoE+ 24-Port</h3>
-                    <p>Высокопроизводительный коммутатор для СКС и систем видеонаблюдения. Расширенный бюджет мощности PoE, поддержка VLAN и гигабитных оптических аплинков SFP+.</p>
-                    <div class="card-actions-row">
-                        <button class="hw-btn-fixed btn-outline open-modal-btn">Спецификация</button>
-                        <button class="hw-btn-fixed btn-filled open-modal-btn">Заказать</button>
-                    </div>
+            
+            <!-- Правая часть (Реквизиты) -->
+            <div style="background: #f8fafc; padding: 30px; border-left: 4px solid var(--color-accent-red); border-top: 1px solid var(--color-border); border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); display: flex; flex-direction: column; box-sizing: border-box;">
+                <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px solid var(--color-border); padding-bottom: 8px; color: var(--color-bg-dark);">Официальные реквизиты</h3>
+                
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 20px;">
+                    <svg width="136" height="49" viewBox="0 0 136 49" xmlns="http://www.w3.org/2000/svg" style="display: block; background: var(--color-bg-dark); border-radius: 2px;">
+                        <rect x="0.5" y="0.5" width="135.2" height="48" rx="2" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
+                        <g transform="translate(5, 5)">
+                            <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round"/>
+                            <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g transform="translate(79, 1.5)">
+                                <path d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                        </g>
+                        <g transform="translate(5, 0)">
+                            <text x="2" y="43.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#ffffff" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
+                        </g>
+                    </svg>
                 </div>
-            </div>
-
-            <div class="hw-card">
-                <div class="card-content">
-                    <span class="card-num">Безопасность</span>
-                    <h3>Контроллер СКУД сетевой на 4 точки прохода</h3>
-                    <p>Интерфейсы связи Ethernet и RS-485. Память на 100 000 пользователей, поддержка считывателей с шифрованием OSDP и интеграция с пожарной сигнализацией.</p>
-                    <div class="card-actions-row">
-                        <button class="hw-btn-fixed btn-outline open-modal-btn">Спецификация</button>
-                        <button class="hw-btn-fixed btn-filled open-modal-btn">Заказать</button>
-                    </div>
+                
+                <div style="font-size: 14px; color: var(--color-text-muted); line-height: 1.8;">
+                    <p style="color: var(--color-bg-dark);"><strong>ООО «АВИК ПРО»</strong></p>
+                    <p><strong>ИНН:</strong> 7716972230</p>
+                    <p><strong>ОГРН:</strong> 1227700508490</p>
+                    <p><strong>КПП:</strong> 771601001</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="modal-overlay" id="tzModal">
-        <div class="modal-box">
-            <button class="modal-close" id="closeModalBtn">&times;</button>
-            <h3>Заявка на расчет ТЗ</h3>
-            <p>Оставьте ваши контактные данные, и инженеры нашей компании свяжутся с вами для составления точной сметы объекта.</p>
-            <form id="tzForm">
-                <div class="form-group">
-                    <label for="clientName">Ваше имя</label>
-                    <input type="text" id="clientName" class="form-control" placeholder="Иван Иванов" required>
-                </div>
-                <div class="form-group">
-                    <label for="clientContact">Телефон или Email</label>
-                    <input type="text" id="clientContact" class="form-control" placeholder="+7 (999) 000-00-00" required>
-                </div>
-                <div class="form-group">
-                    <label for="projectDesc">Краткое описание задачи</label>
-                    <textarea id="projectDesc" class="form-control" rows="3" placeholder="Необходим расчет СКС и СОТ для склада 5000 кв.м..."></textarea>
-                </div>
-                <button type="submit" class="form-submit-btn">Отправить проект</button>
-            </form>
-        </div>
-    </div>
-
-    <footer id="contacts">
-        <div class="footer-container">
-            <div class="footer-left">
-                <p>&copy; 2026 ООО &laquo;АВИК ПРО&raquo; | Системная интеграция, автоматизация и IT-решения</p>
-            </div>
-            <div class="footer-right">
-                <span class="footer-status-dot"></span>
-                <span>Системы работают в штатном режиме</span>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Логика мобильного бургер-меню
-            const menuButton = document.getElementById('mobileMenuBtn');
-            const navigationPanel = document.getElementById('mobileNav');
-
-            if (menuButton && navigationPanel) {
-                menuButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    menuButton.classList.toggle('active');
-                    navigationPanel.classList.toggle('active');
-                });
-
-                // Закрытие при клике по ссылкам меню
-                navigationPanel.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menuButton.classList.remove('active');
-                        navigationPanel.classList.remove('active');
-                    });
-                });
-
-                document.addEventListener('click', () => {
-                    menuButton.classList.remove('active');
-                    navigationPanel.classList.remove('active');
-                });
-            }
-
-            // Логика Модального Окна (Форма ТЗ)
-            const modal = document.getElementById('tzModal');
-            const openModalButtons = document.querySelectorAll('.open-modal-btn');
-            const closeModalButton = document.getElementById('closeModalBtn');
-            const tzForm = document.getElementById('tzForm');
-
-            openModalButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    modal.classList.add('active');
-                });
-            });
-
-            closeModalButton.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
-            });
-
-            // Обработка отправки формы
-            tzForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Спасибо! Ваше техническое задание успешно отправлено. Наши инженеры свяжутся с вами в ближайшее время.');
-                tzForm.reset();
-                modal.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
