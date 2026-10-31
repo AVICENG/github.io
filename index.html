@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AVIC PRO | Инжиниринг, Автоматизация и Безопасность зданий</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Премиальная инженерная дизайн-система с индустриальным оранжевым акцентом */
     :root {
@@ -156,13 +156,20 @@
       max-width: 450px;
     }
 
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
     .input-group {
       display: flex;
       gap: 12px;
     }
 
     .form-input {
-      flex: 1;
+      width: 100%;
       padding: 14px;
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 3px;
@@ -246,7 +253,6 @@
   <header>
     <div class="hw-logo">
       <a href="#">
-        <!-- Место для вашего SVG или Логотипа АВИК ПРО -->
         <strong style="font-size: 20px; letter-spacing: 1px; color: var(--color-metal-main);">AVIC <span style="color: var(--color-orange-accent);">PRO</span></strong>
       </a>
     </div>
@@ -259,20 +265,30 @@
     </nav>
   </header>
 
-  <!-- Главный баннер с формой Formspree -->
+  <!-- Главный баннер -->
   <section class="hw-hero">
     <div class="hero-content">
       <span class="hero-tag">Высокотехнологичный инжиниринг инфраструктуры зданий</span>
       <h1>ООО «АВИК ПРО» <span>разрабатывает и внедряет комплексные архитектурные решения</span></h1>
       <p>Проектируем современные распределенные сети без шаблонных ограничений для жилых комплексов, правительственных объектов, промышленных производств и дата-центров.</p>
       
-      <!-- ИНТЕГРИРОВАННАЯ ФОРМА FORMSPREE -->
-      <form class="hero-form" action="https://formspree.io" method="POST">
+      <!-- Блоки для уведомлений Formspree Ajax -->
+      <div data-fs-success style="font-size: 14px; margin-bottom: 10px; font-weight: 500;"></div>
+      <div data-fs-error style="font-size: 14px; margin-bottom: 10px; font-weight: 500;"></div>
+
+      <!-- ФОРМА С АТРИБУТАМИ ДЛЯ АВТОМАТИЧЕСКОЙ ВАЛИДАЦИИ И AJAX -->
+      <form id="contact-form" class="hero-form">
         <div class="input-group">
-          <input type="text" name="Имя" class="form-input" placeholder="Ваше имя" required>
-          <input type="tel" name="Телефон" class="form-input" placeholder="Контактный телефон" required>
+          <div class="input-container">
+            <input type="text" name="Имя" class="form-input" placeholder="Ваше имя" data-fs-field required>
+            <span data-fs-error="Имя" style="font-size: 11px; color: var(--color-orange-accent);"></span>
+          </div>
+          <div class="input-container">
+            <input type="tel" name="Телефон" class="form-input" placeholder="Контактный телефон" data-fs-field required>
+            <span data-fs-error="Телефон" style="font-size: 11px; color: var(--color-orange-accent);"></span>
+          </div>
         </div>
-        <button type="submit" class="hw-btn">Запросить аудит и расчет проекта</button>
+        <button type="submit" class="hw-btn" data-fs-submit-btn>Запросить аудит и расчет проекта</button>
         <div class="form-privacy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</div>
       </form>
 
@@ -287,6 +303,16 @@
       <p>Проектирование системной архитектуры, квалифицированные монтажные работы, пусконаладка и разработка верхнеуровневого программного обеспечения.</p>
     </div>
   </main>
+
+  <!-- СКРИПТ ИНИЦИАЛИЗАЦИИ И ПОДКЛЮЧЕНИЕ БИБЛИОТЕКИ FORMSPREE AJAX -->
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { 
+      formElement: '#contact-form', 
+      formId: 'mzeejdwy' 
+    });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
