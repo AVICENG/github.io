@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AVIC PRO | Инжиниринг, Автоматизация и Безопасность зданий</title>
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Премиальная инженерная дизайн-система с индустриальным оранжевым акцентом */
     :root {
@@ -71,6 +71,34 @@
       height: 42px;
     }
 
+    .hw-logo-svg {
+      width: 140px;
+      height: 42px;
+      display: block;
+    }
+
+    .logo-titan {
+      stroke: var(--color-metal-main);
+      fill: none;
+    }
+
+    .logo-platina {
+      stroke: var(--color-metal-accent);
+      fill: none;
+    }
+
+    .logo-orange {
+      stroke: var(--color-orange-accent);
+      fill: none;
+    }
+
+    .logo-text-muted {
+      fill: #7e8e9f;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+    }
+
+    /* Навигация без подчеркиваний, неброская */
     .hw-nav ul {
       list-style: none;
       display: flex;
@@ -85,16 +113,36 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1.2px;
-      color: #334155;
+      color: #334155; /* Тонкий благородный цвет */
       position: relative;
       padding-bottom: 4px;
     }
 
     .hw-nav a:hover, .hw-nav a.active {
-      color: var(--color-text-dark);
+      color: var(--color-text-dark); /* Мягкое изменение цвета без оранжевого и подчеркиваний */
     }
 
-    /* Баннер */
+    /* Мобильное меню */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 16px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1005;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-text-dark);
+      transition: all 0.25s ease;
+    }
+
+    /* Баннер - яркий, чистый, ненавязчивый оранжевый по контурам */
     .hw-hero {
       position: relative;
       background-color: var(--color-bg-dark);
@@ -127,7 +175,7 @@
       display: inline-block;
       background: transparent;
       padding: 5px 12px;
-      border: 1px solid var(--color-orange-accent);
+      border: 1px solid var(--color-orange-accent); /* Только оранжевый контур */
       border-radius: 3px;
     }
 
@@ -137,6 +185,11 @@
       line-height: 1.3;
       margin-bottom: 22px;
       letter-spacing: -0.5px;
+    }
+
+    .hw-hero h1 span {
+      color: #ffffff;
+      font-weight: 400;
     }
 
     .hw-hero p {
@@ -156,20 +209,13 @@
       max-width: 450px;
     }
 
-    .input-container {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      flex: 1;
-    }
-
     .input-group {
       display: flex;
       gap: 12px;
     }
 
     .form-input {
-      width: 100%;
+      flex: 1;
       padding: 14px;
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 3px;
@@ -193,7 +239,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      border: 1px solid var(--color-orange-accent);
+      border: 1px solid var(--color-orange-accent); /* Только оранжевый контур */
       cursor: pointer;
       text-align: center;
       border-radius: 3px;
@@ -234,7 +280,7 @@
     .section-header-line {
       width: 50px;
       height: 2px;
-      background-color: var(--color-orange-accent);
+      background-color: var(--color-orange-accent); /* Деликатная оранжевая линия */
       margin-bottom: 20px;
     }
 
@@ -245,21 +291,245 @@
       max-width: 800px;
       line-height: 1.6;
     }
+
+    /* Инженерные карточки */
+    .hw-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 30px;
+    }
+
+    .hw-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border-fine);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image-wrapper {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      padding-left: 30px;
+      background: #fafbfc;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .card-image-wrapper svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--color-orange-accent); /* Контурные иконки стали оранжевыми */
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .card-content {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-num {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .hw-card h3 {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--color-text-dark);
+    }
+
+    .hw-card-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .hw-card-list li {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .hw-card-list li::before {
+      content: "—";
+      color: var(--color-orange-accent);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+    }
+
+    .card-tech-footer {
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px dashed var(--color-border-fine);
+      font-size: 11px;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .hw-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(28, 36, 52, 0.04);
+      border-color: var(--color-orange-accent);
+    }
+
+    /* Адаптивный оверлей мобильного меню */
+    .nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 22, 34, 0.2);
+      z-index: 998;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    
+    .nav-overlay.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Жесткая мобильная адаптивность и защита полей */
+    @media (max-width: 991px) {
+      .menu-toggle {
+        display: flex;
+      }
+      .hw-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--color-bg-white);
+        padding: 90px 40px;
+        display: block;
+        z-index: 999;
+        box-shadow: -10px 0 30px rgba(17, 22, 34, 0.05);
+        transition: right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .hw-nav.active {
+        right: 0;
+      }
+      .hw-nav ul {
+        flex-direction: column;
+        gap: 24px;
+      }
+      .hw-nav li {
+        margin-left: 0;
+      }
+      .hw-nav a {
+        font-size: 14px;
+        display: block;
+        border-bottom: 1px solid var(--color-border-fine);
+        padding-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --side-padding: 5%; /* Уменьшаем поля на смартфонах */
+      }
+      .hw-hero {
+        min-height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-attachment: scroll; /* Исправление бага iOS / Safari */
+      }
+      .hw-hero h1 {
+        font-size: 26px; /* Заголовок гарантированно влезает на любой мобильный */
+        line-height: 1.25;
+      }
+      .input-group {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .hw-btn {
+        padding: 14px 20px;
+        font-size: 11px;
+      }
+    }
+
+    /* Раздел контактов */
+    .contacts-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .contacts-box {
+      background: var(--color-bg-white);
+      padding: 35px;
+      border: 1px solid var(--color-border-fine);
+      border-top: 3px solid var(--color-orange-accent); /* Оранжевый контур сверху */
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Шапка сайта -->
+  <!-- Оверлей для закрытия мобильного меню -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Навигационная панель -->
   <header>
     <div class="hw-logo">
-      <a href="#">
-        <strong style="font-size: 20px; letter-spacing: 1px; color: var(--color-metal-main);">AVIC <span style="color: var(--color-orange-accent);">PRO</span></strong>
+      <a href="index.html">
+        <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(2, 6)">
+            <!-- ПЕРВАЯ БУКВА "А" - строго по контуру оранжевая (fill=none, stroke=оранжевый), как и просили -->
+            <path class="logo-orange" d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Все остальные буквы - строго титаново-черные -->
+            <path class="logo-titan" d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="logo-titan" d="M 54.5,9 L 54.5,23.5" fill="none" stroke-width="4.2" stroke-linecap="round"/>
+            <path class="logo-titan" d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <g transform="translate(79, 1.5)">
+              <path class="logo-titan" d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="logo-titan" d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect class="logo-titan" x="33" y="2" width="10" height="11" rx="4" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </g>
+          <g transform="translate(2, 0)">
+            <text class="logo-text-muted" x="2" y="42.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
+          </g>
+        </svg>
       </a>
     </div>
-    <nav class="hw-nav">
+    <button class="menu-toggle" id="menuBtn">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="hw-nav" id="navMenu">
       <ul>
-        <li><a href="#" class="active">Главная</a></li>
-        <li><a href="#services">Направления</a></li>
+        <li><a href="#engineering" class="active">Инжиниринг</a></li>
+        <li><a href="p/equipment.html">Оборудование</a></li>
+        <li><a href="p/objects.html">Объекты</a></li>
         <li><a href="#contacts">Контакты</a></li>
       </ul>
     </nav>
@@ -268,51 +538,203 @@
   <!-- Главный баннер -->
   <section class="hw-hero">
     <div class="hero-content">
-      <span class="hero-tag">Высокотехнологичный инжиниринг инфраструктуры зданий</span>
-      <h1>ООО «АВИК ПРО» <span>разрабатывает и внедряет комплексные архитектурные решения</span></h1>
-      <p>Проектируем современные распределенные сети без шаблонных ограничений для жилых комплексов, правительственных объектов, промышленных производств и дата-центров.</p>
+      <span class="hero-tag">Проектирование и Автоматизация</span>
+      <h1>Высокотехнологичный инжиниринг <br><span>инфраструктуры зданий</span></h1>
+      <p>ООО «АВИК ПРО» разрабатывает и внедряет комплексные архитектурные решения в сфере автоматизации, связи и цифровой безопасности. Проектируем современные распределенные сети без шаблонных ограничений для жилых комплексов, правительственных объектов, промышленных производств и дата-центров.</p>
       
-      <!-- Блоки для уведомлений Formspree Ajax -->
-      <div data-fs-success style="font-size: 14px; margin-bottom: 10px; font-weight: 500;"></div>
-      <div data-fs-error style="font-size: 14px; margin-bottom: 10px; font-weight: 500;"></div>
-
-      <!-- ФОРМА С АТРИБУТАМИ ДЛЯ АВТОМАТИЧЕСКОЙ ВАЛИДАЦИИ И AJAX -->
-      <form id="contact-form" class="hero-form">
+      <form action="https://api.web3forms.com/submit" method="POST" class="hero-form">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
         <div class="input-group">
-          <div class="input-container">
-            <input type="text" name="Имя" class="form-input" placeholder="Ваше имя" data-fs-field required>
-            <span data-fs-error="Имя" style="font-size: 11px; color: var(--color-orange-accent);"></span>
-          </div>
-          <div class="input-container">
-            <input type="tel" name="Телефон" class="form-input" placeholder="Контактный телефон" data-fs-field required>
-            <span data-fs-error="Телефон" style="font-size: 11px; color: var(--color-orange-accent);"></span>
-          </div>
+          <input type="text" name="name" placeholder="Ваше имя" required class="form-input">
+          <input type="tel" name="phone" placeholder="Контактный телефон" required class="form-input">
         </div>
-        <button type="submit" class="hw-btn" data-fs-submit-btn>Запросить аудит и расчет проекта</button>
-        <div class="form-privacy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</div>
+        <button type="submit" class="hw-btn">Запросить аудит и расчет проекта</button>
+        <p class="form-privacy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
       </form>
-
     </div>
   </section>
 
-  <!-- Блок направлений деятельности -->
-  <main class="hw-main-content" id="services">
+  <!-- Направления деятельности -->
+  <section id="engineering" class="hw-main-content">
     <div class="section-header-block">
       <div class="section-header-line"></div>
       <h2>Направления деятельности</h2>
       <p>Проектирование системной архитектуры, квалифицированные монтажные работы, пусконаладка и разработка верхнеуровневого программного обеспечения.</p>
     </div>
-  </main>
+    
+    <div class="hw-grid">
+      <div class="hw-card">
+        <div class="card-image-wrapper">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+        </div>
+        <div class="card-content">
+          <span class="card-num">Раздел АК / BMS</span>
+          <h3>Автоматизация и диспетчеризация</h3>
+          <ul class="hw-card-list">
+            <li>Шкафы автоматического контроля климатическими и вентиляционными комплексами зданий.</li>
+            <li>Интеллектуальное управление дежурным, внутренним и фасадным освещением.</li>
+            <li>Разработка алгоритмов нижнего уровня и программирование контроллеров.</li>
+            <li>Инжиниринг верхнего уровня: развертывание диспетчерских SCADA-интерфейсов.</li>
+          </ul>
+          <div class="card-tech-footer">Стандарты: Промышленные ПЛК TCP/IP / SCADA-системы</div>
+        </div>
+      </div>
 
-  <!-- СКРИПТ ИНИЦИАЛИЗАЦИИ И ПОДКЛЮЧЕНИЕ БИБЛИОТЕКИ FORMSPREE AJAX -->
+      <div class="hw-card">
+        <div class="card-image-wrapper">
+          <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <div class="card-content">
+          <span class="card-num">Раздел СОТ / CCTV</span>
+          <h3>Технологическое видеонаблюдение</h3>
+          <ul class="hw-card-list">
+            <li>Распределенные системы охранного IP-наблюдения сверхвысокого разрешения.</li>
+            <li>Серверные станции с аппаратными нейросетевыми алгоритмами детекции событий.</li>
+            <li>Проектирование удаленных АРМ операторов и ситуационных мониторинговых центров.</li>
+            <li>Лицензионное программное обеспечение верхнего уровня для управления видеопотоками.</li>
+          </ul>
+          <div class="card-tech-footer">Стандарты: Нейросетевая аналитика / Резервирование данных</div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <div class="card-image-wrapper">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        </div>
+        <div class="card-content">
+          <span class="card-num">Раздел ОПС и СОУЭ</span>
+          <h3>Противопожарная автоматика</h3>
+          <ul class="hw-card-list">
+            <li>Адресные и адресно-аналоговые комплексы пожарной сигнализации повышенной емкости.</li>
+            <li>Линейный температурный контроль протяженных сооружений с использованием термокабелей.</li>
+            <li>Системы оповещения и управления эвакуацией: зонные, световые и речевые комплексы.</li>
+            <li>Автоматический вывод тревожных сигналов на радиостанции прямого мониторинга МЧС.</li>
+          </ul>
+          <div class="card-tech-footer">Стандарты: Адресный контроль / Радиомониторинг МЧС</div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <div class="card-image-wrapper">
+          <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.59 9.56 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.56 0 4.83-1.59 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+        </div>
+        <div class="card-content">
+          <span class="card-num">Раздел СКУД / Access Control</span>
+          <h3>Контроль и управление доступом</h3>
+          <ul class="hw-card-list">
+            <li>Сетевые контроллеры доступа со встроенной защитой интерфейсных линий связи.</li>
+            <li>Биометрические терминалы авторизации и считыватели шифрованных карт.</li>
+            <li>Исполнительные механизмы прохода: замки, электрозащелки, приводы ворот и шлюзы.</li>
+            <li>Организация сквозных аналитических систем автоматического учета рабочего времени.</li>
+          </ul>
+          <div class="card-tech-footer">Стандарты: IP-СКУД / Шифрованные протоколы авторизации</div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <div class="card-image-wrapper">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        </div>
+        <div class="card-content">
+          <span class="card-num">Раздел СОТС / ОС</span>
+          <h3>Охранно-тревожная сигнализация</h3>
+          <ul class="hw-card-list">
+            <li>Адресные датчики объемного обнаружения, акустического и вибрационного контроля периметра.</li>
+            <li>Интерфейсные клавиатуры управления и компактные мнемосхемы индикации зон.</li>
+            <li>Шкафы гарантированного питания с автоматическим мониторингом состояния аккумуляторов.</li>
+            <li>Объектовые блоки передачи извещений с многоканальным резервированием (GSM, IP, радиоканалы).</li>
+          </ul>
+          <div class="card-tech-footer">Стандарты: Адресные шлейфы / Бесперебойное ИБП-резервирование</div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <div class="card-image-wrapper">
+          <svg viewBox="0 0 24 24"><path d="M4 18h16V6H4v12zm18-14v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2zM6 8h3v2H6V8zm0 4h3v2H6v-2zm5-4h7v2h-7V8zm0 4h7v2h-7v-2z"/></svg>
+        </div>
+        <div class="card-content">
+          <span class="card-num">Раздел ЛВС / СКС</span>
+          <h3>Сети передачи данных и трассы</h3>
+          <ul class="hw-card-list">
+            <li>Проектирование и прокладка волоконно-оптических (ВОЛС) и медных систем передачи категорий 5e, 6, 6A.</li>
+            <li>Управляемое ИТ-оборудование корпоративного уровня, высокоплотные PoE+ коммутаторы.</li>
+            <li>Сборка серверных стоек, комплексный монтаж настенных и напольных телекоммуникационных шкафов.</li>
+            <li>Опорные конструкции: сертифицированные металлические лотки, магистральные трассы и гофротрубы LSZH.</li>
+          </ul>
+          <div class="card-tech-footer">Стандарты: Оптические трассы / Огнестойкие кабельные линии FRHF</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts" class="hw-main-content" style="padding-top: 0; background-color: var(--color-bg-white);">
+    <div class="section-header-block">
+      <div class="section-header-line"></div>
+      <h2>Контакты</h2>
+    </div>
+    <div class="contacts-wrapper">
+      <div class="contacts-box">
+        <div>
+          <h3 style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid var(--color-border-fine); padding-bottom: 10px; color: var(--color-text-dark);">Инженерный отдел</h3>
+          <p style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: var(--color-text-dark); letter-spacing: -0.5px;">+7 (925) 134-50-90</p>
+          <p style="font-size: 15px; color: var(--color-text-muted); margin-bottom: 30px;">info@aviceng.com</p>
+          <p style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; color: var(--color-text-dark);">Адрес компании:</p>
+          <p style="color: var(--color-text-muted); font-size: 14px; line-height: 1.6;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
+        </div>
+        <div style="margin-top: 30px; display: flex; gap: 20px;">
+          <a href="https://maps.google.com" target="_blank" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; border-bottom: 1px solid var(--color-text-dark); padding-bottom: 2px;">Google Maps</a>
+          <a href="https://yandex.ru/maps" target="_blank" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; border-bottom: 1px solid var(--color-text-dark); padding-bottom: 2px;">Яндекс.Карты</a>
+        </div>
+      </div>
+      <div class="contacts-box">
+        <div>
+          <h3 style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid var(--color-border-fine); padding-bottom: 10px; color: var(--color-text-dark);">Реквизиты организации</h3>
+          <div style="font-size: 14px; color: var(--color-text-muted); line-height: 1.9; font-weight: 400;">
+            <p style="color: var(--color-text-dark); font-weight: 600; margin-bottom: 8px; font-size: 15px;">ООО «АВИК ПРО»</p>
+            <p><strong>ИНН:</strong> 7716972230</p>
+            <p><strong>ОГРН:</strong> 1227700508490</p>
+            <p><strong>КПП:</strong> 771601001</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Скрипты адаптива -->
   <script>
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-    formspree('initForm', { 
-      formElement: '#contact-form', 
-      formId: 'mzeejdwy' 
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = navMenu.querySelectorAll('a');
+
+    function toggleMenu() {
+      navMenu.classList.toggle('active');
+      menuBtn.classList.toggle('active');
+      navOverlay.classList.toggle('active');
+      
+      const spans = menuBtn.querySelectorAll('span');
+      if(menuBtn.classList.contains('active')) {
+        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    navOverlay.addEventListener('click', toggleMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if(navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
     });
   </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
 </body>
 </html>
