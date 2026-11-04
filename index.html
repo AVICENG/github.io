@@ -1,739 +1,751 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AVIC PRO | Инжиниринг, Автоматизация и Безопасность зданий</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Премиальная инженерная дизайн-система с индустриальным оранжевым акцентом */
-    :root {
-      --color-bg-white: #ffffff;
-      --color-bg-soft: #f8fafc;
-      --color-bg-dark: #111622;
-      --color-text-dark: #1c2434;
-      --color-text-muted: #64748b;
-      --color-border-fine: #e2e8f0;
-      --font-main: 'Inter', -apple-system, sans-serif;
-      --side-padding: 9%;
-      
-      /* Цвета строгой графики и акцент */
-      --color-metal-main: #1c2434;    /* Титан */
-      --color-metal-accent: #8a99ad;  /* Платина */
-      --color-orange-accent: #ff6b00; /* Индустриальный оранжевый */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVIC PRO | Инжиниринг, Автоматизация и Безопасность зданий</title>
+    <style>
+        :root {
+            --color-bg-light: #ffffff;
+            --color-bg-content: #f8fafc;
+            --color-bg-dark: #0b0f19;
+            --color-text-main: #0f172a;
+            --color-text-muted: #475569;
+            --color-accent-red: #de1e26;
+            --color-accent-blue: #0052cc;
+            --color-border: #e2e8f0;
+            --font-main: 'Inter', -apple-system, sans-serif;
+            --side-padding: 8%;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      transition: all 0.25s ease-in-out;
-    }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body {
-      font-family: var(--font-main);
-      background-color: var(--color-bg-white);
-      color: var(--color-text-dark);
-      -webkit-font-smoothing: antialiased;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
 
-    /* Шапка сайта */
-    header {
-      background-color: var(--color-bg-white);
-      padding: 24px var(--side-padding);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--color-border-fine);
-    }
+        /* Шапка сайта */
+        header {
+            background-color: #ffffff;
+            padding: 22px var(--side-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
 
-    .hw-logo, .hw-logo a {
-      display: block;
-      width: 140px;
-      height: 42px;
-    }
+        .hw-logo, .hw-logo a { 
+            display: block !important; 
+            width: 130px !important; 
+            height: 46px !important; 
+        }
 
-    .hw-logo-svg {
-      width: 140px;
-      height: 42px;
-      display: block;
-    }
+        .hw-logo-svg { 
+            width: 130px !important; 
+            height: 46px !important; 
+            display: block; 
+        }
 
-    .logo-titan {
-      stroke: var(--color-metal-main);
-      fill: none;
-    }
+        .hw-nav ul { 
+            list-style: none; 
+            display: flex; 
+            align-items: center;
+        }
 
-    .logo-platina {
-      stroke: var(--color-metal-accent);
-      fill: none;
-    }
+        .hw-nav li { 
+            margin-left: 35px; 
+        }
 
-    .logo-orange {
-      stroke: var(--color-orange-accent);
-      fill: none;
-    }
+        .hw-nav a {
+            font-weight: 600; 
+            font-size: 13px; 
+            text-transform: uppercase;
+            letter-spacing: 0.8px; 
+            color: var(--color-text-main); 
+            transition: color 0.15s ease;
+        }
 
-    .logo-text-muted {
-      fill: #7e8e9f;
-      font-weight: 600;
-      letter-spacing: 0.6px;
-    }
+        .hw-nav a:hover, .hw-nav a.active { 
+            color: var(--color-accent-red); 
+        }
 
-    /* Навигация без подчеркиваний, неброская */
-    .hw-nav ul {
-      list-style: none;
-      display: flex;
-    }
+        /* Кнопка Мобильного Меню */
+        .menu-toggle {
+            display: none; 
+            flex-direction: column; 
+            justify-content: space-between;
+            width: 26px; 
+            height: 18px; 
+            background: transparent; 
+            border: none; 
+            cursor: pointer; 
+            z-index: 10005;
+        }
 
-    .hw-nav li {
-      margin-left: 40px;
-    }
+        .menu-toggle span { 
+            width: 100%; 
+            height: 2px; 
+            background-color: var(--color-text-main); 
+            transition: all 0.3s ease; 
+        }
 
-    .hw-nav a {
-      font-weight: 500;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: #334155; /* Тонкий благородный цвет */
-      position: relative;
-      padding-bottom: 4px;
-    }
+        .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    .hw-nav a:hover, .hw-nav a.active {
-      color: var(--color-text-dark); /* Мягкое изменение цвета без оранжевого и подчеркиваний */
-    }
+        /* Hero Блок */
+        .hw-hero { 
+            position: relative; 
+            background-color: var(--color-bg-dark);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e293b' fill-opacity='0.25'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2v2h-2V0zm0 4h2v2h-2V4zm0 4h2v2h-2V8zm0 12h2v2h-2v-2zm0 12h2v2h-2v-2zm4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm12 0h2v2h-2v-2zm12 0h2v2h-2v-2z'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%23de1e26' fill-opacity='0.15'/%3E%3C/g%3E%3C/svg%3E");
+            min-height: 540px; 
+            display: flex; 
+            align-items: center; 
+            padding: 40px var(--side-padding); 
+            border-bottom: 4px solid var(--color-accent-red);
+        }
 
-    /* Мобильное меню */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 24px;
-      height: 16px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      z-index: 1005;
-    }
+        .hw-hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; right: 0; bottom: 0; 
+            background: radial-gradient(circle at 75% 50%, rgba(222, 30, 38, 0.15), transparent 60%); 
+            z-index: 1; 
+        }
 
-    .menu-toggle span {
-      width: 100%;
-      height: 2px;
-      background-color: var(--color-text-dark);
-      transition: all 0.25s ease;
-    }
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+            max-width: 780px; 
+            color: #ffffff; 
+        }
 
-    /* Баннер - яркий, чистый, ненавязчивый оранжевый по контурам */
-    .hw-hero {
-      position: relative;
-      background-color: var(--color-bg-dark);
-      background-image: linear-gradient(rgba(17, 22, 34, 0.35), rgba(17, 22, 34, 0.55)), url('images/baner.webp');
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-height: 540px;
-      display: flex;
-      align-items: center;
-      padding: 60px var(--side-padding);
-      border-bottom: 1px solid var(--color-border-fine);
-      overflow: hidden;
-    }
+        .hero-tag {
+            font-size: 11px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            color: #ffffff;
+            margin-bottom: 20px; 
+            display: inline-block; 
+            background: rgba(255, 255, 255, 0.08); 
+            padding: 5px 14px; 
+            border-left: 3px solid var(--color-accent-red);
+        }
 
-    .hero-content {
-      max-width: 800px;
-      color: #ffffff;
-      text-shadow: 0 2px 10px rgba(17, 22, 34, 0.4);
-    }
+        .hw-hero h1 { 
+            font-size: 44px; 
+            font-weight: 800; 
+            line-height: 1.2; 
+            margin-bottom: 20px; 
+            letter-spacing: -0.5px; 
+        }
 
-    .hero-tag {
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #ffffff;
-      margin-bottom: 20px;
-      display: inline-block;
-      background: transparent;
-      padding: 5px 12px;
-      border: 1px solid var(--color-orange-accent); /* Только оранжевый контур */
-      border-radius: 3px;
-    }
+        .hw-hero h1 .text-accent { 
+            color: var(--color-accent-red); 
+        }
 
-    .hw-hero h1 {
-      font-size: 42px;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 22px;
-      letter-spacing: -0.5px;
-    }
+        .hw-hero p { 
+            font-size: 16px; 
+            font-weight: 300; 
+            color: #94a3b8; 
+            line-height: 1.6; 
+            margin-bottom: 35px; 
+        }
 
-    .hw-hero h1 span {
-      color: #ffffff;
-      font-weight: 400;
-    }
+        .hero-actions { 
+            display: flex; 
+            gap: 15px; 
+            flex-wrap: wrap;
+        }
 
-    .hw-hero p {
-      font-size: 15px;
-      font-weight: 300;
-      color: #cbd5e1;
-      line-height: 1.65;
-      margin-bottom: 35px;
-    }
+        .hw-btn { 
+            display: inline-block; 
+            background-color: var(--color-accent-red); 
+            color: #ffffff; 
+            padding: 14px 28px; 
+            font-weight: 600; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            transition: all 0.2s ease; 
+            border: 2px solid var(--color-accent-red);
+            cursor: pointer;
+            text-align: center;
+        }
 
-    /* Форма и кнопки */
-    .hero-form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      width: 100%;
-      max-width: 450px;
-    }
+        .hw-btn:hover { 
+            background-color: #b5151b; 
+            border-color: #b5151b;
+            box-shadow: 0 4px 15px rgba(222, 30, 38, 0.3); 
+        }
 
-    .input-group {
-      display: flex;
-      gap: 12px;
-    }
+        .hw-btn-secondary { 
+            display: inline-block; 
+            background-color: transparent; 
+            color: #ffffff; 
+            padding: 14px 28px; 
+            font-weight: 600; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            border: 2px solid var(--color-accent-red); 
+            transition: all 0.2s ease; 
+            cursor: pointer;
+            text-align: center;
+        }
 
-    .form-input {
-      flex: 1;
-      padding: 14px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 3px;
-      background: rgba(17, 22, 34, 0.75);
-      font-family: inherit;
-      font-size: 14px;
-      color: #ffffff;
-      outline: none;
-    }
+        .hw-btn-secondary:hover { 
+            background-color: var(--color-accent-red); 
+            color: #ffffff; 
+            box-shadow: 0 4px 15px rgba(222, 30, 38, 0.3); 
+        }
 
-    .form-input:focus {
-      border-color: var(--color-orange-accent);
-    }
+        /* Направления */
+        .hw-main-content { 
+            padding: 90px var(--side-padding); 
+            background-color: var(--color-bg-content); 
+        }
 
-    .hw-btn {
-      display: inline-block;
-      background-color: transparent;
-      color: #ffffff;
-      padding: 15px 30px;
-      font-weight: 600;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      border: 1px solid var(--color-orange-accent); /* Только оранжевый контур */
-      cursor: pointer;
-      text-align: center;
-      border-radius: 3px;
-      white-space: normal;
-      word-wrap: break-word;
-    }
+        .section-header-block { 
+            text-align: left; 
+            margin-bottom: 50px; 
+        }
 
-    .hw-btn:hover {
-      border-color: #ffffff;
-      background-color: rgba(255, 255, 255, 0.05);
-    }
+        .section-header-block h2 { 
+            font-size: 32px; 
+            font-weight: 800; 
+            letter-spacing: -0.5px; 
+            color: var(--color-bg-dark); 
+            margin-bottom: 12px; 
+        }
 
-    .form-privacy {
-      font-size: 11px;
-      color: #94a3b8;
-      margin-top: -4px;
-    }
+        .section-header-line { 
+            width: 60px; 
+            height: 3px; 
+            background-color: var(--color-accent-red); 
+            margin-bottom: 15px; 
+        }
 
-    /* Контентная зона */
-    .hw-main-content {
-      padding: 90px var(--side-padding);
-      background-color: var(--color-bg-soft);
-    }
+        .section-header-block p { 
+            font-size: 15px; 
+            color: var(--color-text-muted); 
+            font-weight: 400; 
+        }
 
-    .section-header-block {
-      text-align: left;
-      margin-bottom: 60px;
-    }
+        .hw-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+        }
 
-    .section-header-block h2 {
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--color-text-dark);
-      margin-bottom: 15px;
-    }
+        .hw-card { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            display: flex; 
+            flex-direction: column; 
+            transition: all 0.3s ease; 
+            position: relative; 
+        }
 
-    .section-header-line {
-      width: 50px;
-      height: 2px;
-      background-color: var(--color-orange-accent); /* Деликатная оранжевая линия */
-      margin-bottom: 20px;
-    }
+        .card-image-wrapper { 
+            width: 100%; 
+            height: 35px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: left; 
+            padding-left: 30px; 
+            background: #f8fafc; 
+            border-bottom: 1px solid #f1f5f9; 
+        }
 
-    .section-header-block p {
-      font-size: 15px;
-      color: var(--color-text-muted);
-      font-weight: 400;
-      max-width: 800px;
-      line-height: 1.6;
-    }
+        .card-content { 
+            padding: 25px 30px 30px 30px; 
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+        }
 
-    /* Инженерные карточки */
-    .hw-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 30px;
-    }
+        .card-num { 
+            font-size: 11px; 
+            font-weight: 700; 
+            color: var(--color-accent-blue); 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
 
-    .hw-card {
-      background: var(--color-bg-white);
-      border: 1px solid var(--color-border-fine);
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      position: relative;
-      overflow: hidden;
-    }
+        .hw-card h3 { 
+            font-size: 19px; 
+            font-weight: 700; 
+            margin-bottom: 14px; 
+            color: var(--color-bg-dark); 
+            margin-top: 5px;
+        }
 
-    .card-image-wrapper {
-      width: 100%;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: left;
-      padding-left: 30px;
-      background: #fafbfc;
-      border-bottom: 1px solid #f1f5f9;
-    }
+        .hw-card p { 
+            font-size: 14px; 
+            color: var(--color-text-muted); 
+            line-height: 1.6; 
+            font-weight: 400; 
+            flex-grow: 1;
+        }
 
-    .card-image-wrapper svg {
-      width: 30px;
-      height: 30px;
-      stroke: var(--color-orange-accent); /* Контурные иконки стали оранжевыми */
-      stroke-width: 1.5;
-      fill: none;
-    }
+        .card-standards {
+            margin-top: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 10px;
+        }
 
-    .card-content {
-      padding: 30px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
+        .hw-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.05); 
+            border-color: #cbd5e1; 
+        }
 
-    .card-num {
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
+        .hw-card::after { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; width: 0; height: 3px; 
+            background-color: var(--color-accent-red); 
+            transition: width 0.25s ease; 
+        }
 
-    .hw-card h3 {
-      font-size: 19px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: var(--color-text-dark);
-    }
+        .hw-card:hover::after { 
+            width: 100%; 
+        }
 
-    .hw-card-list {
-      list-style: none;
-      margin-bottom: 20px;
-    }
+        /* Секция Объектов */
+        .hw-objects-section {
+            padding: 90px var(--side-padding);
+            background-color: #ffffff;
+        }
 
-    .hw-card-list li {
-      font-size: 14px;
-      color: #475569;
-      line-height: 1.6;
-      margin-bottom: 10px;
-      padding-left: 18px;
-      position: relative;
-    }
+        .objects-placeholder {
+            background: var(--color-bg-content);
+            border: 2px dashed var(--color-border);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--color-text-muted);
+            border-radius: 8px;
+            font-size: 15px;
+        }
 
-    .hw-card-list li::before {
-      content: "—";
-      color: var(--color-orange-accent);
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-weight: 700;
-    }
+        /* Секция Формы */
+        .hw-form-section {
+            padding: 90px var(--side-padding);
+            background-color: var(--color-bg-content);
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid var(--color-border);
+        }
 
-    .card-tech-footer {
-      margin-top: auto;
-      padding-top: 15px;
-      border-top: 1px dashed var(--color-border-fine);
-      font-size: 11px;
-      color: var(--color-text-muted);
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-    }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
 
-    .hw-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 25px rgba(28, 36, 52, 0.04);
-      border-color: var(--color-orange-accent);
-    }
+        .form-container h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--color-bg-dark);
+        }
 
-    /* Адаптивный оверлей мобильного меню */
-    .nav-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(17, 22, 34, 0.2);
-      z-index: 998;
-      display: none;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    
-    .nav-overlay.active {
-      display: block;
-      opacity: 1;
-    }
+        .form-container p {
+            color: var(--color-text-muted);
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
 
-    /* Жесткая мобильная адаптивность и защита полей */
-    @media (max-width: 991px) {
-      .menu-toggle {
-        display: flex;
-      }
-      .hw-nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background: var(--color-bg-white);
-        padding: 90px 40px;
-        display: block;
-        z-index: 999;
-        box-shadow: -10px 0 30px rgba(17, 22, 34, 0.05);
-        transition: right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-      .hw-nav.active {
-        right: 0;
-      }
-      .hw-nav ul {
-        flex-direction: column;
-        gap: 24px;
-      }
-      .hw-nav li {
-        margin-left: 0;
-      }
-      .hw-nav a {
-        font-size: 14px;
-        display: block;
-        border-bottom: 1px solid var(--color-border-fine);
-        padding-bottom: 10px;
-      }
-    }
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-    @media (max-width: 480px) {
-      :root {
-        --side-padding: 5%; /* Уменьшаем поля на смартфонах */
-      }
-      .hw-hero {
-        min-height: auto;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        background-attachment: scroll; /* Исправление бага iOS / Safari */
-      }
-      .hw-hero h1 {
-        font-size: 26px; /* Заголовок гарантированно влезает на любой мобильный */
-        line-height: 1.25;
-      }
-      .input-group {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .hw-btn {
-        padding: 14px 20px;
-        font-size: 11px;
-      }
-    }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            color: var(--color-text-main);
+            font-family: var(--font-main);
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
 
-    /* Раздел контактов */
-    .contacts-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      align-items: stretch;
-    }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent-red);
+            box-shadow: 0 0 0 3px rgba(222, 30, 38, 0.1);
+        }
 
-    .contacts-box {
-      background: var(--color-bg-white);
-      padding: 35px;
-      border: 1px solid var(--color-border-fine);
-      border-top: 3px solid var(--color-orange-accent); /* Оранжевый контур сверху */
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-sizing: border-box;
-    }
-  </style>
+        .form-container .hw-btn {
+            width: 100%;
+            padding: 16px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+
+        .form-privacy {
+            display: block;
+            margin-top: 15px;
+            font-size: 11px;
+            color: var(--color-text-muted);
+        }
+
+        /* Подвал */
+        footer { 
+            background-color: #ffffff; 
+            color: var(--color-text-main); 
+            padding: 40px var(--side-padding); 
+            font-size: 13px; 
+            border-top: 1px solid var(--color-border); 
+        }
+
+        .footer-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .footer-left p, .footer-center p { 
+            font-size: 13px; 
+            color: var(--color-text-muted); 
+            line-height: 1.5;
+        }
+
+        .contact-link:hover {
+            color: var(--color-accent-red);
+            text-decoration: underline;
+        }
+
+        .footer-right { 
+            font-weight: 500; 
+            color: var(--color-text-muted); 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            white-space: nowrap;
+        }
+
+        .footer-status-dot { 
+            width: 8px; 
+            height: 8px; 
+            background-color: #10b981; 
+            border-radius: 50%; 
+            display: inline-block; 
+            position: relative; 
+        }
+
+        .footer-status-dot::after { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            border-radius: 50%; 
+            background-color: #10b981; 
+            animation: statusPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes statusPulse {
+            0% { transform: scale(1); opacity: 0.75; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+
+        /* Мобильная адаптивность */
+        @media (max-width: 992px) {
+            :root { --side-padding: 5%; }
+            .hw-hero h1 { font-size: 36px; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+
+            .hw-nav {
+                position: fixed;
+                top: 80px; 
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: #ffffff;
+                padding: 40px var(--side-padding);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                transform: translateX(-100%); 
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .hw-nav.active { transform: translateX(0); }
+            .hw-nav ul { flex-direction: column; align-items: flex-start; }
+            .hw-nav li { margin-left: 0; margin-bottom: 25px; width: 100%; }
+            .hw-nav a { font-size: 16px; display: block; padding: 10px 0; }
+
+            .hw-hero { min-height: 460px; padding-top: 60px; padding-bottom: 60px; }
+            .hw-hero h1 { font-size: 30px; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .hw-btn, .hw-btn-secondary { width: 100%; }
+
+            .hw-main-content, .hw-objects-section, .hw-form-section { padding: 60px var(--side-padding); }
+            .section-header-block h2 { font-size: 26px; }
+            .footer-container { flex-direction: column; text-align: center; align-items: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hw-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Оверлей для закрытия мобильного меню -->
-  <div class="nav-overlay" id="navOverlay"></div>
+    <header></header>
 
-  <!-- Навигационная панель -->
-  <header>
-    <div class="hw-logo">
-      <a href="index.html">
-        <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(2, 6)">
-            <!-- ПЕРВАЯ БУКВА "А" - строго по контуру оранжевая (fill=none, stroke=оранжевый), как и просили -->
-            <path class="logo-orange" d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- Все остальные буквы - строго титаново-черные -->
-            <path class="logo-titan" d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path class="logo-titan" d="M 54.5,9 L 54.5,23.5" fill="none" stroke-width="4.2" stroke-linecap="round"/>
-            <path class="logo-titan" d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <section id="hero" class="hw-hero">
+        <div class="hero-content">
+            <span class="hero-tag">Интеллектуальные системы & Безопасность</span>
+            <h1>Высокотехнологичный инжиниринг <span class="text-accent">инфраструктуры зданий</span></h1>
+            <p>ООО «АВИК ИНЖСЕРВИС» разрабатывает и внедряет комплексные архитектурные решения в сфере автоматизации, связи и цифровой безопасности. Проектируем современные распределенные сети без шаблонных ограничений для жилых комплексов, правительственных объектов, промышленных производств и дата-центров.</p>
+            <div class="hero-actions">
+                <a href="#audit-form" class="hw-btn">Запросить расчет проекта</a>
+                <a href="#directions" class="hw-btn-secondary">Направления деятельности</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="directions" class="hw-main-content">
+        <div class="section-header-block">
+            <div class="section-header-line"></div>
+            <h2>Направления деятельности</h2>
+            <p>Проектирование системной архитектуры, квалифицированные монтажные работы, пусконаладка и разработка верхнеуровневого программного обеспечения.</p>
+        </div>
+
+        <div class="hw-grid">
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <div class="card-num">Раздел АК / BMS</div>
+                </div>
+                <div class="card-content">
+                    <h3>Автоматизация и диспетчеризация</h3>
+                    <p>Шкафы автоматического контроля климатическими и вентиляционными комплексами зданий. Интеллектуальное управление дежурным, внутренним и фасадным освещением. Разработка алгоритмов нижнего уровня и программирование контроллеров. Инжиниринг верхнего уровня: развертывание диспетчерских SCADA-интерфейсов.</p>
+                    <div class="card-standards">Стандарты: Промышленные ПЛК TCP/IP / SCADA-системы</div>
+                </div>
+            </div>
+
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <div class="card-num">Раздел СОТ / CCTV</div>
+                </div>
+                <div class="card-content">
+                    <h3>Технологическое видеонаблюдение</h3>
+                    <p>Распределенные системы охранного IP-наблюдения сверхвысокого разрешения. Серверные станции с аппаратными нейросетевыми алгоритмами детекции событий. Проектирование удаленных АРМ операторов и ситуационных мониторинговых центров. Лицензионное программное обеспечение верхнего уровня для управления видеопотоками.</p>
+                    <div class="card-standards">Стандарты: Нейросетевая аналитика / Резервирование данных</div>
+                </div>
+            </div>
+
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <div class="card-num">Раздел ОПС и СОУЭ</div>
+                </div>
+                <div class="card-content">
+                    <h3>Противопожарная автоматика</h3>
+                    <p>Адресные и адресно-аналоговые комплексы пожарной сигнализации повышенной емкости. Линейный температурный контроль протяженных сооружений с использованием термокабелей. Системы оповещения и управления эвакуацией: зонные, световые и речевые комплексы. Автоматический вывод тревожных сигналов на радиостанции прямого мониторинга МЧС.</p>
+                    <div class="card-standards">Стандарты: Адресный контроль / Радиомониторинг МЧС</div>
+                </div>
+            </div>
+
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <div class="card-num">Раздел СКУД / Access Control</div>
+                </div>
+                <div class="card-content">
+                    <h3>Контроль и управление доступом</h3>
+                    <p>Сетевые контроллеры доступа со встроенной защитой интерфейсных линий связи. Биометрические терминалы авторизации и считыватели шифрованных карт. Исполнительные механизмы прохода: замки, электрозащелки, приводы ворот и шлюзы. Организация сквозных аналитических систем автоматического учета рабочего времени.</p>
+                    <div class="card-standards">Стандарты: IP-СКУД / Шифрованные протоколы авторизации</div>
+                </div>
+            </div>
+
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <div class="card-num">Раздел СОТС / ОС</div>
+                </div>
+                <div class="card-content">
+                    <h3>Охранно-тревожная сигнализация</h3>
+                    <p>Адресные датчики объемного обнаружения, акустического и вибрационного контроля периметра. Интерфейсные клавиатуры управления и компактные мнемосхемы индикации зон. Шкафы гарантированного питания с автоматическим мониторингом состояния аккумуляторов. Объектовые блоки передачи извещений с многоканальным резервированием (GSM, IP, радиоканалы).</p>
+                    <div class="card-standards">Стандарты: Адресные шлейфы / Бесперебойное ИБП-резервирование</div>
+                </div>
+            </div>
+
+            <div class="hw-card">
+                <div class="card-image-wrapper">
+                    <div class="card-num">Раздел ЛВС / СКС</div>
+                </div>
+                <div class="card-content">
+                    <h3>Сети передачи данных и трассы</h3>
+                    <p>Проектирование и прокладка волоконно-оптических (ВОЛС) и медных систем передачи категорий 5e, 6, 6A. Управляемое ИТ-оборудование корпоративного уровня, высокоплотные PoE+ коммутаторы. Сборка серверных стоек, комплексный монтаж настенных и напольных телекоммуникационных шкафов. Опорные конструкции: сертифицированные металлические лотки, магистральные трассы и гофротрубы LSZH.</p>
+                    <div class="card-standards">Стандарты: Оптические трассы / Огнестойкие кабельные линии FRHF</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="objects" class="hw-objects-section">
+        <div class="section-header-block">
+            <div class="section-header-line"></div>
+            <h2>Выполненные объекты</h2>
+            <p>Наши ключевые проекты, реализованные с соблюдением строгих отраслевых стандартов безопасности и автоматизации.</p>
+        </div>
+        <div class="objects-placeholder">
+            <p>Раздел находится в стадии наполнения портфолио. Мы проектируем решения для жилых комплексов, правительственных объектов, промышленных производств и дата-центров.</p>
+        </div>
+    </section>
+
+    <section id="audit-form" class="hw-form-section">
+        <div class="form-container">
+            <h3>Запросить расчет или аудит проекта</h3>
+            <p>Оставьте ваши контакты, инженерный отдел свяжется с вами для уточнения деталей задачи.</p>
+            <form action="https://formspree.io/f/mnnqgvez" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="_replyto" placeholder="Электронная почта" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Номер телефона" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Краткое описание задачи или объекта" rows="4"></textarea>
+                </div>
+                <input type="hidden" name="_to" value="info@aviceng.com">
+                <button type="submit" class="hw-btn">Отправить запрос</button>
+                <span class="form-privacy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</span>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p><strong>ООО «АВИК ИНЖСЕРВИС»</strong></p>
+                <p>ИНН: 7717290070 | ОГРН: 1157746486083</p>
+                <p>129075, г. Москва, Мурманский пр-д, д. 14 к. 1</p>
+                <p style="margin-top: 10px; opacity: 0.6;">&copy; 2026 AVIC PRO. Все права защищены.</p>
+            </div>
+            <div class="footer-center">
+                <p><strong>Инженерный отдел:</strong></p>
+                <p><a href="tel:+79251345090" class="contact-link">+7 (925) 134-50-90</a></p>
+                <p><a href="mailto:info@aviceng.com" class="contact-link">info@aviceng.com</a></p>
+            </div>
+            <div class="footer-right">
+                <span class="footer-status-dot"></span>
+                <span>Системы мониторинга активны</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const headerElement = document.querySelector('header');
             
-            <g transform="translate(79, 1.5)">
-              <path class="logo-titan" d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path class="logo-titan" d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect class="logo-titan" x="33" y="2" width="10" height="11" rx="4" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </g>
-          </g>
-          <g transform="translate(2, 0)">
-            <text class="logo-titan-muted" x="2" y="42.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.9" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
-          </g>
-        </svg>
-      </a>
-    </div>
-    <button class="menu-toggle" id="menuBtn">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="hw-nav" id="navMenu">
-      <ul>
-        <li><a href="#engineering" class="active">Инжиниринг</a></li>
-        <li><a href="p/equipment.html">Оборудование</a></li>
-        <li><a href="p/objects.html">Объекты</a></li>
-        <li><a href="#contacts">Контакты</a></li>
-      </ul>
-    </nav>
-  </header>
+            if (headerElement) {
+                const homePath = '#hero';
+                const eqPath   = '#directions';
+                const objPath  = '#objects';
+                const contPath = '#contacts';
 
-  <!-- Главный баннер -->
-  <section class="hw-hero">
-    <div class="hero-content">
-      <span class="hero-tag">Интеллектуальные системы & Безопасность</span>
-      <h1> Высокотехнологичный инжиниринг <br>инфраструктуры зданий</span></h1>
-      <p>ООО «АВИК ИНЖСЕРВИС» разрабатывает и внедряет комплексные архитектурные решения в сфере автоматизации, связи и цифровой безопасности. Проектируем современные распределенные сети без шаблонных ограничений для жилых комплексов, правительственных объектов, промышленных производств и дата-центров.</p>
-      
-     <form action="https://formspree.io/f/mzeejdwy" method="POST" class="hero-form">
-  <div class="input-group">
-    <input type="text" name="name" class="form-input" placeholder="Ваше имя" required>
-    <input type="tel" name="phone" class="form-input" placeholder="Телефон" required>
-  </div>
-  <button type="submit" class="hw-btn">Запросить аудит и расчет проекта</button>
-  <p class="form-privacy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
-</form>
-    </div>
-  </section>
+                headerElement.innerHTML = `
+                    <div class="hw-logo">
+                        <a href="${homePath}">
+                            <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://www.w3.org/2000/svg" style="height: 46px !important;">
+                                <g transform="translate(2, 6)">
+                                    <path d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke="#de1e26" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M 54.5,9 L 54.5,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round"/>
+                                    <path d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke="#0b0f19" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <g transform="translate(79, 1.5)">
+                                        <path d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke="#0b0f19" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <rect x="33" y="2" width="10" height="11" rx="4" fill="none" stroke="#de1e26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(2, 0)">
+                                    <text class="hw-logo-text-sub" x="2" y="42.5" font-family="'Inter', sans-serif" font-weight="700" font-size="6.3" fill="#767676" letter-spacing="0.48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <button class="menu-toggle" id="mobileMenuBtn" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
 
-  <!-- Направления деятельности -->
-  <section id="engineering" class="hw-main-content">
-    <div class="section-header-block">
-      <div class="section-header-line"></div>
-      <h2>Направления деятельности</h2>
-      <p>Проектирование системной архитектуры, квалифицированные монтажные работы, пусконаладка и разработка верхнеуровневого программного обеспечения.</p>
-    </div>
-    
-    <div class="hw-grid">
-      <div class="hw-card">
-        <div class="card-image-wrapper">
-          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
-        </div>
-        <div class="card-content">
-          <span class="card-num">Раздел АК / BMS</span>
-          <h3>Автоматизация и диспетчеризация</h3>
-          <ul class="hw-card-list">
-            <li>Шкафы автоматического контроля климатическими и вентиляционными комплексами зданий.</li>
-            <li>Интеллектуальное управление дежурным, внутренним и фасадным освещением.</li>
-            <li>Разработка алгоритмов нижнего уровня и программирование контроллеров.</li>
-            <li>Инжиниринг верхнего уровня: развертывание диспетчерских SCADA-интерфейсов.</li>
-          </ul>
-          <div class="card-tech-footer">Стандарты: Промышленные ПЛК TCP/IP / SCADA-системы</div>
-        </div>
-      </div>
+                    <nav class="hw-nav" id="mobileNav">
+                        <ul>
+                            <li><a href="${homePath}">Главная</a></li>
+                            <li><a href="${eqPath}">Направления</a></li>
+                            <li><a href="${objPath}">Объекты</a></li>
+                            <li><a href="${contPath}">Контакты</a></li>
+                        </ul>
+                    </nav>
+                `;
 
-      <div class="hw-card">
-        <div class="card-image-wrapper">
-          <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-        </div>
-        <div class="card-content">
-          <span class="card-num">Раздел СОТ / CCTV</span>
-          <h3>Технологическое видеонаблюдение</h3>
-          <ul class="hw-card-list">
-            <li>Распределенные системы охранного IP-наблюдения сверхвысокого разрешения.</li>
-            <li>Серверные станции с аппаратными нейросетевыми алгоритмами детекции событий.</li>
-            <li>Проектирование удаленных АРМ операторов и ситуационных мониторинговых центров.</li>
-            <li>Лицензионное программное обеспечение верхнего уровня для управления видеопотоками.</li>
-          </ul>
-          <div class="card-tech-footer">Стандарты: Нейросетевая аналитика / Резервирование данных</div>
-        </div>
-      </div>
+                const menuButton = document.getElementById('mobileMenuBtn');
+                const navigationPanel = document.getElementById('mobileNav');
 
-      <div class="hw-card">
-        <div class="card-image-wrapper">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-        </div>
-        <div class="card-content">
-          <span class="card-num">Раздел ОПС и СОУЭ</span>
-          <h3>Противопожарная автоматика</h3>
-          <ul class="hw-card-list">
-            <li>Адресные и адресно-аналоговые комплексы пожарной сигнализации повышенной емкости.</li>
-            <li>Линейный температурный контроль протяженных сооружений с использованием термокабелей.</li>
-            <li>Системы оповещения и управления эвакуацией: зонные, световые и речевые комплексы.</li>
-            <li>Автоматический вывод тревожных сигналов на радиостанции прямого мониторинга МЧС.</li>
-          </ul>
-          <div class="card-tech-footer">Стандарты: Адресный контроль / Радиомониторинг МЧС</div>
-        </div>
-      </div>
+                if (menuButton && navigationPanel) {
+                    menuButton.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        menuButton.classList.toggle('active');
+                        navigationPanel.classList.toggle('active');
+                    });
 
-      <div class="hw-card">
-        <div class="card-image-wrapper">
-          <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.59 9.56 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.56 0 4.83-1.59 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-        </div>
-        <div class="card-content">
-          <span class="card-num">Раздел СКУД / Access Control</span>
-          <h3>Контроль и управление доступом</h3>
-          <ul class="hw-card-list">
-            <li>Сетевые контроллеры доступа со встроенной защитой интерфейсных линий связи.</li>
-            <li>Биометрические терминалы авторизации и считыватели шифрованных карт.</li>
-            <li>Исполнительные механизмы прохода: замки, электрозащелки, приводы ворот и шлюзы.</li>
-            <li>Организация сквозных аналитических систем автоматического учета рабочего времени.</li>
-          </ul>
-          <div class="card-tech-footer">Стандарты: IP-СКУД / Шифрованные протоколы авторизации</div>
-        </div>
-      </div>
+                    const navLinks = navigationPanel.querySelectorAll('a');
+                    navLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            menuButton.classList.remove('active');
+                            navigationPanel.classList.remove('active');
+                        });
+                    });
 
-      <div class="hw-card">
-        <div class="card-image-wrapper">
-          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-        </div>
-        <div class="card-content">
-          <span class="card-num">Раздел СОТС / ОС</span>
-          <h3>Охранно-тревожная сигнализация</h3>
-          <ul class="hw-card-list">
-            <li>Адресные датчики объемного обнаружения, акустического и вибрационного контроля периметра.</li>
-            <li>Интерфейсные клавиатуры управления и компактные мнемосхемы индикации зон.</li>
-            <li>Шкафы гарантированного питания с автоматическим мониторингом состояния аккумуляторов.</li>
-            <li>Объектовые блоки передачи извещений с многоканальным резервированием (GSM, IP, радиоканалы).</li>
-          </ul>
-          <div class="card-tech-footer">Стандарты: Адресные шлейфы / Бесперебойное ИБП-резервирование</div>
-        </div>
-      </div>
+                    navigationPanel.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                    });
 
-      <div class="hw-card">
-        <div class="card-image-wrapper">
-          <svg viewBox="0 0 24 24"><path d="M4 18h16V6H4v12zm18-14v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2zM6 8h3v2H6V8zm0 4h3v2H6v-2zm5-4h7v2h-7V8zm0 4h7v2h-7v-2z"/></svg>
-        </div>
-        <div class="card-content">
-          <span class="card-num">Раздел ЛВС / СКС</span>
-          <h3>Сети передачи данных и трассы</h3>
-          <ul class="hw-card-list">
-            <li>Проектирование и прокладка волоконно-оптических (ВОЛС) и медных систем передачи категорий 5e, 6, 6A.</li>
-            <li>Управляемое ИТ-оборудование корпоративного уровня, высокоплотные PoE+ коммутаторы.</li>
-            <li>Сборка серверных стоек, комплексный монтаж настенных и напольных телекоммуникационных шкафов.</li>
-            <li>Опорные конструкции: сертифицированные металлические лотки, магистральные трассы и гофротрубы LSZH.</li>
-          </ul>
-          <div class="card-tech-footer">Стандарты: Оптические трассы / Огнестойкие кабельные линии FRHF</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Контакты -->
-  <section id="contacts" class="hw-main-content" style="padding-top: 0; background-color: var(--color-bg-white);">
-    <div class="section-header-block">
-      <div class="section-header-line"></div>
-      <h2>Контакты</h2>
-    </div>
-    <div class="contacts-wrapper">
-      <div class="contacts-box">
-        <div>
-          <h3 style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid var(--color-border-fine); padding-bottom: 10px; color: var(--color-text-dark);">Инженерный отдел</h3>
-          <p style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: var(--color-text-dark); letter-spacing: -0.5px;">+7 (925) 134-50-90</p>
-          <p style="font-size: 15px; color: var(--color-text-muted); margin-bottom: 30px;">info@aviceng.com</p>
-          <p style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; color: var(--color-text-dark);">Адрес компании:</p>
-          <p style="color: var(--color-text-muted); font-size: 14px; line-height: 1.6;">129075, город Москва, Мурманский пр-д, д. 14 к. 1</p>
-        </div>
-        <div style="margin-top: 30px; display: flex; gap: 20px;">
-          <a href="https://maps.google.com" target="_blank" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; border-bottom: 1px solid var(--color-text-dark); padding-bottom: 2px;">Google Maps</a>
-          <a href="https://yandex.ru/maps" target="_blank" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; border-bottom: 1px solid var(--color-text-dark); padding-bottom: 2px;">Яндекс.Карты</a>
-        </div>
-      </div>
-      <div class="contacts-box">
-        <div>
-          <h3 style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid var(--color-border-fine); padding-bottom: 10px; color: var(--color-text-dark);">Реквизиты организации</h3>
-          <div style="font-size: 14px; color: var(--color-text-muted); line-height: 1.9; font-weight: 400;">
-            <p style="color: var(--color-text-dark); font-weight: 600; margin-bottom: 8px; font-size: 15px;">ООО «АВИК ИНЖСЕРВИС»</p>
-            <p><strong>ИНН:</strong> 7717290070</p>
-            <p><strong>ОГРН:</strong> 1157746486083</p>
-            <p><strong>КПП:</strong> 771701001</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Скрипты адаптива -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navMenu = document.getElementById('navMenu');
-    const navOverlay = document.getElementById('navOverlay');
-    const navLinks = navMenu.querySelectorAll('a');
-
-    function toggleMenu() {
-      navMenu.classList.toggle('active');
-      menuBtn.classList.toggle('active');
-      navOverlay.classList.toggle('active');
-      
-      const spans = menuBtn.querySelectorAll('span');
-      if(menuBtn.classList.contains('active')) {
-        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-      }
-    }
-
-    menuBtn.addEventListener('click', toggleMenu);
-    navOverlay.addEventListener('click', toggleMenu);
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if(navMenu.classList.contains('active')) {
-          toggleMenu();
-        }
-      });
-    });
-  </script>
+                    document.addEventListener('click', () => {
+                        menuButton.classList.remove('active');
+                        navigationPanel.classList.remove('active');
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>
