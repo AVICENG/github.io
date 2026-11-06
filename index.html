@@ -1,333 +1,123 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AVIC PRO — автоматизация и диспетчеризация инженерных систем. Реализованные объекты.">
-<title>AVIC PRO — Реализованные объекты</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVIC PRO | Инжиниринг, автоматизация и безопасность зданий</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:#10243c;
-  --blue:#28649b;
-  --text:#18283a;
-  --muted:#718096;
-  --line:#e5eaf0;
-  --bg:#f5f7fa;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6}
-a{color:inherit}
-.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
-header{background:var(--navy);color:white;padding:20px 0}
-.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{font-size:23px;font-weight:800;letter-spacing:3px;text-decoration:none}
-.logo span{color:#79b9ef}
-nav{display:flex;gap:25px;font-size:14px}
-nav a{text-decoration:none;color:#dce7f2}
-.hero{background:linear-gradient(120deg,#10243c,#1c4b78);color:white;padding:85px 0}
-.eyebrow{color:#8fc5f3;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(34px,5vw,58px);line-height:1.12;max-width:850px;margin:18px 0}
-.hero p{max-width:760px;color:#d5e0ec;font-size:17px}
-.button{display:inline-block;margin-top:20px;padding:12px 20px;background:white;color:var(--navy);text-decoration:none;border-radius:4px;font-weight:bold}
-section{padding:70px 0}
-.section-title{font-size:36px;margin:5px 0 10px}
-.section-intro{color:var(--muted);max-width:760px}
-.services{background:var(--bg)}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-.service{background:white;border:1px solid var(--line);border-radius:8px;padding:22px}
-.service h3{margin:0 0 8px;font-size:17px}
-.service p{margin:0;color:var(--muted);font-size:14px}
-.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
-.project{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:white;display:flex;flex-direction:column}
-.photo{height:205px;background:#e9eef4;position:relative}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-fallback{height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#66788d;background:linear-gradient(135deg,#edf2f7,#dce5ef);text-align:center;padding:15px}
-.photo-fallback strong{font-size:12px;letter-spacing:2px}
-.photo-fallback span{font-size:12px;margin-top:8px}
-.photo-link{position:absolute;bottom:10px;right:10px;background:#10243cdd;color:white;padding:6px 10px;border-radius:4px;text-decoration:none;font-size:11px}
-.project-body{padding:19px;display:flex;flex-direction:column;flex:1}
-.date{font-size:12px;color:var(--blue);font-weight:bold;margin-bottom:7px}
-.project h3{font-size:18px;line-height:1.35;margin:0 0 8px}
-.address{font-size:13px;color:var(--muted);margin:0 0 12px}
-.description{font-size:13px;color:#4d5c6d;margin:0}
-.tags{font-size:11px;color:var(--blue);font-weight:bold;margin-top:auto;padding-top:16px}
-.contact{background:var(--navy);color:white}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.contact p{color:#d0dce8}
-.contact a{color:white}
-footer{background:#09182a;color:#aebdce;padding:18px 0;font-size:12px}
-@media(max-width:900px){
- .project-grid{grid-template-columns:repeat(2,1fr)}
- .service-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
- .wrap{width:calc(100% - 28px)}
- nav{gap:12px;font-size:12px}
- .hero{padding:60px 0}
- .project-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
- .photo{height:220px}
- section{padding:52px 0}
-}
+:root{--white:#fff;--soft:#f8fafc;--dark:#111622;--text:#1c2434;--muted:#64748b;--line:#e2e8f0;--orange:#ff6b00;--pad:9%;--font:'Inter',-apple-system,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:100px}body{font-family:var(--font);background:#fff;color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit;text-decoration:none}
+header{background:#fff;padding:20px var(--pad);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--line)}
+.hw-logo,.hw-logo a{display:block;width:140px;height:46px}.hw-logo-svg{width:140px;height:46px;display:block}.logo-titan{stroke:var(--text);fill:none}.logo-orange{stroke:var(--orange);fill:none}.logo-titan-muted{fill:#7e8e9f}
+.hw-nav ul{list-style:none;display:flex;gap:34px}.hw-nav a{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#334155}.hw-nav a:hover{color:var(--orange)}
+.menu-toggle{display:none;background:none;border:0;cursor:pointer;width:26px;height:20px;flex-direction:column;justify-content:space-between;z-index:1005}.menu-toggle span{height:2px;background:var(--text);width:100%}
+.hw-hero{background:linear-gradient(90deg,rgba(11,17,30,.93),rgba(11,17,30,.68) 55%,rgba(11,17,30,.2)),url('images/baner.webp') center/cover no-repeat fixed;background-color:var(--dark);min-height:540px;display:flex;align-items:center;padding:70px var(--pad);color:white}
+.hero-content{max-width:800px}.hero-tag{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--orange);padding:7px 12px;display:inline-block;margin-bottom:22px}.hw-hero h1{font-size:42px;line-height:1.25;margin-bottom:22px}.hw-hero h1 span{font-weight:400}.hw-hero p{font-size:16px;line-height:1.75;color:#f1f5f9;max-width:720px;margin-bottom:30px}
+.hero-form{display:flex;flex-direction:column;gap:12px;max-width:450px}.input-group{display:flex;gap:12px}.form-input{min-width:0;flex:1;padding:14px;border:1px solid #ffffff40;border-radius:3px;background:#111622bf;color:white;font:14px var(--font)}.hw-btn{background:transparent;color:white;padding:14px 24px;border:1px solid var(--orange);border-radius:3px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer}.hw-btn:hover{background:#ffffff12;border-color:white}.form-privacy{font-size:10px;color:#aab4c3}
+section.content{padding:85px var(--pad);background:var(--soft)}section.white{background:white}.section-head{margin-bottom:42px}.section-line{width:50px;height:2px;background:var(--orange);margin-bottom:18px}.section-head h2{font-size:32px;margin-bottom:12px;letter-spacing:-.5px}.section-head p{font-size:14px;line-height:1.7;color:var(--muted);max-width:850px}
+.hw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}.hw-card{background:white;border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}.card-image-wrapper{height:64px;padding:18px 28px;background:#fafbfc;border-bottom:1px solid #f1f5f9}.card-image-wrapper svg{width:28px;height:28px;stroke:var(--orange);stroke-width:1.5;fill:none}.card-content{padding:26px;display:flex;flex-direction:column;flex:1}.card-num{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}.hw-card h3{font-size:18px;margin-bottom:14px}.hw-card-list{list-style:none;margin-bottom:18px}.hw-card-list li{font-size:13px;line-height:1.65;color:#475569;margin-bottom:8px;padding-left:17px;position:relative}.hw-card-list li:before{content:'—';position:absolute;left:0;color:var(--orange);font-weight:700}.card-tech-footer{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:10px;color:var(--muted);text-transform:uppercase}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}.project{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}.project-photo{height:190px;background:#e9edf2;position:relative;overflow:hidden}.project-photo img{width:100%;height:100%;object-fit:cover;display:block}.project-photo.placeholder{display:flex;align-items:center;justify-content:center;position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,#101a2b 0%,#263a55 48%,#e86b22 49%,#f49a55 51%,#dfe6ed 100%);color:#fff;text-align:center;padding:20px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}.project-photo.placeholder:before{content:"";position:absolute;z-index:-1;inset:18% 12% 0;background:repeating-linear-gradient(90deg,#ffffff18 0 2px,transparent 2px 34px),linear-gradient(180deg,#ffffff25,#11162270);clip-path:polygon(12% 0,88% 0,100% 100%,0 100%);border:1px solid #ffffff55}.project-photo.placeholder:after{content:"AVIC PRO";position:absolute;right:12px;bottom:10px;font-size:9px;letter-spacing:2px;color:#ffffffa8}.project-body{padding:20px;display:flex;flex-direction:column;flex:1}.project-date{font-size:10px;color:var(--orange);font-weight:700;letter-spacing:1px;margin-bottom:8px}.project h3{font-size:16px;line-height:1.4;margin-bottom:8px}.project-address{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px}.project-desc{font-size:12px;color:#475569;line-height:1.6}.project-tag{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:#64748b;border-top:1px solid var(--line);padding-top:12px;margin-top:14px}
+.note{font-size:12px;color:var(--muted);line-height:1.6;margin-top:22px}
+.contacts-wrapper{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}.contacts-box{background:#fff;padding:32px;border:1px solid var(--line);border-top:3px solid var(--orange);display:flex;flex-direction:column;justify-content:space-between}.contacts-box h3{font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:12px}.contacts-box p{color:var(--muted);font-size:14px;line-height:1.8}.contacts-box .phone{font-size:23px;font-weight:700;color:var(--text);margin-bottom:4px}
+footer{padding:25px var(--pad);font-size:11px;color:var(--muted);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}
+.nav-overlay{display:none;position:fixed;inset:0;background:#11162233;z-index:998}.nav-overlay.active{display:block}
+@media(max-width:991px){.menu-toggle{display:flex}.hw-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:white;padding:90px 32px;z-index:999;transition:right .3s;box-shadow:-10px 0 30px #11162212}.hw-nav.active{right:0}.hw-nav ul{flex-direction:column;gap:24px}.hw-nav a{display:block;padding-bottom:12px;border-bottom:1px solid var(--line);font-size:13px}}
+@media(max-width:600px){:root{--pad:5%}.hw-hero{min-height:auto;padding:60px var(--pad);background-attachment:scroll;background-image:linear-gradient(#0b111ed9,#0b111ee8),url('images/baner.webp')}.hw-hero h1{font-size:29px}.hw-hero p{font-size:14px}.input-group{flex-direction:column}.section-head h2{font-size:27px}section.content{padding-top:60px;padding-bottom:60px}.projects-grid{grid-template-columns:1fr}footer{flex-direction:column}}
 </style>
 </head>
 <body>
-
+<div class="nav-overlay" id="navOverlay"></div>
 <header>
- <div class="wrap nav">
-  <a class="logo" href="#">AVIC<span>PRO</span></a>
-  <nav>
-   <a href="#services">Направления</a>
-   <a href="#projects">Объекты</a>
-   <a href="#contacts">Контакты</a>
-  </nav>
- </div>
+  <div class="hw-logo"><a href="#top" aria-label="AVIC PRO — главная">
+    <!-- Логотип оставлен в исходном виде из присланного HTML -->
+    <svg class="hw-logo-svg" viewBox="0 0 130 46" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(2, 6)">
+        <path class="logo-orange" d="M 19.5,23.5 L 19.5,14 C 19.5,10.5 16,8.5 11,8.5 C 6,8.5 2,10.5 2,14 C 2,17.5 6,23.5 11,23.5 L 19.5,23.5" fill="none" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="logo-titan" d="M 26.5,9 L 36.5,23.5 L 46.5,9" fill="none" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="logo-titan" d="M 54.5,9 L 54.5,23.5" fill="none" stroke-width="4.2" stroke-linecap="round"/>
+        <path class="logo-titan" d="M 74,9 C 66,9 62,12 62,16.25 C 62,20.5 66,23.5 74,23.5" fill="none" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(79, 1.5)">
+          <path class="logo-titan" d="M 2,13 L 2,2 M 2,2 L 9,2 C 12,2 13.5,4 13.5,6 C 13.5,8 12,10 9,10 L 2,10" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="logo-titan" d="M 17,13 L 17,2 M 17,2 L 23.5,2 C 26.5,2 28,3.5 28,5.5 C 28,7.5 26.5,9 23.5,9 L 17,9 M 23,9 L 28,13" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect class="logo-titan" x="33" y="2" width="10" height="11" rx="4" fill="none" stroke-width="3.2"/>
+        </g>
+      </g>
+      <g transform="translate(2, 0)"><text class="logo-titan-muted" x="2" y="42.5" font-family="'Inter',sans-serif" font-weight="700" font-size="6.9" letter-spacing=".48">ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ</text></g>
+    </svg>
+  </a></div>
+  <button class="menu-toggle" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  <nav class="hw-nav" id="navMenu"><ul>
+    <li><a href="#engineering">Инжиниринг</a></li><li><a href="#projects">Объекты</a></li><li><a href="#contacts">Контакты</a></li>
+  </ul></nav>
 </header>
 
-<main>
-<section class="hero">
- <div class="wrap">
-  <div class="eyebrow">Инженерные системы · Автоматизация</div>
-  <h1>Интеллектуальные решения для инженерной инфраструктуры зданий</h1>
-  <p>ООО «АВИК ИНЖСЕРВИС» выполняет проектирование, программирование, монтаж, пусконаладку и техническое обслуживание систем автоматизации и диспетчеризации инженерных систем зданий.</p>
-  <a class="button" href="#projects">Наши объекты</a>
- </div>
+<main id="top">
+<section class="hw-hero"><div class="hero-content">
+  <span class="hero-tag">Интеллектуальные системы &amp; Безопасность</span>
+  <h1>Высокотехнологичный инжиниринг<br><span>инфраструктуры зданий</span></h1>
+  <p>ООО «АВИК ИНЖСЕРВИС» разрабатывает и внедряет комплексные решения в сфере автоматизации, связи и цифровой безопасности. Проектируем и внедряем инженерные и слаботочные системы для жилых комплексов, общественных, правительственных и промышленных объектов, а также дата-центров.</p>
+  <form action="https://formspree.io/f/mzeejdwy" method="POST" class="hero-form">
+    <div class="input-group"><input type="text" name="name" class="form-input" placeholder="Ваше имя" required><input type="tel" name="phone" class="form-input" placeholder="Телефон" required></div>
+    <button type="submit" class="hw-btn">Запросить аудит и расчёт проекта</button>
+    <p class="form-privacy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+  </form>
+</div></section>
+
+<section id="engineering" class="content">
+<div class="section-head"><div class="section-line"></div><h2>Направления деятельности</h2><p>Проектирование, монтаж, пусконаладка, программирование, техническое обслуживание и интеграция инженерных и слаботочных систем.</p></div>
+<div class="hw-grid">
+  <article class="hw-card"><div class="card-image-wrapper"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg></div><div class="card-content"><span class="card-num">Раздел АК / BMS</span><h3>Автоматизация и диспетчеризация</h3><ul class="hw-card-list"><li>Шкафы автоматического контроля климатическими и вентиляционными комплексами зданий.</li><li>Управление дежурным, внутренним и фасадным освещением.</li><li>Разработка алгоритмов нижнего уровня и программирование контроллеров.</li><li>Развертывание диспетчерских SCADA-интерфейсов и интеграция инженерных систем.</li></ul><div class="card-tech-footer">ПЛК · TCP/IP · SCADA · BMS</div></div></article>
+  <article class="hw-card"><div class="card-image-wrapper"><svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div class="card-content"><span class="card-num">Раздел СОТ / CCTV</span><h3>Технологическое видеонаблюдение</h3><ul class="hw-card-list"><li>Распределённые системы охранного IP-видеонаблюдения высокого разрешения.</li><li>Серверные станции и аналитика видеоизображений, детекция событий.</li><li>АРМ операторов, ситуационные и мониторинговые центры.</li><li>ПО верхнего уровня для управления видеопотоками и архивами.</li></ul><div class="card-tech-footer">IP-видео · VMS · видеоаналитика</div></div></article>
+  <article class="hw-card"><div class="card-image-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div><div class="card-content"><span class="card-num">Раздел ОПС / СОУЭ</span><h3>Противопожарная автоматика</h3><ul class="hw-card-list"><li>Адресные и адресно-аналоговые комплексы пожарной сигнализации.</li><li>Линейный температурный контроль протяжённых сооружений.</li><li>Системы оповещения и управления эвакуацией: речевые и световые.</li><li>Интеграция сигналов с инженерными системами и диспетчерскими постами.</li></ul><div class="card-tech-footer">ОПС · СОУЭ · пожарная автоматика</div></div></article>
+  <article class="hw-card"><div class="card-image-wrapper"><svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.59 9.56 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.56 0 4.83-1.59 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div><div class="card-content"><span class="card-num">Раздел СКУД</span><h3>Контроль и управление доступом</h3><ul class="hw-card-list"><li>Сетевые контроллеры доступа и распределённая архитектура СКУД.</li><li>Биометрические терминалы и считыватели карт.</li><li>Замки, электрозащёлки, турникеты, приводы ворот и шлюзы.</li><li>Интеграция с учётом рабочего времени и системами безопасности.</li></ul><div class="card-tech-footer">СКУД · биометрия · контроль доступа</div></div></article>
+  <article class="hw-card"><div class="card-image-wrapper"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div><div class="card-content"><span class="card-num">Раздел СОТС / ОС</span><h3>Охранно-тревожная сигнализация</h3><ul class="hw-card-list"><li>Датчики объёмного обнаружения, акустического и вибрационного контроля.</li><li>Охрана периметра, тревожные кнопки и индикация зон.</li><li>Шкафы гарантированного питания и контроль аккумуляторов.</li><li>Передача извещений по IP, GSM и радиоканалам.</li></ul><div class="card-tech-footer">ОС · СОТС · охрана периметра</div></div></article>
+  <article class="hw-card"><div class="card-image-wrapper"><svg viewBox="0 0 24 24"><path d="M4 18h16V6H4v12zm18-14v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2zM6 8h3v2H6V8zm0 4h3v2H6v-2zm5-4h7v2h-7V8zm0 4h7v2h-7v-2z"/></svg></div><div class="card-content"><span class="card-num">Раздел ЛВС / СКС</span><h3>Сети передачи данных и трассы</h3><ul class="hw-card-list"><li>ВОЛС и медные кабельные системы категорий 5e, 6 и 6A.</li><li>Коммутаторы корпоративного уровня, PoE и сетевые узлы.</li><li>Сборка серверных стоек и телекоммуникационных шкафов.</li><li>Кабельные лотки, магистральные трассы и огнестойкие линии.</li></ul><div class="card-tech-footer">ЛВС · СКС · ВОЛС · PoE</div></div></article>
+</div></section>
+
+<section id="projects" class="content white">
+<div class="section-head"><div class="section-line"></div><h2>Реализованные объекты</h2><p>Избранные проекты AVIC PRO. В карточках размещены фотографии конкретных зданий, которые удалось сопоставить с объектами из проектного списка.</p></div>
+<div class="projects-grid">
+  <article class="project"><div class="project-photo"><img src="https://center.mosfilm.ru/upload/iblock/177/eck61ol55tdxh6c6pbdxu7ow6wfnr86h.jpg" alt="Киноконцертный комплекс и павильон №17 Мосфильма" loading="lazy"></div><div class="project-body"><div class="project-date">24.08.2024</div><h3>Киноконцертный комплекс и павильон №17 «Мосфильма»</h3><div class="project-address">Москва, ул. Мосфильмовская, Раменки</div><p class="project-desc">Программирование и пусконаладка систем автоматизации и диспетчеризации.</p><div class="project-tag">Автоматизация · диспетчеризация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://aovm.ru/photo_bc/7/1/1/1.jpg" alt="Бизнес-центр Меридиан" loading="lazy"></div><div class="project-body"><div class="project-date">12.02.2021</div><h3>БЦ «Меридиан»</h3><div class="project-address">Москва, Смольная ул., 24Д</div><p class="project-desc">Модернизация систем автоматики и диспетчеризации.</p><div class="project-tag">BMS · модернизация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://i.archi.ru/i/324460.jpg" alt="Бизнес-центр ОКО II" loading="lazy"></div><div class="project-body"><div class="project-date">16.09.2020</div><h3>БЦ ОКО II</h3><div class="project-address">Москва-Сити, участок 16Б</div><p class="project-desc">Работы по автоматизации и диспетчеризации инженерных систем.</p><div class="project-tag">BMS · диспетчеризация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://www.aex.ru/images/media/900/16900.jpg" alt="Аэропорт Остафьево" loading="lazy"></div><div class="project-body"><div class="project-date">28.04.2019 / 26.07.2017</div><h3>Аэропорт «Остафьево»</h3><div class="project-address">Москва, поселение Рязановское</div><p class="project-desc">Автоматизация и диспетчеризация; работы по вентиляции и КНС.</p><div class="project-tag">Автоматика · вентиляция · КНС</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://images.cdn-cian.ru/images/75/349/801/1089435792-6.jpg" alt="Технопарк Отрадное" loading="lazy"></div><div class="project-body"><div class="project-date">08.09.2020 / 06.11.2018</div><h3>Технопарк «Отрадное»</h3><div class="project-address">Москва, ул. Отрадная, 2, корпуса А, В и С</div><p class="project-desc">Проектирование, монтаж и пусконаладка систем автоматизации и диспетчеризации, включая паркинг.</p><div class="project-tag">Автоматизация · диспетчеризация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://lottehotelmoscow.ru/upload/resize_cache/iblock/b02/768_405_2619711fa078991f0a23d032687646b21/q615la455chgjh648vxnb47pa9fr6qbf.jpg" alt="Lotte Hotel Moscow" loading="lazy"></div><div class="project-body"><div class="project-date">01.08.2012</div><h3>Гостиница и ТДЦ Lotte</h3><div class="project-address">Москва, Новинский бульвар, 8</div><p class="project-desc">Техническое обслуживание систем автоматики и диспетчеризации.</p><div class="project-tag">BMS · техническое обслуживание</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://s.afisha.ru/mediastorage/ec/3b/232371ff9df04d04847630a23bec.jpg" alt="Московский художественный театр имени Чехова" loading="lazy"></div><div class="project-body"><div class="project-date">28.01.2016</div><h3>МХТ им. А. П. Чехова</h3><div class="project-address">Москва, Камергерский переулок, 3</div><p class="project-desc">Автоматизация и диспетчеризация инженерных систем при реконструкции.</p><div class="project-tag">Автоматизация · реконструкция</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://i.archi.ru/i/650/196856.jpg" alt="Жилой комплекс Литератор" loading="lazy"></div><div class="project-body"><div class="project-date">26.07.2015</div><h3>ЖК «Литератор»</h3><div class="project-address">Москва, ул. Льва Толстого, 23, корпус Ж</div><p class="project-desc">Автоматизация и диспетчеризация инженерных систем.</p><div class="project-tag">BMS · жилой комплекс</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://static.tildacdn.com/tild6337-3232-4361-b532-376332653066/goodzone.webp" alt="Торгово-развлекательный центр Гудзон" loading="lazy"></div><div class="project-body"><div class="project-date">18.08.2014</div><h3>ТРЦ «Гудзон» (GoodZone)</h3><div class="project-address">Москва, Каширское шоссе, 12</div><p class="project-desc">Автоматизация и диспетчеризация кинотеатра «Люксор», «О’КЕЙ», «М.Видео» и офисных помещений.</p><div class="project-tag">Автоматизация · торговый центр</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://um.mos.ru/content/quest/media/204/1660a9d82c4979.jpg" alt="Мемориальный музей космонавтики" loading="lazy"></div><div class="project-body"><div class="project-date">20.01.2010</div><h3>Мемориальный музей космонавтики</h3><div class="project-address">Москва, проспект Мира, 101</div><p class="project-desc">Работы по диспетчеризации инженерных систем.</p><div class="project-tag">Диспетчеризация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx74Bsnd3Y7JxehTKClz70IywAQ3jpKEhJ5821ZKlaw&s=10" alt="Фасад торгово-делового центра Галерея в Звенигороде" loading="lazy"></div><div class="project-body"><div class="project-date">12.02.2022</div><h3>ТДЦ «Галерея»</h3><div class="project-address">Московская область, Звенигород, Радужная ул.</div><p class="project-desc">Проектирование, монтаж и пусконаладка автоматики и диспетчеризации.</p><div class="project-tag">Автоматизация · диспетчеризация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://www.sportcar-center.com/photos/header/491319_cXk5pJKs7jHtXEWp4rmBRLiKMOoBudC1.jpg" alt="Porsche Центр Рублёвский — фасад дилерского центра" loading="lazy"></div><div class="project-body"><div class="project-date">14.01.2021 / 10.01.2018 / 07.11.2017</div><h3>Спорткар-центр / Porsche-Центр Рублёвский</h3><div class="project-address">Московская область, Одинцовский район, Раздоры, МКАД, 61-й км, стр. 1</div><p class="project-desc">Облачная диспетчеризация, автоматизация и диспетчеризация инженерных систем, техническое обслуживание.</p><div class="project-tag">Автоматизация · диспетчеризация · сервис</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://cdn-p.cian.site/images/nezhiloe-pomeshcenie-moskva-pereulok-romanov-1867383477-1.jpg" alt="Здание по адресу Москва, Романов переулок, 4" loading="lazy"></div><div class="project-body"><div class="project-date">24.12.2020 / 14.11.2011</div><h3>Офис Bloomberg</h3><div class="project-address">Москва, Романов переулок, 4</div><p class="project-desc">Модернизация, автоматизация и диспетчеризация инженерных систем.</p><div class="project-tag">BMS · модернизация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://static.life.ru/publications/2024/10/15/996393822451.8967.webp" alt="Здание Государственной Думы на Охотном Ряду, 1" loading="lazy"></div><div class="project-body"><div class="project-date">09.01.2019</div><h3>Государственная Дума</h3><div class="project-address">Москва, ул. Охотный Ряд, 1</div><p class="project-desc">Техническое обслуживание автоматики и диспетчеризации.</p><div class="project-tag">Техническое обслуживание</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://i.archi.ru/i/245812.jpg" alt="Здание инженерных служб Московского метрополитена на улице Гиляровского" loading="lazy"></div><div class="project-body"><div class="project-date">12.11.2017 / 25.05.2013</div><h3>Здание инженерных служб ГУП «Московский метрополитен»</h3><div class="project-address">Москва, ул. Гиляровского, 37/1</div><p class="project-desc">Диспетчеризация и техническое обслуживание автоматики.</p><div class="project-tag">Диспетчеризация · ТО</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://xn--80apydf.xn--p1ai/upload/iblock/e39/hpq9cns68htcjgvox45sbiqhmxylqhu0.jpg" alt="Производственная линия на заводе Danfoss в Лешково" loading="lazy"></div><div class="project-body"><div class="project-date">07.10.2017</div><h3>Danfoss</h3><div class="project-address">Московская область, Истринский район, Лешково, 217</div><p class="project-desc">Автоматизация и диспетчеризация.</p><div class="project-tag">Автоматизация · диспетчеризация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://fortexgroup.ru/i/354/0/w_1180/353890-87421df5c6c1c2697351f4ade5f246d2.jpg" alt="Фасад торгового центра Ковчег на Малой Филёвской улице" loading="lazy"></div><div class="project-body"><div class="project-date">17.04.2015</div><h3>ТЦ «Ковчег»</h3><div class="project-address">Москва, ул. Малая Филёвская, 13</div><p class="project-desc">Автоматизация и диспетчеризация.</p><div class="project-tag">Автоматизация · диспетчеризация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Moscow%2C_Volgogradsky_Prospect_32%2C_Sberbank_building_%2830425890524%29.jpg" alt="Здание Сбербанка на Волгоградском проспекте, 32" loading="lazy"></div><div class="project-body"><div class="project-date">15.05.2013</div><h3>ОАО «Сбербанк России», кассовый узел</h3><div class="project-address">Москва, Волгоградский проспект, 32, корп. 45</div><p class="project-desc">Автоматика и диспетчеризация.</p><div class="project-tag">Автоматизация · диспетчеризация</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://daichi.ru/upload/iblock/ee1/9mbohavps0r3ywd63qe989zozf7qy4m8/%D0%9C%D0%95%D0%93%D0%90%D0%A6%D0%9E%D0%94-3-%D0%9F%D0%90%D0%9E-%D0%A1%D0%B1%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D0%BA%201180%20(2).jpg" alt="МЕГА ЦОД Сбербанка — фото объекта с сайта Даичи" loading="lazy"></div><div class="project-body"><div class="project-date">19.03.2011</div><h3>Сбербанк России, МЕГА ЦОД</h3><div class="project-address">Москва, 2-й Южнопортовый проезд</div><p class="project-desc">Автоматизация и диспетчеризация инженерных систем.</p><div class="project-tag">Автоматизация · ЦОД</div></div></article>
+  <article class="project"><div class="project-photo"><img src="https://morrowgroup.ru/cache_images/637_DJI_0912_960x720.jpeg" alt="Вид сверху на комплекс Неглинная Плаза на Трубной площади, 2" loading="lazy"></div><div class="project-body"><div class="project-date">15.07.2010</div><h3>Банк Москвы</h3><div class="project-address">Москва, ул. Трубная, 2</div><p class="project-desc">Диспетчеризация и техническое обслуживание.</p><div class="project-tag">Диспетчеризация · ТО</div></div></article>
+</div>
+<p class="note">Примечание: часть карточек содержит фотографии соответствующих зданий или объекта по указанному адресу. Для проектов, где достоверное фото пока не найдено, использована фирменная абстрактная архитектурная иллюстрация, а не фотография чужого объекта. Изображения загружаются с сайтов-источников при открытии страницы.</p>
 </section>
 
-<section class="services" id="services">
- <div class="wrap">
-  <div class="eyebrow">Компетенции</div>
-  <h2 class="section-title">Направления деятельности</h2>
-  <p class="section-intro">Комплексная работа с инженерной инфраструктурой объектов различного назначения.</p>
-  <div class="service-grid">
-   <div class="service"><h3>Автоматизация и диспетчеризация</h3><p>Системы управления инженерным оборудованием, BMS, SCADA и интеграция подсистем.</p></div>
-   <div class="service"><h3>Видеонаблюдение</h3><p>IP-видеонаблюдение, серверные станции, видеоаналитика и рабочие места операторов.</p></div>
-   <div class="service"><h3>Противопожарная автоматика</h3><p>Пожарная сигнализация, оповещение и интеграция с инженерными системами.</p></div>
-   <div class="service"><h3>Контроль доступа</h3><p>Контроллеры, считыватели, турникеты, замки и управление доступом.</p></div>
-   <div class="service"><h3>Охранная сигнализация</h3><p>Охрана периметра, датчики, тревожные кнопки и контроль зон.</p></div>
-   <div class="service"><h3>Сети передачи данных</h3><p>ВОЛС, СКС, коммутационное оборудование и телекоммуникационная инфраструктура.</p></div>
-  </div>
- </div>
-</section>
-
-<section id="projects">
- <div class="wrap">
-  <div class="eyebrow">Опыт компании</div>
-  <h2 class="section-title">Реализованные объекты</h2>
-  <p class="section-intro">Избранные проекты компании. Даты, адреса и описание работ приведены по предоставленному референсу.</p>
-  <div class="project-grid" id="projectGrid"></div>
- </div>
-</section>
-
-<section class="contact" id="contacts">
- <div class="wrap contact-grid">
-  <div>
-   <div class="eyebrow">Контакты</div>
-   <h2 class="section-title">ООО «АВИК ИНЖСЕРВИС»</h2>
-   <p>Инженерные системы, автоматизация и диспетчеризация объектов.</p>
-   <p><strong>Телефон:</strong> <a href="tel:+79251345090">+7 (925) 134-50-90</a><br>
-   <strong>Email:</strong> <a href="mailto:info@aviceng.com">info@aviceng.com</a></p>
-  </div>
-  <div>
-   <h3>Реквизиты</h3>
-   <p>129075, город Москва,<br>Мурманский проезд, д. 14, корп. 1</p>
-   <p>ИНН 7717290070<br>ОГРН 1157746486083<br>КПП 771701001</p>
-  </div>
- </div>
-</section>
+<section id="contacts" class="content white">
+<div class="section-head"><div class="section-line"></div><h2>Контакты</h2></div>
+<div class="contacts-wrapper">
+  <div class="contacts-box"><div><h3>Инженерный отдел</h3><p class="phone">+7 (925) 134-50-90</p><p>info@aviceng.com</p><p style="margin-top:24px"><strong style="color:#1c2434">Адрес компании:</strong><br>129075, город Москва, Мурманский пр-д, д. 14, корп. 1</p></div><p style="margin-top:25px"><a href="https://yandex.ru/maps/?text=Москва%2C%20Мурманский%20проезд%2C%2014%20к1" target="_blank" rel="noopener">Открыть адрес на Яндекс Картах →</a></p></div>
+  <div class="contacts-box"><div><h3>Реквизиты организации</h3><p><strong style="color:#1c2434">ООО «АВИК ИНЖСЕРВИС»</strong></p><p><strong>ИНН:</strong> 7717290070</p><p><strong>ОГРН:</strong> 1157746486083</p><p><strong>КПП:</strong> 771701001</p></div></div>
+</div></section>
 </main>
-
-<footer><div class="wrap">© AVIC PRO · ООО «АВИК ИНЖСЕРВИС»</div></footer>
-
+<footer><span>© AVIC PRO · ООО «АВИК ИНЖСЕРВИС»</span><span>Инжиниринг · Автоматизация · Слаботочные системы</span></footer>
 <script>
-const projects = [
-{
-date:"24.08.2024",
-title:"Киноконцертный комплекс и съёмочный павильон №17",
-address:"Москва, Раменки, Мосфильмовская улица",
-work:"Программирование и пусконаладочные работы системы автоматизации и диспетчеризации инженерных систем.",
-search:"Киноконцертный комплекс съемочный павильон 17 Мосфильм Москва"
-},
-{
-date:"12.02.2022",
-title:"Торгово-деловой центр «Галерея»",
-address:"Московская область, Звенигород, Радужная улица",
-work:"Проектирование, монтаж и пусконаладка систем автоматизации и диспетчеризации инженерных систем.",
-image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx74Bsnd3Y7JxehTKClz70IywAQ3jpKEhJ5821ZKlaw&s=10"
-},
-{
-date:"12.02.2021",
-title:"Бизнес-центр «Меридиан»",
-address:"Москва, Смольная улица, 24Д",
-work:"Модернизация автоматизации и диспетчеризации инженерных систем здания.",
-search:"Бизнес центр Меридиан Смольная 24Д Москва"
-},
-{
-date:"14.01.2021 · 10.01.2018 · 07.11.2017",
-title:"Спорткар-центр / Porsche-Центр Рублёвский",
-address:"Московская область, Одинцовский район, деревня Раздоры, МКАД 61 км, строение 1",
-work:"Создание облачной системы диспетчеризации, автоматизация и диспетчеризация инженерных систем, техническое обслуживание.",
-search:"Спорткар центр Porsche Рублевский Раздоры"
-},
-{
-date:"24.12.2020 · 14.11.2011",
-title:"Bloomberg",
-address:"Москва, Романов переулок, 4",
-work:"Модернизация, автоматизация и диспетчеризация инженерных систем.",
-search:"Bloomberg Романов переулок 4 Москва здание"
-},
-{
-date:"16.09.2020",
-title:"Бизнес-центр ОКО II",
-address:"Москва-Сити, участок 16Б",
-work:"Автоматизация и диспетчеризация инженерных систем здания.",
-search:"Башня ОКО 2 Москва Сити"
-},
-{
-date:"08.09.2020 · 06.11.2018",
-title:"Технопарк «Отрадное»",
-address:"Москва, Отрадная улица, 2, корпуса А, В и С",
-work:"Проектирование и полный комплекс работ по автоматизации и диспетчеризации инженерных систем, включая паркинг.",
-search:"Технопарк Отрадное Отрадная 2 Москва"
-},
-{
-date:"28.04.2019 · 26.07.2017",
-title:"Аэропорт «Остафьево»",
-address:"Москва, поселение Рязановское",
-work:"Автоматизация и диспетчеризация инженерных систем, вентиляции и КНС.",
-search:"Аэропорт Остафьево Москва"
-},
-{
-date:"09.01.2019",
-title:"Государственная Дума РФ",
-address:"Москва, Охотный Ряд, 1",
-work:"Техническое обслуживание систем автоматизации и диспетчеризации здания.",
-search:"Государственная Дума Охотный ряд 1 здание"
-},
-{
-date:"12.11.2017 · 25.05.2013",
-title:"Здание инженерных служб Московского метрополитена",
-address:"Москва, улица Гиляровского, 37/1",
-work:"Диспетчеризация инженерных систем здания и техническое обслуживание автоматики.",
-image:"https://i.archi.ru/i/245812.jpg"
-},
-{
-date:"07.10.2017",
-title:"Danfoss",
-address:"Московская область, Истринский район, Лешково, 217",
-work:"Автоматизация и диспетчеризация инженерных систем.",
-search:"Danfoss Лешково 217"
-},
-{
-date:"28.01.2016",
-title:"МХТ им. А. П. Чехова",
-address:"Москва, Камергерский переулок, 3",
-work:"Автоматизация и диспетчеризация инженерных систем на объекте реконструкции.",
-search:"МХТ Чехова Камергерский переулок 3"
-},
-{
-date:"26.07.2015",
-title:"ЖК «Литератор»",
-address:"Москва, улица Льва Толстого, 23, корпус Ж",
-work:"Автоматизация и диспетчеризация инженерных систем.",
-search:"ЖК Литератор Льва Толстого 23 Москва"
-},
-{
-date:"17.04.2015",
-title:"ТЦ «Ковчег»",
-address:"Москва, Малая Филёвская улица, 13",
-work:"Автоматизация и диспетчеризация инженерных систем здания.",
-search:"ТЦ Ковчег Малая Филевская 13"
-},
-{
-date:"18.08.2014",
-title:"ТРЦ «Гудзон» (GoodZone)",
-address:"Москва, Каширское шоссе, 12",
-work:"Автоматизация и диспетчеризация кинотеатра «Люксор», гипермаркета «О’КЕЙ», «М.Видео» и офисных помещений.",
-search:"ТРЦ Гудзон GoodZone Каширское шоссе 12"
-},
-{
-date:"15.05.2013",
-title:"Сбербанк — здание кассового узла",
-address:"Москва, Волгоградский проспект, 32, корпус 45",
-work:"Автоматизация и диспетчеризация инженерных систем здания.",
-search:"Сбербанк кассовый узел Волгоградский проспект 32 корпус 45"
-},
-{
-date:"01.08.2012",
-title:"Гостиница и торгово-деловой центр Lotte",
-address:"Москва, Новинский бульвар, 8",
-work:"Техническое обслуживание систем автоматики и диспетчеризации зданий.",
-search:"Lotte Hotel Moscow Новинский бульвар 8"
-},
-{
-date:"19.03.2011",
-title:"Сбербанк — МЕГА ЦОД",
-address:"Москва, 2-й Южнопортовый проезд",
-work:"Автоматизация и диспетчеризация инженерных систем.",
-image:"https://daichi.ru/upload/iblock/ee1/9mbohavps0r3ywd63qe989zozf7qy4m8/%D0%9C%D0%95%D0%93%D0%90%D0%A6%D0%9E%D0%94-3-%D0%9F%D0%90%D0%9E-%D0%A1%D0%B1%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D0%BA%201180%20(2).jpg"
-},
-{
-date:"15.07.2010",
-title:"Банк Москвы",
-address:"Москва, улица Трубная, 2",
-work:"Диспетчеризация инженерных систем и техническое обслуживание систем автоматики и диспетчеризации здания.",
-search:"Банк Москвы Трубная 2 Москва"
-},
-{
-date:"20.01.2010",
-title:"Мемориальный музей космонавтики",
-address:"Москва, проспект Мира, 101",
-work:"Диспетчеризация инженерных систем.",
-search:"Мемориальный музей космонавтики Москва"
-}
-];
-
-const grid = document.getElementById("projectGrid");
-
-projects.forEach(project => {
- const card = document.createElement("article");
- card.className = "project";
-
- const photo = document.createElement("div");
- photo.className = "photo";
-
- if (project.image) {
-   const img = document.createElement("img");
-   img.src = project.image;
-   img.alt = project.title;
-   img.loading = "lazy";
-   img.onerror = () => {
-     photo.innerHTML = '<div class="photo-fallback"><strong>ФОТО ОБЪЕКТА</strong><span>Изображение временно недоступно</span></div>';
-   };
-   photo.appendChild(img);
- } else {
-   photo.innerHTML = '<div class="photo-fallback"><strong>ФОТО ОБЪЕКТА</strong><span>Фотография будет добавлена</span></div>';
- }
-
- const query = project.search || project.title + " " + project.address;
- const link = document.createElement("a");
- link.className = "photo-link";
- link.href = "https://yandex.ru/maps/?text=" + encodeURIComponent(query);
- link.target = "_blank";
- link.rel = "noopener";
- link.textContent = project.image ? "Источник фото ↗" : "Найти объект ↗";
- photo.appendChild(link);
-
- const body = document.createElement("div");
- body.className = "project-body";
- body.innerHTML = `
-  <div class="date">${project.date}</div>
-  <h3>${project.title}</h3>
-  <p class="address">${project.address}</p>
-  <p class="description">${project.work}</p>
-  <div class="tags">АВТОМАТИЗАЦИЯ · ДИСПЕТЧЕРИЗАЦИЯ</div>
- `;
-
- card.appendChild(photo);
- card.appendChild(body);
- grid.appendChild(card);
-});
+const menuBtn=document.getElementById('menuBtn'),navMenu=document.getElementById('navMenu'),overlay=document.getElementById('navOverlay');
+function closeMenu(){navMenu.classList.remove('active');overlay.classList.remove('active');menuBtn.classList.remove('active')}
+menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');overlay.classList.toggle('active');menuBtn.classList.toggle('active')});
+overlay.addEventListener('click',closeMenu);
+navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 </script>
-</body>
-</html>
+</body></html>
